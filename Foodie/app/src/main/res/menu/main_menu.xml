@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group >
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/nav_home_icon_selector"
+            android:title="Home" />
+        <item
+            android:id="@+id/like"
+            android:icon="@drawable/nav_favorite_icon_selector"
+            android:title="Like" />
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/nav_profile_icon_selector"
+            android:title="Pofile" />
+        <item
+            android:id="@+id/history"
+            android:icon="@drawable/nav_history_icon_selector"
+            android:title="History" />
+    </group>
+</menu>
