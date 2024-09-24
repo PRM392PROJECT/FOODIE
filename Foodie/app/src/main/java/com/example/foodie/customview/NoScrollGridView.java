@@ -2,6 +2,7 @@ package com.example.foodie.customview;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.widget.GridView;
 
 public class NoScrollGridView extends GridView {
@@ -23,5 +24,13 @@ public class NoScrollGridView extends GridView {
         // Disable scrolling by setting a large height measure spec
         int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
         super.onMeasure(widthMeasureSpec, expandSpec);
+    }
+    public static void setNoScrollGridViewColumns(Context context, NoScrollGridView gridView, int columnWidthDp) {
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        int screenWidthPx = displayMetrics.widthPixels;
+        int columnWidthPx = (int) (columnWidthDp * displayMetrics.density); // Convert dp to px
+        int numColumns = screenWidthPx / columnWidthPx; // Tính số cột
+
+        gridView.setNumColumns(numColumns);
     }
 }
