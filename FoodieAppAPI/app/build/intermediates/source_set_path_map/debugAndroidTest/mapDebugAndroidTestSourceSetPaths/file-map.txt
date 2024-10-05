@@ -1,0 +1,5 @@
+com.example.foodie.test.app-core-1.6.1-0 C:\Users\LINH\.gradle\caches\transforms-4\18dfaa3396d5ced5bc7be2d0e533c97e\transformed\core-1.6.1\res
+com.example.foodie.test.app-androidTest-1 E:\Project\FOODIE\FoodieAppAPI\app\build\generated\res\resValues\androidTest\debug
+com.example.foodie.test.app-mergeDebugAndroidTestResources-2 E:\Project\FOODIE\FoodieAppAPI\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.foodie.test.app-mergeDebugAndroidTestResources-3 E:\Project\FOODIE\FoodieAppAPI\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.foodie.test.app-debugAndroidTest-4 E:\Project\FOODIE\FoodieAppAPI\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

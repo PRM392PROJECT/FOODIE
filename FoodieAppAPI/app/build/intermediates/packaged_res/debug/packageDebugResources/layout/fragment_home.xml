@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <!-- Phần header cố định -->
+
+    <!-- TabLayout for food categories, positioned below the AppBarLayout -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+        <!-- Include layout for the search bar -->
+        <include android:id="@+id/header"
+            layout="@layout/header_layout" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabFoodCategory"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        app:tabIndicatorColor="#FA4A0C"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#FA4A0C"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_below="@id/appbar"
+        />
+
+    <!-- ViewPager2 to display the food categories -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerFood"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabFoodCategory"
+        android:layout_marginTop="70dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
