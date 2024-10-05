@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="food_item_width">200dp</dimen> <!-- Kích thước width cho item thực tế -->
-    <dimen name="food_item_height">250dp</dimen>
-    <dimen name="fab_margin">16dp</dimen> <!-- Kích thước height cho item thực tế -->
-</resources>
