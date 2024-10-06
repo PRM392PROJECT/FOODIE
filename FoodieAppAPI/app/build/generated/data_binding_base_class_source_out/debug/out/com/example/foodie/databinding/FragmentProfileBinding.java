@@ -4,10 +4,10 @@ package com.example.foodie.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -20,47 +20,50 @@ import java.lang.String;
 
 public final class FragmentProfileBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
-  public final Button buttonUpdateProfile;
+  public final TextView email;
 
   @NonNull
-  public final ImageButton buttonlogout;
+  public final TextView fullName;
 
   @NonNull
-  public final EditText editTextAddress;
+  public final LinearLayout nextAddress;
 
   @NonNull
-  public final EditText editTextEmail;
+  public final LinearLayout nextCart;
 
   @NonNull
-  public final EditText editTextName;
+  public final LinearLayout nextInfor;
 
   @NonNull
-  public final EditText editTextPhoneNumber;
+  public final LinearLayout nextLogout;
 
   @NonNull
-  public final ImageView imageViewAvatar;
+  public final ImageView profileImage;
 
-  private FragmentProfileBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button buttonUpdateProfile, @NonNull ImageButton buttonlogout,
-      @NonNull EditText editTextAddress, @NonNull EditText editTextEmail,
-      @NonNull EditText editTextName, @NonNull EditText editTextPhoneNumber,
-      @NonNull ImageView imageViewAvatar) {
+  @NonNull
+  public final ConstraintLayout topPanel;
+
+  private FragmentProfileBinding(@NonNull RelativeLayout rootView, @NonNull TextView email,
+      @NonNull TextView fullName, @NonNull LinearLayout nextAddress, @NonNull LinearLayout nextCart,
+      @NonNull LinearLayout nextInfor, @NonNull LinearLayout nextLogout,
+      @NonNull ImageView profileImage, @NonNull ConstraintLayout topPanel) {
     this.rootView = rootView;
-    this.buttonUpdateProfile = buttonUpdateProfile;
-    this.buttonlogout = buttonlogout;
-    this.editTextAddress = editTextAddress;
-    this.editTextEmail = editTextEmail;
-    this.editTextName = editTextName;
-    this.editTextPhoneNumber = editTextPhoneNumber;
-    this.imageViewAvatar = imageViewAvatar;
+    this.email = email;
+    this.fullName = fullName;
+    this.nextAddress = nextAddress;
+    this.nextCart = nextCart;
+    this.nextInfor = nextInfor;
+    this.nextLogout = nextLogout;
+    this.profileImage = profileImage;
+    this.topPanel = topPanel;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -85,51 +88,56 @@ public final class FragmentProfileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.buttonUpdateProfile;
-      Button buttonUpdateProfile = ViewBindings.findChildViewById(rootView, id);
-      if (buttonUpdateProfile == null) {
+      id = R.id.email;
+      TextView email = ViewBindings.findChildViewById(rootView, id);
+      if (email == null) {
         break missingId;
       }
 
-      id = R.id.buttonlogout;
-      ImageButton buttonlogout = ViewBindings.findChildViewById(rootView, id);
-      if (buttonlogout == null) {
+      id = R.id.full_name;
+      TextView fullName = ViewBindings.findChildViewById(rootView, id);
+      if (fullName == null) {
         break missingId;
       }
 
-      id = R.id.editTextAddress;
-      EditText editTextAddress = ViewBindings.findChildViewById(rootView, id);
-      if (editTextAddress == null) {
+      id = R.id.next_address;
+      LinearLayout nextAddress = ViewBindings.findChildViewById(rootView, id);
+      if (nextAddress == null) {
         break missingId;
       }
 
-      id = R.id.editTextEmail;
-      EditText editTextEmail = ViewBindings.findChildViewById(rootView, id);
-      if (editTextEmail == null) {
+      id = R.id.next_cart;
+      LinearLayout nextCart = ViewBindings.findChildViewById(rootView, id);
+      if (nextCart == null) {
         break missingId;
       }
 
-      id = R.id.editTextName;
-      EditText editTextName = ViewBindings.findChildViewById(rootView, id);
-      if (editTextName == null) {
+      id = R.id.next_infor;
+      LinearLayout nextInfor = ViewBindings.findChildViewById(rootView, id);
+      if (nextInfor == null) {
         break missingId;
       }
 
-      id = R.id.editTextPhoneNumber;
-      EditText editTextPhoneNumber = ViewBindings.findChildViewById(rootView, id);
-      if (editTextPhoneNumber == null) {
+      id = R.id.next_logout;
+      LinearLayout nextLogout = ViewBindings.findChildViewById(rootView, id);
+      if (nextLogout == null) {
         break missingId;
       }
 
-      id = R.id.imageViewAvatar;
-      ImageView imageViewAvatar = ViewBindings.findChildViewById(rootView, id);
-      if (imageViewAvatar == null) {
+      id = R.id.profile_image;
+      ImageView profileImage = ViewBindings.findChildViewById(rootView, id);
+      if (profileImage == null) {
         break missingId;
       }
 
-      return new FragmentProfileBinding((ConstraintLayout) rootView, buttonUpdateProfile,
-          buttonlogout, editTextAddress, editTextEmail, editTextName, editTextPhoneNumber,
-          imageViewAvatar);
+      id = R.id.topPanel;
+      ConstraintLayout topPanel = ViewBindings.findChildViewById(rootView, id);
+      if (topPanel == null) {
+        break missingId;
+      }
+
+      return new FragmentProfileBinding((RelativeLayout) rootView, email, fullName, nextAddress,
+          nextCart, nextInfor, nextLogout, profileImage, topPanel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

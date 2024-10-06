@@ -4,14 +4,13 @@ package com.example.foodie.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import androidx.viewpager2.widget.ViewPager2;
 import com.example.foodie.R;
-import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -19,10 +18,7 @@ import java.lang.String;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final CoordinatorLayout rootView;
-
-  @NonNull
-  public final AppBarLayout appbar;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final HeaderLayoutBinding header;
@@ -33,11 +29,9 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final ViewPager2 viewPagerFood;
 
-  private FragmentHomeBinding(@NonNull CoordinatorLayout rootView, @NonNull AppBarLayout appbar,
-      @NonNull HeaderLayoutBinding header, @NonNull TabLayout tabFoodCategory,
-      @NonNull ViewPager2 viewPagerFood) {
+  private FragmentHomeBinding(@NonNull RelativeLayout rootView, @NonNull HeaderLayoutBinding header,
+      @NonNull TabLayout tabFoodCategory, @NonNull ViewPager2 viewPagerFood) {
     this.rootView = rootView;
-    this.appbar = appbar;
     this.header = header;
     this.tabFoodCategory = tabFoodCategory;
     this.viewPagerFood = viewPagerFood;
@@ -45,7 +39,7 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public CoordinatorLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -70,12 +64,6 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.appbar;
-      AppBarLayout appbar = ViewBindings.findChildViewById(rootView, id);
-      if (appbar == null) {
-        break missingId;
-      }
-
       id = R.id.header;
       View header = ViewBindings.findChildViewById(rootView, id);
       if (header == null) {
@@ -95,8 +83,8 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((CoordinatorLayout) rootView, appbar, binding_header,
-          tabFoodCategory, viewPagerFood);
+      return new FragmentHomeBinding((RelativeLayout) rootView, binding_header, tabFoodCategory,
+          viewPagerFood);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -12,10 +12,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.foodie.R;
-import com.example.foodie.customview.NoScrollListView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -34,7 +34,7 @@ public final class ActivityOrderDetailBinding implements ViewBinding {
   public final Button btnPlaceOrder;
 
   @NonNull
-  public final NoScrollListView listviewOrderDetail;
+  public final RecyclerView listviewOrderDetail;
 
   @NonNull
   public final RelativeLayout main;
@@ -53,7 +53,7 @@ public final class ActivityOrderDetailBinding implements ViewBinding {
 
   private ActivityOrderDetailBinding(@NonNull RelativeLayout rootView,
       @NonNull ConstraintLayout bottomPanel, @NonNull ImageButton btnBack,
-      @NonNull Button btnPlaceOrder, @NonNull NoScrollListView listviewOrderDetail,
+      @NonNull Button btnPlaceOrder, @NonNull RecyclerView listviewOrderDetail,
       @NonNull RelativeLayout main, @NonNull ScrollView scrollView,
       @NonNull ConstraintLayout topPanel, @NonNull TextView totalItem, @NonNull TextView totalPay) {
     this.rootView = rootView;
@@ -114,7 +114,7 @@ public final class ActivityOrderDetailBinding implements ViewBinding {
       }
 
       id = R.id.listview_order_detail;
-      NoScrollListView listviewOrderDetail = ViewBindings.findChildViewById(rootView, id);
+      RecyclerView listviewOrderDetail = ViewBindings.findChildViewById(rootView, id);
       if (listviewOrderDetail == null) {
         break missingId;
       }

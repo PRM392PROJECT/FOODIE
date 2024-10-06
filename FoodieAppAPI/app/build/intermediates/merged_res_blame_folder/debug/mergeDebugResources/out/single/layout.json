@@ -4,36 +4,32 @@
         "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\fragment_favorite.xml"
     },
     {
-        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\fragment_history.xml",
-        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\fragment_history.xml"
-    },
-    {
-        "merged": "com.example.foodie.app-mergeDebugResources-44:/layout/fragment_product_list.xml",
-        "source": "com.example.foodie.app-main-47:/layout/fragment_product_list.xml"
-    },
-    {
         "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\header_layout.xml",
         "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\header_layout.xml"
-    },
-    {
-        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\product_cart.xml",
-        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\product_cart.xml"
     },
     {
         "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\product_detail_layput.xml",
         "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\product_detail_layput.xml"
     },
     {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\product_cart.xml",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\product_cart.xml"
+    },
+    {
         "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\activity_product_detail.xml",
         "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\activity_product_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\fragment_my_order.xml",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\fragment_my_order.xml"
     },
     {
         "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\fragment_login.xml",
         "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\fragment_login.xml"
     },
     {
-        "merged": "com.example.foodie.app-mergeDebugResources-44:/layout/activity_product_detail.xml",
-        "source": "com.example.foodie.app-main-47:/layout/activity_product_detail.xml"
+        "merged": "com.example.foodie.app-mergeDebugResources-44:/layout/activity_main.xml",
+        "source": "com.example.foodie.app-main-47:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\fragment_dashboard.xml",
@@ -48,6 +44,10 @@
         "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\fragment_home.xml"
     },
     {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\history_order_cart.xml",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\history_order_cart.xml"
+    },
+    {
         "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\activity_main.xml",
         "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\activity_main.xml"
     },
@@ -60,12 +60,16 @@
         "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\fragment_product_list.xml"
     },
     {
-        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\fragment_feedback_list.xml",
-        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\fragment_feedback_list.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\fragment_order_list.xml",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\fragment_order_list.xml"
     },
     {
         "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\activity_order_detail.xml",
         "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\activity_order_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\fragment_feedback_list.xml",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-47:\\layout\\fragment_feedback_list.xml"
     },
     {
         "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-mergeDebugResources-44:\\layout\\fragment_register.xml",

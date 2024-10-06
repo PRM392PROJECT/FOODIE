@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -52,7 +53,7 @@ public final class ActivityProductDetailBinding implements ViewBinding {
   public final TextView productPrice;
 
   @NonNull
-  public final TextView productRating;
+  public final RatingBar ratingBar;
 
   @NonNull
   public final TextView storeName;
@@ -64,9 +65,8 @@ public final class ActivityProductDetailBinding implements ViewBinding {
       @NonNull ConstraintLayout bottom, @NonNull ImageButton btnBack,
       @NonNull Button buttonAddToCart, @NonNull Button buttonOrder, @NonNull Flow flow,
       @NonNull NoScrollListView listviewFeedback, @NonNull TextView productDescription,
-      @NonNull TextView productName, @NonNull TextView productPrice,
-      @NonNull TextView productRating, @NonNull TextView storeName,
-      @NonNull ConstraintLayout topPanel) {
+      @NonNull TextView productName, @NonNull TextView productPrice, @NonNull RatingBar ratingBar,
+      @NonNull TextView storeName, @NonNull ConstraintLayout topPanel) {
     this.rootView = rootView;
     this.bottom = bottom;
     this.btnBack = btnBack;
@@ -77,7 +77,7 @@ public final class ActivityProductDetailBinding implements ViewBinding {
     this.productDescription = productDescription;
     this.productName = productName;
     this.productPrice = productPrice;
-    this.productRating = productRating;
+    this.ratingBar = ratingBar;
     this.storeName = storeName;
     this.topPanel = topPanel;
   }
@@ -163,9 +163,9 @@ public final class ActivityProductDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.product_rating;
-      TextView productRating = ViewBindings.findChildViewById(rootView, id);
-      if (productRating == null) {
+      id = R.id.rating_bar;
+      RatingBar ratingBar = ViewBindings.findChildViewById(rootView, id);
+      if (ratingBar == null) {
         break missingId;
       }
 
@@ -183,7 +183,7 @@ public final class ActivityProductDetailBinding implements ViewBinding {
 
       return new ActivityProductDetailBinding((RelativeLayout) rootView, bottom, btnBack,
           buttonAddToCart, buttonOrder, flow, listviewFeedback, productDescription, productName,
-          productPrice, productRating, storeName, topPanel);
+          productPrice, ratingBar, storeName, topPanel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

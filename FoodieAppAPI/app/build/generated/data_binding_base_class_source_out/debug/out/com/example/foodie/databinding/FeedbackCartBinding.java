@@ -4,7 +4,9 @@ package com.example.foodie.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,17 +26,30 @@ public final class FeedbackCartBinding implements ViewBinding {
   public final TextView comment;
 
   @NonNull
-  public final ImageView userAvata;
+  public final TextView commentDate;
 
   @NonNull
-  public final TextView userName;
+  public final TextView email;
+
+  @NonNull
+  public final ImageButton menuButton;
+
+  @NonNull
+  public final RatingBar ratingBar;
+
+  @NonNull
+  public final ImageView userAvatar;
 
   private FeedbackCartBinding(@NonNull CardView rootView, @NonNull TextView comment,
-      @NonNull ImageView userAvata, @NonNull TextView userName) {
+      @NonNull TextView commentDate, @NonNull TextView email, @NonNull ImageButton menuButton,
+      @NonNull RatingBar ratingBar, @NonNull ImageView userAvatar) {
     this.rootView = rootView;
     this.comment = comment;
-    this.userAvata = userAvata;
-    this.userName = userName;
+    this.commentDate = commentDate;
+    this.email = email;
+    this.menuButton = menuButton;
+    this.ratingBar = ratingBar;
+    this.userAvatar = userAvatar;
   }
 
   @Override
@@ -70,19 +85,38 @@ public final class FeedbackCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.user_avata;
-      ImageView userAvata = ViewBindings.findChildViewById(rootView, id);
-      if (userAvata == null) {
+      id = R.id.comment_date;
+      TextView commentDate = ViewBindings.findChildViewById(rootView, id);
+      if (commentDate == null) {
         break missingId;
       }
 
-      id = R.id.user_name;
-      TextView userName = ViewBindings.findChildViewById(rootView, id);
-      if (userName == null) {
+      id = R.id.email;
+      TextView email = ViewBindings.findChildViewById(rootView, id);
+      if (email == null) {
         break missingId;
       }
 
-      return new FeedbackCartBinding((CardView) rootView, comment, userAvata, userName);
+      id = R.id.menu_button;
+      ImageButton menuButton = ViewBindings.findChildViewById(rootView, id);
+      if (menuButton == null) {
+        break missingId;
+      }
+
+      id = R.id.rating_bar;
+      RatingBar ratingBar = ViewBindings.findChildViewById(rootView, id);
+      if (ratingBar == null) {
+        break missingId;
+      }
+
+      id = R.id.user_avatar;
+      ImageView userAvatar = ViewBindings.findChildViewById(rootView, id);
+      if (userAvatar == null) {
+        break missingId;
+      }
+
+      return new FeedbackCartBinding((CardView) rootView, comment, commentDate, email, menuButton,
+          ratingBar, userAvatar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
