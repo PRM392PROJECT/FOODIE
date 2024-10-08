@@ -52,8 +52,8 @@ public class OrderListAdapter extends BaseAdapter {
         }
         else {
             status.setText("On Going");
-            rate.setVisibility(View.GONE);
-            reOrder.setVisibility(View.GONE);
+            rate.setVisibility(View.INVISIBLE);
+            reOrder.setVisibility(View.INVISIBLE);
         }
         return convertView;
     }

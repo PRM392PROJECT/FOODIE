@@ -4,13 +4,13 @@
             "outputFile": "com.example.foodie.app-mergeDebugResources-43:/values-w600dp-v13/values-w600dp-v13.xml",
             "map": [
                 {
-                    "source": "E:\\Project\\FOODIE\\FoodieAppAPI\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
+                    "source": "E:\\Fall 2024\\PRM391\\Project\\FOODIE\\FoodieAppAPI\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "16",
+                        "startOffsets": "17",
                         "endColumns": "57",
-                        "endOffsets": "69"
+                        "endOffsets": "70"
                     },
                     "to": {
                         "startLines": "2",

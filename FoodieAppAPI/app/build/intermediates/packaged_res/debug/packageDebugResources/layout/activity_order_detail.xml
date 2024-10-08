@@ -9,6 +9,7 @@
     android:padding="16dp">
 
     <!-- Top Panel -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -49,14 +50,50 @@
         android:layout_below="@id/topPanel"
         android:layout_above="@id/bottomPanel">
 
-       <!-- infor mation user-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-       <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listview_order_detail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/order_detail_cart"/>
+            <!-- User Information -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
+                <TextView
+                    android:id="@+id/tvFirstName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First Name:" />
+
+                <TextView
+                    android:id="@+id/tvLastName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name:" />
+
+                <TextView
+                    android:id="@+id/tvPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number:" />
+
+                <TextView
+                    android:id="@+id/tvAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address:" />
+            </LinearLayout>
+
+            <!-- Product List RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listview_order_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/order_detail_cart" />
+        </LinearLayout>
     </ScrollView>
     <!-- Bottom Panel -->
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -4,7 +4,7 @@
             "outputFile": "com.example.foodie.app-mergeDebugResources-43:/values-v25/values-v25.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\LINH\\.gradle\\caches\\transforms-4\\65d2397a8054c570ef6ffe6243793174\\transformed\\appcompat-1.7.0\\res\\values-v25\\values-v25.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-4\\65d2397a8054c570ef6ffe6243793174\\transformed\\appcompat-1.7.0\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

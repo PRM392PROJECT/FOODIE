@@ -51,11 +51,25 @@ public final class ActivityOrderDetailBinding implements ViewBinding {
   @NonNull
   public final TextView totalPay;
 
+  @NonNull
+  public final TextView tvAddress;
+
+  @NonNull
+  public final TextView tvFirstName;
+
+  @NonNull
+  public final TextView tvLastName;
+
+  @NonNull
+  public final TextView tvPhoneNumber;
+
   private ActivityOrderDetailBinding(@NonNull RelativeLayout rootView,
       @NonNull ConstraintLayout bottomPanel, @NonNull ImageButton btnBack,
       @NonNull Button btnPlaceOrder, @NonNull RecyclerView listviewOrderDetail,
       @NonNull RelativeLayout main, @NonNull ScrollView scrollView,
-      @NonNull ConstraintLayout topPanel, @NonNull TextView totalItem, @NonNull TextView totalPay) {
+      @NonNull ConstraintLayout topPanel, @NonNull TextView totalItem, @NonNull TextView totalPay,
+      @NonNull TextView tvAddress, @NonNull TextView tvFirstName, @NonNull TextView tvLastName,
+      @NonNull TextView tvPhoneNumber) {
     this.rootView = rootView;
     this.bottomPanel = bottomPanel;
     this.btnBack = btnBack;
@@ -66,6 +80,10 @@ public final class ActivityOrderDetailBinding implements ViewBinding {
     this.topPanel = topPanel;
     this.totalItem = totalItem;
     this.totalPay = totalPay;
+    this.tvAddress = tvAddress;
+    this.tvFirstName = tvFirstName;
+    this.tvLastName = tvLastName;
+    this.tvPhoneNumber = tvPhoneNumber;
   }
 
   @Override
@@ -145,8 +163,33 @@ public final class ActivityOrderDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvAddress;
+      TextView tvAddress = ViewBindings.findChildViewById(rootView, id);
+      if (tvAddress == null) {
+        break missingId;
+      }
+
+      id = R.id.tvFirstName;
+      TextView tvFirstName = ViewBindings.findChildViewById(rootView, id);
+      if (tvFirstName == null) {
+        break missingId;
+      }
+
+      id = R.id.tvLastName;
+      TextView tvLastName = ViewBindings.findChildViewById(rootView, id);
+      if (tvLastName == null) {
+        break missingId;
+      }
+
+      id = R.id.tvPhoneNumber;
+      TextView tvPhoneNumber = ViewBindings.findChildViewById(rootView, id);
+      if (tvPhoneNumber == null) {
+        break missingId;
+      }
+
       return new ActivityOrderDetailBinding((RelativeLayout) rootView, bottomPanel, btnBack,
-          btnPlaceOrder, listviewOrderDetail, main, scrollView, topPanel, totalItem, totalPay);
+          btnPlaceOrder, listviewOrderDetail, main, scrollView, topPanel, totalItem, totalPay,
+          tvAddress, tvFirstName, tvLastName, tvPhoneNumber);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

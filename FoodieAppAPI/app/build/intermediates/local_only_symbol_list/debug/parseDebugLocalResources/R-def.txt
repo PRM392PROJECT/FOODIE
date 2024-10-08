@@ -105,8 +105,12 @@ id text_notifications
 id topPanel
 id total_item
 id total_pay
+id tvAddress
 id tvDescription
+id tvFirstName
 id tvFoodName
+id tvLastName
+id tvPhoneNumber
 id tvPrice
 id user_avatar
 id viewPager

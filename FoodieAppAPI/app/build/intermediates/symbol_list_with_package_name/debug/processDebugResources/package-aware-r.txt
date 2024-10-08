@@ -3724,8 +3724,12 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvAddress
 id tvDescription
+id tvFirstName
 id tvFoodName
+id tvLastName
+id tvPhoneNumber
 id tvPrice
 id unchecked
 id uniform
