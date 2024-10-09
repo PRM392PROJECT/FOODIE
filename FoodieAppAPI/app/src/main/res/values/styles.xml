@@ -11,4 +11,8 @@
     <style name="window_background">
         <item name="android:windowBackground">#BCBABA</item>
     </style>
+    <style name="background_location">
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
 </resources>
