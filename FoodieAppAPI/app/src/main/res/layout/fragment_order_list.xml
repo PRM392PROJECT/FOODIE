@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.orderHistory.OrderListFragment">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <LinearLayout
+           android:id="@+id/root"
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <!-- Custom NoScrollListView that will handle its own scrolling -->
+           <com.example.foodie.customview.NoScrollListView
+               android:id="@+id/recyclerView"
+               android:visibility="visible"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               tools:listitem="@layout/order_detail_cart" />
+
+           <!-- ImageView for empty state -->
+           <ImageView
+               android:id="@+id/empty"
+               android:src="@drawable/ic_food_empty"
+               android:visibility="gone"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_gravity="center"
+               android:scaleType="centerInside"/>
+
+       </LinearLayout>
+   </ScrollView>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+</FrameLayout>

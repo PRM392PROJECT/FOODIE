@@ -1,0 +1,164 @@
+﻿@model Foodie.ManagementAPI.RequestDto.ProductRequest
+
+@{
+    ViewData["Title"] = "Thêm Sản Phẩm Mới";
+}
+@await Html.PartialAsync("_Header_Seller")
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Thêm Sản Phẩm Mới</h2>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            <ul>
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            </ul>
+        </div>
+    }
+
+    <form id="createProductForm" method="post" enctype="multipart/form-data">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="Name" class="form-label fw-bold">Tên Sản Phẩm</label>
+                <input asp-for="Name" class="form-control rounded-pill" placeholder="Nhập tên sản phẩm" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Price" class="form-label fw-bold">Giá</label>
+                <input asp-for="Price" class="form-control rounded-pill" placeholder="Nhập giá sản phẩm" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label fw-bold">Mô Tả</label>
+            <textarea asp-for="Description" class="form-control rounded-3" rows="3" placeholder="Mô tả chi tiết về sản phẩm"></textarea>
+            <small class="form-text text-muted">Vui lòng cung cấp mô tả chi tiết về sản phẩm.</small>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CategoryId" class="form-label fw-bold">Danh Mục</label>
+            <input asp-for="CategoryId" id="CategoryInput" />
+            <select asp-for="CategoryId" class="form-select rounded-pill" id="CategoryId" onchange="updateCategoryId(this)">
+                <option value="">Chọn danh mục</option>
+            </select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+
+        <!-- Bốn vị trí nhập cho hình ảnh -->
+        <div class="row mb-3 text-center">
+            @for (int i = 0; i < 4; i++)
+            {
+                <div class="col-md-3 mb-3">
+                    <label class="form-label fw-bold">Hình ảnh @(i + 1)</label>
+                    <input asp-for="Images[@i].ImageUrl" class="form-control rounded-pill" placeholder="Nhập URL hình ảnh" oninput="updateImagePreview(this, @i)" />
+                    <input asp-for="Images[@i].OrderIndex" value="@(i + 1)" type="number" hidden />
+                    <span asp-validation-for="Images[@i].ImageUrl" class="text-danger"></span>
+
+                    <!-- Thẻ img để hiển thị hình ảnh mặc định -->
+                    <img id="imagePreview_@i" class="img-fluid img-thumbnail mt-2 shadow-sm" style="max-width: 150px;"
+                         src="~/images/placeholder.png" />
+                </div>
+            }
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success btn-lg rounded-pill">Tạo Sản Phẩm</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    async function fetchCategories() {
+        try {
+            const response = await fetch('http://localhost:7059/api/categories');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const categories = await response.json();
+            const categorySelect = document.getElementById('CategoryId');
+
+            categories.forEach(category => {
+                if (category.categoryId > 0) {
+                    const option = document.createElement('option');
+                    option.value = category.categoryId;
+                    option.textContent = category.categoryName;
+                    categorySelect.appendChild(option);
+                }
+            });
+        } catch (error) {
+            console.error('Error fetching categories:', error);
+        }
+    }
+
+    function updateCategoryId(selectElement) {
+        const selectedValue = selectElement.value;
+        document.getElementById('CategoryInput').value = selectedValue; // Cập nhật giá trị cho input ẩn
+    }
+
+    function updateImagePreview(input, index) {
+        const fileInput = input.value;
+        const imagePreview = document.getElementById(`imagePreview_${index}`);
+
+        if (fileInput) {
+            imagePreview.src = fileInput;  // Hiển thị URL hình ảnh đã nhập
+            imagePreview.style.display = 'block'; // Hiển thị hình ảnh nếu có URL
+        } else {
+            imagePreview.src = '~/images/placeholder.png'; // Hình ảnh mặc định nếu không có URL
+        }
+    }
+
+    window.onload = function () {
+        fetchCategories();
+        // Tự động hiển thị hình ảnh mặc định cho mỗi hình ảnh
+        for (let i = 0; i < 4; i++) {
+            const imagePreview = document.getElementById(`imagePreview_${i}`);
+            imagePreview.src = '~/images/placeholder.png'; // Đặt hình ảnh mặc định
+        }
+    };
+</script>
+
+<style>
+    .container {
+        max-width: 900px;
+    }
+
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .form-label {
+        font-size: 1.1rem;
+    }
+
+    .form-control, .form-select {
+        padding: 10px 15px;
+        border: 1px solid #ced4da;
+    }
+
+    .btn {
+        padding: 10px 30px;
+        font-size: 1.2rem;
+    }
+
+    .img-thumbnail {
+        border: none;
+        border-radius: 8px;
+    }
+
+    .row {
+        justify-content: space-between;
+    }
+
+    .shadow-sm {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+    }
+</style>

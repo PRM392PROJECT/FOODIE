@@ -1,0 +1,12 @@
+E:\Project\FOODIE\FoodieWebAPI\Foodie.Service\bin\Debug\net8.0\Foodie.Service.deps.json
+E:\Project\FOODIE\FoodieWebAPI\Foodie.Service\bin\Debug\net8.0\Foodie.Service.dll
+E:\Project\FOODIE\FoodieWebAPI\Foodie.Service\bin\Debug\net8.0\Foodie.Service.pdb
+E:\Project\FOODIE\FoodieWebAPI\Foodie.Service\obj\Debug\net8.0\Foodie.Service.csproj.AssemblyReference.cache
+E:\Project\FOODIE\FoodieWebAPI\Foodie.Service\obj\Debug\net8.0\Foodie.Service.GeneratedMSBuildEditorConfig.editorconfig
+E:\Project\FOODIE\FoodieWebAPI\Foodie.Service\obj\Debug\net8.0\Foodie.Service.AssemblyInfoInputs.cache
+E:\Project\FOODIE\FoodieWebAPI\Foodie.Service\obj\Debug\net8.0\Foodie.Service.AssemblyInfo.cs
+E:\Project\FOODIE\FoodieWebAPI\Foodie.Service\obj\Debug\net8.0\Foodie.Service.csproj.CoreCompileInputs.cache
+E:\Project\FOODIE\FoodieWebAPI\Foodie.Service\obj\Debug\net8.0\Foodie.Service.dll
+E:\Project\FOODIE\FoodieWebAPI\Foodie.Service\obj\Debug\net8.0\refint\Foodie.Service.dll
+E:\Project\FOODIE\FoodieWebAPI\Foodie.Service\obj\Debug\net8.0\Foodie.Service.pdb
+E:\Project\FOODIE\FoodieWebAPI\Foodie.Service\obj\Debug\net8.0\ref\Foodie.Service.dll

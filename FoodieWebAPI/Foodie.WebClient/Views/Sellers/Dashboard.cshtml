@@ -1,0 +1,72 @@
+﻿<style>
+    .card {
+        display: flex;
+        flex-direction: column; /* Đặt chiều cao cột */
+        height: 100%; /* Chiều cao 100% cho mỗi card */
+    }
+
+    .card-body {
+        flex-grow: 1; /* Cho phép card-body mở rộng để lấp đầy khoảng trống */
+    }
+
+    .card-img-top {
+        width: 100%; /* Đặt chiều rộng 100% của thẻ cha */
+        height: 200px; /* Đặt chiều cao cố định */
+        object-fit: cover; /* Giữ tỉ lệ hình ảnh, cắt bớt nếu cần */
+    }
+</style>
+@await Html.PartialAsync("_Header_Seller")
+<div class="container">
+    <div id="productList" class="container-fluid">
+        <h2>Danh Sách Sản Phẩm</h2>
+        <div class="row" id="products"></div>
+    </div>
+
+</div>
+<script>
+    async function fetchProducts() {
+        try {
+            const restaurantId = getCookie('UserRestaurentId'); 
+            const pageNumber = 1; // Số trang
+            const pageSize = 10; // Kích thước trang
+
+            const response = await fetch(`http://localhost:7059/api/products/get-by-restaurantId/${restaurantId}?pageNumber=${pageNumber}&pageSize=${pageSize}`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+
+            const productsContainer = document.getElementById('products');
+            productsContainer.innerHTML = ''; // Xóa nội dung cũ
+
+            data.items.forEach(product => {
+                const productCard = `
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="${product.images[0].imageUrl}" class="card-img-top" alt="${product.name}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${product.name}</h5>
+                                    <p class="card-text">${product.description}</p>
+                                    <p class="card-text"><strong>Giá: ${product.price.toLocaleString()} VND</strong></p>
+                                    <p class="card-text"><small>Thời gian tạo: ${new Date(product.createAt).toLocaleString()}</small></p>
+                                    <a href="/Sellers/EditProduct/${product.productId}" class="btn btn-primary">Edit</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                productsContainer.innerHTML += productCard;
+            });
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+    }
+
+    // Gọi hàm khi trang được tải
+    window.onload = fetchProducts;
+    function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+</script>
+
