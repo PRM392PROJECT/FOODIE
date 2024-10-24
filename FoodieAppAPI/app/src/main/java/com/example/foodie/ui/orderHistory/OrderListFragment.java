@@ -90,7 +90,7 @@ public class OrderListFragment extends Fragment implements IOrderListView {
     public void showOrderEmpty() {
         if(isAdded()){
             requireActivity().runOnUiThread(()->{
-                binding.progressBar.setVisibility(View.VISIBLE);
+                binding.empty.setVisibility(View.VISIBLE);
             });
         }
     }

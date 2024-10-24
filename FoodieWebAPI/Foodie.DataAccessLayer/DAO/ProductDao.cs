@@ -78,6 +78,7 @@ namespace Foodie.DataAccessLayer.DAO
             var products = await _context.Products
                 .Include (p => p.Category)
                 .Include (p => p.Restaurant)
+                .Include(p=>p.ProductImages)
                 .Where(p=>p.Name.ToLower().Contains(name))
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)

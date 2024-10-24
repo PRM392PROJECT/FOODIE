@@ -36,6 +36,9 @@ public interface ApiService {
     @GET("products/get-byId/{productId}")
     Call<Product> getFoodById(@Path("productId") int foodId);
 
+    @GET("products/search-by-name/{name}")
+    Call<ViewPage<Product>> searchProductByName(@Path("name") String name);
+
     @GET("productfeedbacks/get-page")
     Call<ViewPage<Feedback>> getFeedbacks(
             @Query("productId") int productId,

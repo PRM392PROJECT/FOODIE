@@ -58,7 +58,8 @@ public class OrderDetailActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void orderSuccess() {
-        finish();
+        Intent intent = new Intent(this, OrderSuccessActivity.class);
+        startActivity(intent);
     }
 
     @Override

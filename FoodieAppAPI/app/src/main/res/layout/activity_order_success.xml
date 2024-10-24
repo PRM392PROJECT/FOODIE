@@ -2,17 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center"
     android:orientation="vertical"
     android:background="#FFFFFF"
     android:padding="20dp"
-    >
+    tools:context=".ui.order.OrderSuccessActivity">
 
-   <ImageView
-       android:id="@+id/animation"
-       android:src="@drawable/ic_food_load"
-       android:layout_width="match_parent"
-       android:layout_height="300dp"/>
+    <ImageView
+        android:id="@+id/animation"
+        android:src="@drawable/icon_order_success"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
 
     <TextView
         android:id="@+id/success_message"

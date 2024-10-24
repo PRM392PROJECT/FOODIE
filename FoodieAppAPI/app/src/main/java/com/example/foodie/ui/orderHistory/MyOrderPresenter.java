@@ -34,6 +34,7 @@ public class MyOrderPresenter {
             call.enqueue(new Callback<List<Order>>() {
                 @Override
                 public void onResponse(Call<List<Order>> call, Response<List<Order>> response) {
+                    view.hideLoading();
                     if (response.isSuccessful() && response.body() != null) {
                         // Lọc các đơn hàng có trạng thái "1" (đang xử lý)
                         List<Order> orders = new ArrayList<>();
@@ -42,23 +43,19 @@ public class MyOrderPresenter {
                                 orders.add(order);
                             }
                         }
-                        // Kiểm tra xem có đơn hàng nào không
                         if (!orders.isEmpty()) {
-                            view.hideLoading();
                             view.showOrderOnGoing(orders);
                         } else {
-                            view.hideLoading();
                             view.showOrderEmpty();
                         }
-                    } else {
-                        view.showOrderEmpty();
                     }
                 }
 
                 @Override
                 public void onFailure(Call<List<Order>> call, Throwable t) {
-                    // Xử lý lỗi khi gọi API thất bại
                     view.showError(t.getMessage());
+                    view.showOrderEmpty();
+
                 }
             });
         } else {
@@ -75,6 +72,7 @@ public class MyOrderPresenter {
             call.enqueue(new Callback<List<Order>>() {
                 @Override
                 public void onResponse(Call<List<Order>> call, Response<List<Order>> response) {
+                    view.hideLoading();
                     if (response.isSuccessful() && response.body() != null) {
                         // Lọc các đơn hàng có trạng thái "1" (đang xử lý)
                         List<Order> orders = new ArrayList<>();
@@ -83,7 +81,6 @@ public class MyOrderPresenter {
                                 orders.add(order);
                             }
                         }
-                        // Kiểm tra xem có đơn hàng nào không
                         if (!orders.isEmpty()) {
                             view.showOrderHistory(orders);
                         } else {
@@ -96,11 +93,10 @@ public class MyOrderPresenter {
 
                 @Override
                 public void onFailure(Call<List<Order>> call, Throwable t) {
-                    // Xử lý lỗi khi gọi API thất bại
+                    view.showOrderEmpty();
                     view.showError(t.getMessage());
                 }
             });
-            view.hideLoading();
         } else {
             view.showError("User not logged in");
         }

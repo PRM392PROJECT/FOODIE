@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment implements IHomeView , View.OnClickLi
         requireActivity().runOnUiThread(()->{
             fragments.clear();
             for (Category categoryFood : categoryFoods) {
-                ProductListFragment fragment = ProductListFragment.newInstance(categoryFood.getCategoryId());
+                ProductListFragment fragment = ProductListFragment.newInstance(getContext(),categoryFood.getCategoryId());
                 fragments.add(fragment);
             }
 
@@ -181,7 +181,8 @@ public class HomeFragment extends Fragment implements IHomeView , View.OnClickLi
     @Override
     public void onClick(View v) {
         if(v.getId() == binding.header.iconSearch.getId()){
-            Intent intent = new Intent(getContext(), SearchActivity.class);
+            String title= binding.header.searchEditText.getText().toString();
+            Intent intent = SearchActivity.newInstance(requireContext(),title);
             startActivity(intent);
         }
     }
@@ -189,7 +190,8 @@ public class HomeFragment extends Fragment implements IHomeView , View.OnClickLi
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
-            Intent intent = new Intent(getContext(), SearchActivity.class);
+            String title= binding.header.searchEditText.getText().toString();
+            Intent intent = SearchActivity.newInstance(requireContext(),title);
             startActivity(intent);
             return  true;
         }

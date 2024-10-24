@@ -50,7 +50,7 @@ public class ProductAdapter extends BaseAdapter {
         // Có thể thêm ImageView nếu bạn có ảnh thực phẩm
         ImageView imageView = convertView.findViewById(R.id.foodImage);
         Glide.with(context)
-                .load(food.getImages().get(0).getImageUrl())
+                .load( !food.getImages().isEmpty()? food.getImages().get(0).getImageUrl() :"")
                 .placeholder(R.drawable.ic_food_load)
                 .error(R.drawable.ic_food_load)
                 .into(imageView);

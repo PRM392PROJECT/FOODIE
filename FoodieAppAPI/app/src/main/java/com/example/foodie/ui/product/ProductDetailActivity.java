@@ -50,7 +50,7 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        //EdgeToEdge.enable(this);
         binding = ActivityProductDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         presenter = new ProductDetailPresenter(this,this);
@@ -72,9 +72,10 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         if(v.getId() == binding.btnBack.getId()){
             finish();
-        }if(v.getId() == binding.buttonAddToCart.getId()){
+        }else if(v.getId() == binding.buttonAddToCart.getId()){
+
         }
-        if(v.getId() == binding.buttonOrder.getId()){
+        else if(v.getId() == binding.buttonOrder.getId()){
             showOrder();
         }
     }
@@ -87,7 +88,7 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
             binding.productName.setText(String.format("%s", product.getName()));
             binding.productDescription.setText(String.format("%s", product.getDescription()));
             Glide.with(this)
-                    .load(product.getImages().get(0).getImageUrl())
+                    .load( !product.getImages().isEmpty()? product.getImages().get(0).getImageUrl():"")
                     .placeholder(R.drawable.ic_food)
                     .error(R.drawable.ic_food)
                     .into(binding.productImages);
@@ -121,10 +122,9 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
             orderItems.add(orderItem);
             order.setOrderItems(orderItems);
             Intent intent = OrderDetailActivity.newIntent(this, order);
-            startActivity(intent);
+            startActivityForResult(intent,100);
         }
         else{
-            // Hiển thị thông báo yêu cầu đăng nhập
             showLoginDialog(this);
         }
     }
@@ -137,6 +137,12 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100 && resultCode == AuthenActivity.RESULT_OK) {
             showOrder();
+        }
+        else if(requestCode ==100 && resultCode == OrderDetailActivity.RESULT_OK){
+            String orderStatus = data.getStringExtra("orderStatus");
+            if(orderStatus.equals("success")){
+                finish();
+            }
         }
     }
     private void showLoginDialog(Context context) {
@@ -164,5 +170,4 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
-
 }

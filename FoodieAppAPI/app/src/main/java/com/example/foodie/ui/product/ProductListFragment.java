@@ -1,5 +1,6 @@
 package com.example.foodie.ui.product;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -30,16 +31,18 @@ public class ProductListFragment extends Fragment implements IProductListView {
     private ProductListPresenter presenter;
     private int categoryId;
     private boolean isLoadData = false;
-    public ProductListFragment() {
-        // Required empty public constructor
+    private Context context;
+    public ProductListFragment(Context context) {
+         this.context = context;
     }
-     public static ProductListFragment newInstance(int categoryId) {
+     public static ProductListFragment newInstance(Context context,int categoryId) {
         Bundle args = new Bundle();
         args.putInt(ARG_CATEGORY_ID, categoryId);
-        ProductListFragment fragment = new ProductListFragment();
+        ProductListFragment fragment = new ProductListFragment(context);
         fragment.setArguments(args);
         return fragment;
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -95,16 +98,12 @@ public class ProductListFragment extends Fragment implements IProductListView {
         }
     }
 
-    public void searchFoods(String keyword){
-        if(isAdded()){
-            requireActivity().runOnUiThread(()->{
-                presenter.getFoodByCategory(1);
-            });
-        }
-    }
     public void showFoods(List<Product> foods) {
         if(isAdded()){
             requireActivity().runOnUiThread(()->{
+                if(adapter == null){
+                    adapter = new ProductAdapter(getContext(),new ArrayList<>());
+                }
                 adapter.updateData(foods);
                 isLoadData = true;
             });

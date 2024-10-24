@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Ẩn ActionBar nếu nó có
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -57,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
         transaction.add(R.id.content, profile, "Profile").hide(profile);
         transaction.add(R.id.content, history, "History").hide(history);
         transaction.commit();
+
         binding.navView.post(() -> {
             binding.navView.setSelectedItemId(R.id.navigation_home);
         });
-        // Tự động chọn home khi mở ứng dụng
         binding.navView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
