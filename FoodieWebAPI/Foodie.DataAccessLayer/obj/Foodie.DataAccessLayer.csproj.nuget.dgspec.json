@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj": {}
+    "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj": {}
   },
   "projects": {
-    "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj": {
+    "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj",
+        "projectUniqueName": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj",
         "projectName": "Foodie.DataAccessLayer",
-        "projectPath": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\LINH\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.DataAccessLayer\\obj\\",
+        "projectPath": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\LINH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -81,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
