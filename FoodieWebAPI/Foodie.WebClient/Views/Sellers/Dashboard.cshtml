@@ -1,0 +1,83 @@
+﻿@await Html.PartialAsync("_Header_Seller")
+<div class="container">
+    <div id="productList" class="container-fluid">
+        <h2>Danh Sách Sản Phẩm</h2>
+        <div class="row" id="products">
+
+        </div>
+    </div>
+
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        await fetchProducts();
+    });
+    async function fetchProducts() {
+        try {
+            const email = '@Html.Raw(ViewBag.Email)';
+            const pageNumber = 1; 
+            const pageSize = 1000; 
+            const token = '@Html.Raw(ViewBag.Token)';
+
+            const response = await fetch(`http://localhost:7059/api/products/get-by-email/${email}?pageNumber=${pageNumber}&pageSize=${pageSize}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                }
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            console.log(data);
+            const productsContainer = document.getElementById('products');
+            productsContainer.innerHTML = '';
+
+            data.items.forEach(product => {
+                // Lấy URL hình ảnh, và nếu không có thì sử dụng URL hình ảnh thay thế
+                const imageUrl = product.images[0]?.imageUrl || 'https://c8.alamy.com/comp/2EA6NCD/not-food-grade-plastic-vector-sign-isolated-not-food-safe-material-wine-glass-and-fork-symbol-2EA6NCD.jpg';
+
+                const productCard = `
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img 
+                    src="${imageUrl}" 
+                    class="card-img-top" 
+                    alt="${product.name}" 
+                    onerror="this.onerror=null; this.src='https://c8.alamy.com/comp/2EA6NCD/not-food-grade-plastic-vector-sign-isolated-not-food-safe-material-wine-glass-and-fork-symbol-2EA6NCD.jpg';" 
+                >
+                <div class="card-body">
+                    <h5 class="card-title">${product.name}</h5>
+                    <p class="card-text">${product.description}</p>
+                    <p class="card-text"><strong>Giá: ${product.price.toLocaleString()} VND</strong></p>
+                    <p class="card-text"><small>Thời gian tạo: ${new Date(product.createAt).toLocaleString()}</small></p>
+                    <a href="/Sellers/EditProduct/${product.productId}" class="btn btn-primary">Edit</a>
+                </div>
+            </div>
+        </div>
+    `;
+                productsContainer.innerHTML += productCard;
+            });
+
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+    }
+</script>
+<style>
+    .card {
+        display: flex;
+        flex-direction: column; /* Đặt chiều cao cột */
+        height: 100%; /* Chiều cao 100% cho mỗi card */
+    }
+
+    .card-body {
+        flex-grow: 1; /* Cho phép card-body mở rộng để lấp đầy khoảng trống */
+    }
+
+    .card-img-top {
+        width: 100%; /* Đặt chiều rộng 100% của thẻ cha */
+        height: 200px; /* Đặt chiều cao cố định */
+        object-fit: cover; /* Giữ tỉ lệ hình ảnh, cắt bớt nếu cần */
+    }
+</style>

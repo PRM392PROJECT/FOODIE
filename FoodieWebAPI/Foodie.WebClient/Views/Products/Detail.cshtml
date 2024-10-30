@@ -1,0 +1,99 @@
+﻿@await Html.PartialAsync("_Header_Customer")
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: #f9f9f9;
+    }
+
+    .product-detail {
+        max-width: 600px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .product-detail img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .product-detail h2 {
+            margin: 0 0 10px;
+        }
+
+        .product-detail p {
+            margin: 10px 0;
+        }
+
+    .order-button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+        .order-button:hover {
+            background-color: #218838;
+        }
+
+    .loading {
+        text-align: center;
+        font-size: 18px;
+        color: #888;
+    }
+</style>
+
+
+<div class="product-detail" id="product-detail">
+    <div class="loading">Đang tải chi tiết sản phẩm...</div>
+</div>
+
+<script>
+    // Nhận productId từ Razor (truyền từ controller)
+    const productId = @Html.Raw(Model);
+
+    // Tạo URL động dựa trên productId
+    const apiUrl = `http://localhost:7059/api/products/get-byid/${productId}`;
+
+    async function fetchProductDetail() {
+        try {
+            const response = await fetch(apiUrl);
+            const productData = await response.json();
+            const productDetail = `
+                                <h2>${productData.name}</h2>
+                                <p><strong>Giá:</strong> ${productData.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</p>
+                                <p><strong>Mô tả:</strong> ${productData.description}</p>
+
+                                <h3>Thông tin thêm</h3>
+                                <ul>
+                                    <li><strong>Danh mục:</strong> ${productData.categoryName}</li>
+                                    <li><strong>Ngày tạo:</strong> ${new Date(productData.createAt).toLocaleDateString('vi-VN')}</li>
+                                    <li><strong>Ngày cập nhật:</strong> ${new Date(productData.upDateAt).toLocaleDateString('vi-VN')}</li>
+                                </ul>
+                                <img width="200px" src="${productData.images[0].imageUrl}" alt="${productData.name}">
+                                <button class="order-button" onclick="orderProduct(${productData.productId})">Đặt hàng</button>
+                            `;
+
+            // Thay thế nội dung của phần tử product-detail bằng thông tin sản phẩm
+            document.getElementById('product-detail').innerHTML = productDetail;
+        } catch (error) {
+            console.error('Lỗi khi lấy dữ liệu sản phẩm:', error);
+            document.getElementById('product-detail').innerHTML = '<div class="error">Không thể tải chi tiết sản phẩm.</div>';
+        }
+    }
+
+    function orderProduct(productId) {
+        window.location.href = `/Orders/${productId}`;
+    }
+
+    // Gọi hàm fetchProductDetail khi trang được tải
+    window.onload = fetchProductDetail;
+</script>

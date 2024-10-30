@@ -1,0 +1,185 @@
+﻿@await Html.PartialAsync("_Header_Seller")
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Edit product</h2>
+
+    <form id="createProductForm">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="Name" class="form-label fw-bold">Tên Sản Phẩm</label>
+                <input name="Name" id="Name" class="form-control rounded-pill" placeholder="Nhập tên sản phẩm"/>
+            </div>
+
+            <div class="col-md-6">
+                <label for="Price" class="form-label fw-bold">Giá</label>
+                <input name="Price" id="Price" class="form-control rounded-pill" placeholder="Nhập giá sản phẩm"/>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="Description" class="form-label fw-bold">Mô Tả</label>
+            <textarea name="Description" id="Description" class="form-control rounded-3" rows="3" placeholder="Mô tả chi tiết về sản phẩm"></textarea>
+            <small class="form-text text-muted">Vui lòng cung cấp mô tả chi tiết về sản phẩm.</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="CategoryId" class="form-label fw-bold">Danh Mục</label>
+            <input name="CategoryId" id="CategoryInput" type="hidden"/>
+            <select name="CategoryId" class="form-select rounded-pill" id="CategoryId" onchange="updateCategoryId(this)">
+                <option value="">Chọn danh mục</option>
+            </select>
+        </div>
+
+        <!-- Image Input Section -->
+        <div class="row mb-3 text-center" id="images">
+
+        </div>
+
+        <div class="text-center">
+            <button type="button" id="btnUpdate" class="btn btn-success btn-lg rounded-pill">Save</button>
+            <button type="button" id="btnEditImage" class="btn btn-success btn-lg rounded-pill">Edit Images</button>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded',async()=>{
+        await fetchCategories();
+        await showProduct();
+    });
+    document.getElementById('btnUpdate').addEventListener('click',async()=>{
+    await updateProduct();
+    });
+    document.getElementById('btnEditImage').addEventListener('click',()=>{
+        window.location.href=`/Sellers/UpdateImageProduct/${@Html.Raw(Model)}`;
+    });
+    async function updateProduct(){
+    const productId = @Html.Raw(Model);
+        const api =  `http://localhost:7059/api/products/update-product/${productId}`;
+        const productUpdate = {
+            categoryId: parseInt(document.getElementById('CategoryId').value),
+            name: document.getElementById('Name').value,
+            description: document.getElementById('Description').value,
+            price: parseFloat(document.getElementById('Price').value)
+        };
+        console.log(productUpdate);
+        try {
+           const response = await  fetch(api,{
+           method : 'PUT',
+           headers : {
+                'Content-Type':'application/json'
+           },
+           body : JSON.stringify(productUpdate)
+           });
+           if ( response.ok){
+             alert('update success');
+             window.location.href='/sellers/dashboard';
+           }else{
+              alert('Update false');
+           }
+        }catch(error){
+            console.log(error);
+            alert('Update false');
+        }
+
+    }
+    async function showProduct(){
+        const productId = @Html.Raw(Model);
+        const api = `http://localhost:7059/api/products/get-byId/${productId}`;
+        try{
+            const response = await fetch(api);
+            if (response.ok) {
+                const data = await response.json();
+                document.getElementById('Name').value=data.name;
+                document.getElementById('Price').value = data.price;
+                document.getElementById('Description').value =data.description;
+                const categorySelect = document.getElementById('CategoryId');
+                Array.from(categorySelect.options).forEach(option => {
+                    if (option.value == data.categoryId) {
+                        option.selected = true;
+                    }
+                });
+            }
+        }catch(error){
+            
+        }
+    }
+
+    async function fetchCategories() {
+        try {
+            const response = await fetch('http://localhost:7059/api/categories');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const categories = await response.json();
+            const categorySelect = document.getElementById('CategoryId');
+            categories.forEach(category => {
+                if (category.categoryId > 0) {
+                    const option = document.createElement('option');
+                    option.value = category.categoryId;
+                    option.textContent = category.categoryName;
+                    categorySelect.appendChild(option);
+                }
+            });
+        } catch (error) {
+            console.error('Error fetching categories:', error);
+        }
+    }
+
+    function updateCategoryId(selectElement) {
+        document.getElementById('CategoryInput').value = selectElement.value;
+    }
+
+    function updateImagePreview(input, index) {
+        const imageUrl = input.value;
+        const imagePreview = document.getElementById(`imagePreview_${index}`);
+
+        if (imageUrl) {
+            imagePreview.src = imageUrl;
+            imagePreview.style.display = 'block';
+        } else {
+            imagePreview.src = '~/images/placeholder.png';
+        }
+    }
+
+   
+</script>
+
+<style>
+    .container {
+        max-width: 900px;
+    }
+
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .form-label {
+        font-size: 1.1rem;
+    }
+
+    .form-control, .form-select {
+        padding: 10px 15px;
+        border: 1px solid #ced4da;
+    }
+
+    .btn {
+        padding: 10px 30px;
+        font-size: 1.2rem;
+    }
+
+    .img-thumbnail {
+        border: none;
+        border-radius: 8px;
+    }
+
+    .row {
+        justify-content: space-between;
+    }
+
+    .shadow-sm {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+    }
+</style>
