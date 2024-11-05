@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
 
@@ -20,6 +21,7 @@ import com.example.foodie.models.OrderItem;
 import com.example.foodie.models.Product;
 import com.example.foodie.models.User;
 import com.example.foodie.ui.authen.AuthenActivity;
+import com.example.foodie.ui.cart.CartActivity;
 import com.example.foodie.ui.order.OrderDetailActivity;
 import com.example.foodie.untils.UserInfoManager;
 
@@ -80,7 +82,21 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
         if (v == binding.btnBack) {
             finish();
         } else if (v == binding.buttonAddToCart) {
+<<<<<<< Updated upstream
             // Add to Cart functionality here
+=======
+            User user = UserInfoManager.getUserInfo(this);
+            if (user != null) {
+                // Nếu đã đăng nhập, thêm sản phẩm vào giỏ hàng
+                int quantity = binding.seekBarQuantity.getProgress();
+                int productId = product.getProductId();
+                double price = product.getPrice();
+                presenter.addTocart(productId, quantity, price);
+            } else {
+                // Nếu chưa đăng nhập, hiển thị thông báo đăng nhập
+                showLoginDialog(this);
+            }
+>>>>>>> Stashed changes
         } else if (v == binding.buttonOrder) {
             showOrder();
         }
@@ -184,6 +200,20 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void showCart() {
+<<<<<<< Updated upstream
         // Display cart functionality if implemented
     }
+=======
+
+    }
+    @Override
+    public void addTocartSuccess() {
+        runOnUiThread(() -> {
+            Intent intent = new Intent(this, CartActivity.class);
+            startActivity(intent);
+            Log.i("add-tocart","success");
+        });
+    }
+
+>>>>>>> Stashed changes
 }

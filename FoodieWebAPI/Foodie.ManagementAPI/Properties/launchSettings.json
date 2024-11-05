@@ -8,7 +8,11 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
+<<<<<<< Updated upstream
       "applicationUrl": "http://localhost:7059"
+=======
+      "applicationUrl": "http://10.33.30.27:7059"
+>>>>>>> Stashed changes
     },
     "IIS Express": {
       "commandName": "IISExpress",

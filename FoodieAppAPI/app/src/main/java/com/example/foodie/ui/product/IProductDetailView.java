@@ -12,4 +12,5 @@ public interface IProductDetailView {
     void showError(String message);
     void showOrder();
     void showCart();
+    void addTocartSuccess();
 }
