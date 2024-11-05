@@ -41,6 +41,7 @@ namespace Foodie.DataAccessLayer.DBContexts
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             IConfigurationRoot conf = builder.Build();
             optionsBuilder.UseSqlServer(conf.GetConnectionString("DBConnection"));
+            optionsBuilder.EnableSensitiveDataLogging();
         }
 
 
@@ -171,7 +172,7 @@ namespace Foodie.DataAccessLayer.DBContexts
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.OrderItems)
                     .HasForeignKey(d => d.ProductId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__OrderItem__Produ__628FA481");
             });
 
@@ -202,6 +203,9 @@ namespace Foodie.DataAccessLayer.DBContexts
                     .HasForeignKey(d => d.RestaurantId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Products__Restau__4BAC3F29");
+                entity.HasMany(p => p.ProductImages)
+                    .WithOne() 
+                    .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<ProductFeedback>(entity =>

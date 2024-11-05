@@ -1,5 +1,6 @@
 package com.example.foodie.ui.product;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.example.foodie.models.ViewPage;
@@ -18,8 +19,10 @@ public class ProductListPresenter {
     private IProductListView view;
     private int currentPage = 1;
     private  int pageSize = 10;
-    public ProductListPresenter(IProductListView view) {
-        apiService = ApiClient.getClient().create(ApiService.class);
+    private Context context;
+    public ProductListPresenter(IProductListView view,Context context) {
+        this.context = context;
+        apiService = ApiClient.getClient(context).create(ApiService.class);
         this.view = view;
     }
 

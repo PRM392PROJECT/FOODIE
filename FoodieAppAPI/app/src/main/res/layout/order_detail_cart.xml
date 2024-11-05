@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         tools:ignore="ExtraText">
 
         <ImageView
@@ -46,11 +46,11 @@
             android:textColor="#FF0000"
             app:layout_constraintStart_toEndOf="@id/foodImage"
             app:layout_constraintTop_toBottomOf="@id/foodname"
-            app:layout_constraintBottom_toTopOf="@+id/orderDetails"/>
+            app:layout_constraintBottom_toTopOf="@+id/orderDate"/>
 
         <!-- Ngày giờ đặt hàng -->
         <TextView
-            android:id="@+id/orderDetails"
+            android:id="@+id/orderDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             app:layout_constraintStart_toEndOf="@id/foodImage"
-            app:layout_constraintTop_toBottomOf="@id/orderDetails"
+            app:layout_constraintTop_toBottomOf="@id/orderDate"
             app:layout_constraintBottom_toTopOf="@+id/btnRate">
 
             <!-- Danh mục món ăn -->
@@ -95,32 +95,34 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Rate -->
+
+        <!-- Nút "Re-Order" -->
+
         <Button
             android:id="@+id/btnRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="144dp"
             android:backgroundTint="#FF6600"
+
             android:text="Rate"
             android:textColor="#FFFFFF"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/orderDetails"
-            app:layout_constraintTop_toBottomOf="@id/categoryStatusContainer"/>
-
-        <!-- Nút "Re-Order" -->
+            app:layout_constraintEnd_toStartOf="@id/btnReOrder"
+            app:layout_constraintHorizontal_bias="0.022"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnReOrder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="52dp"
+            android:layout_marginEnd="16dp"
             android:backgroundTint="#FF6600"
             android:text="Re-Order"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/categoryStatusContainer"
-            app:layout_constraintVertical_bias="1.0"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

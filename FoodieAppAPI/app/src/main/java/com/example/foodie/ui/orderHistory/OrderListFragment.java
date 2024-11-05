@@ -23,15 +23,15 @@ public class OrderListFragment extends Fragment implements IOrderListView {
     private FragmentOrderListBinding binding;
     private MyOrderPresenter presenter;
     private OrderListAdapter adapter;
-    private int status;
-    public OrderListFragment(int status) {
-        this.status = status;
+    private Context context;
+    public OrderListFragment(Context context) {
+        this.context = context;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        presenter = new MyOrderPresenter(this,getContext());
+        presenter = new MyOrderPresenter(this,context);
         adapter = new OrderListAdapter(getActivity(),new ArrayList<>());
     }
 
@@ -47,33 +47,38 @@ public class OrderListFragment extends Fragment implements IOrderListView {
         super.onViewCreated(view, savedInstanceState);
 
         binding.recyclerView.setAdapter(adapter);
-        if(status == 0){
-            getOnGoingOrders();
-        }
-        else {
-            getHistoryOrders();
-        }
-
     }
 
     @Override
     public void showOrderOnGoing(List<Order> orderOnGoings) {
-        adapter.updateData(orderOnGoings);
+       requireActivity().runOnUiThread(()->{
+           adapter.updateData(orderOnGoings);
+       });
     }
 
     @Override
     public void showOrderHistory(List<Order> orderHistories) {
-        adapter.updateData(orderHistories);
+        requireActivity().runOnUiThread(()->{
+            adapter.updateData(orderHistories);
+        });
     }
 
     @Override
     public void showLoading() {
-
+        if(isAdded()){
+            requireActivity().runOnUiThread(()->{
+                binding.progressBar.setVisibility(View.VISIBLE);
+            });
+        }
     }
 
     @Override
     public void hideLoading() {
-
+      if(isAdded()){
+          requireActivity().runOnUiThread(()->{
+              binding.progressBar.setVisibility(View.GONE);
+          });
+      }
     }
 
     @Override
@@ -83,14 +88,24 @@ public class OrderListFragment extends Fragment implements IOrderListView {
 
     @Override
     public void showOrderEmpty() {
-        binding.empty.setVisibility(View.VISIBLE);
+        if(isAdded()){
+            requireActivity().runOnUiThread(()->{
+                binding.empty.setVisibility(View.VISIBLE);
+            });
+        }
     }
 
     public void getOnGoingOrders(){
+        if(presenter == null){
+            presenter = new MyOrderPresenter(this,context);
+        }
         presenter.loadOrderOngoing();
     }
 
     public void getHistoryOrders(){
+        if(presenter == null){
+            presenter = new MyOrderPresenter(this,context);
+        }
         presenter.loadOrderHistory();
     }
 }

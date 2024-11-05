@@ -38,6 +38,7 @@
 
             <!-- Image Product -->
             <ImageView
+                android:id="@+id/product_images"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:src="@drawable/ic_food"
@@ -88,24 +89,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Size:"/>
-            <RadioGroup
-                android:orientation="horizontal"
+                android:text="Quantity: "/>
+            <SeekBar
+                android:id="@+id/seekBarQuantity"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10\"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="14\"/>
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="16\"/>
-            </RadioGroup>
+                android:layout_height="wrap_content"
+                android:min="1"
+                android:max="5"/>
+
+
             <!-- Price -->
             <TextView
                 android:id="@+id/product_price"

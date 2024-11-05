@@ -40,5 +40,10 @@ public class CollectionPagerAdapter extends FragmentStateAdapter {
         }
         return false;
     }
+    public void updateFragments(List<Fragment> newFragments) {
+        fragmentList.clear();
+        fragmentList.addAll(newFragments);
+        notifyDataSetChanged();
+    }
 }
 

@@ -9,6 +9,7 @@ public class Product implements Serializable {
     private int productId;
     private String name;
     private int categoryId;
+    private int restaurantId;
     private String categoryName;
     private double price;
     private String description;
@@ -96,6 +97,14 @@ public class Product implements Serializable {
 
     public void setImages(List<Image> images) {
         this.images = images;
+    }
+
+    public int getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(int restaurantId) {
+        this.restaurantId = restaurantId;
     }
 
     @Override

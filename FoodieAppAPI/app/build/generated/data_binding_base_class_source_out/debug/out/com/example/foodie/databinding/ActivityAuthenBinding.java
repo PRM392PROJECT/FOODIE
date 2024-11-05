@@ -5,9 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import androidx.viewpager2.widget.ViewPager2;
@@ -19,13 +19,13 @@ import java.lang.String;
 
 public final class ActivityAuthenBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final ImageView backButton;
 
   @NonNull
-  public final ConstraintLayout main;
+  public final RelativeLayout main;
 
   @NonNull
   public final TabLayout tabLayout;
@@ -33,8 +33,8 @@ public final class ActivityAuthenBinding implements ViewBinding {
   @NonNull
   public final ViewPager2 viewPager;
 
-  private ActivityAuthenBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView backButton,
-      @NonNull ConstraintLayout main, @NonNull TabLayout tabLayout, @NonNull ViewPager2 viewPager) {
+  private ActivityAuthenBinding(@NonNull RelativeLayout rootView, @NonNull ImageView backButton,
+      @NonNull RelativeLayout main, @NonNull TabLayout tabLayout, @NonNull ViewPager2 viewPager) {
     this.rootView = rootView;
     this.backButton = backButton;
     this.main = main;
@@ -44,7 +44,7 @@ public final class ActivityAuthenBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -75,7 +75,7 @@ public final class ActivityAuthenBinding implements ViewBinding {
         break missingId;
       }
 
-      ConstraintLayout main = (ConstraintLayout) rootView;
+      RelativeLayout main = (RelativeLayout) rootView;
 
       id = R.id.tabLayout;
       TabLayout tabLayout = ViewBindings.findChildViewById(rootView, id);
@@ -89,7 +89,7 @@ public final class ActivityAuthenBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAuthenBinding((ConstraintLayout) rootView, backButton, main, tabLayout,
+      return new ActivityAuthenBinding((RelativeLayout) rootView, backButton, main, tabLayout,
           viewPager);
     }
     String missingId = rootView.getResources().getResourceName(id);

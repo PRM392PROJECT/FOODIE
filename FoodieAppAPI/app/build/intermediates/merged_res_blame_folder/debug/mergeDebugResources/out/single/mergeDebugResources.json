@@ -1,238 +1,306 @@
 [
     {
-        "merged": "com.example.foodie.app-debug-45:/xml_backup_rules.xml.flat",
-        "source": "com.example.foodie.app-main-47:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\xml\\network_security_config.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.foodie.app-main-47:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/xml_network_security_config.xml.flat",
-        "source": "com.example.foodie.app-main-47:/xml/network_security_config.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_phone.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_phone.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_fragment_dashboard.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/fragment_dashboard.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_activity_authen.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\activity_authen.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.foodie.app-main-47:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_location.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_location.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_activity_main.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/activity_main.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_cart.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_cart.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_notifications_black_24dp.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_notifications_black_24dp.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_plus_one_24.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_plus_one_24.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_menu.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_menu.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_fragment_favorite.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\fragment_favorite.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_fragment_product_list.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/fragment_product_list.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.foodie.app-main-47:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_more_vert.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_more_vert.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_activity_edit_profile.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\activity_edit_profile.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.foodie.app-main-47:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_history_order_cart.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\history_order_cart.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_fragment_home.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/fragment_home.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_navigate_next.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_navigate_next.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_exposure_neg_1_24.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_exposure_neg_1_24.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_test.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\test.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_activity_authen.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/activity_authen.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_fragment_notifications.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\fragment_notifications.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_fragment_feedback_list.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/fragment_feedback_list.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_order_detail_cart.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/order_detail_cart.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_logout.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_logout.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_fragment_login.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/fragment_login.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_login.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_login.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_fragment_my_order.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/fragment_my_order.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_activity_edit_address.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\activity_edit_address.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_navigate_next.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_navigate_next.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_fragment_login.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\fragment_login.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_fragment_order_list.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/fragment_order_list.xml"
+        "merged": "com.example.foodie.app-debug-49:/layout_fragment_register.xml.flat",
+        "source": "com.example.foodie.app-main-51:/layout/fragment_register.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "com.example.foodie.app-main-47:/mipmap-anydpi/ic_launcher.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_favorite.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_favorite.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_cart.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_cart.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_email.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_email.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_fragment_favorite.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/fragment_favorite.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_activity_product_detail.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/activity_product_detail.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_product_cart.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/product_cart.xml"
+        "merged": "com.example.foodie.app-debug-49:/layout_activity_cart.xml.flat",
+        "source": "com.example.foodie.app-main-51:/layout/activity_cart.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_search.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_search.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_activity_cart.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\activity_cart.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_food_load.png.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_food_load.png"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.foodie.app-main-47:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.foodie.app-main-47:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_order_item_cart.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\order_item_cart.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_logout.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_logout.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_food_empty.png.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_food_empty.png"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_history_order_cart.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/history_order_cart.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_search.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_location.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_location.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_avata.png.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_avata.png"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_order_detail_cart.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\order_detail_cart.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.foodie.app-main-47:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_feedback_cart.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\feedback_cart.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_activity_base.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/activity_base.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_backgroud_edittext.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\backgroud_edittext.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_profile.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_profile.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_dashboard_black_24dp.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_dashboard_black_24dp.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_feedback_cart.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/feedback_cart.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_activity_order_success.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\activity_order_success.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_food.webp.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_food.webp"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_dashboard_black_24dp.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_dashboard_black_24dp.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_activity_order_detail.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\activity_order_detail.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_history.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_history.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_history.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_history.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "com.example.foodie.app-main-47:/mipmap-anydpi/ic_launcher_round.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_profile.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_profile.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_home_black_24dp.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_home_black_24dp.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_product_detail_layput.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\product_detail_layput.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_back.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_back.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_edit_profile.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\edit_profile.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_favorite.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_favorite.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_fragment_my_order.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\fragment_my_order.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/menu_bottom_nav_menu.xml.flat",
-        "source": "com.example.foodie.app-main-47:/menu/bottom_nav_menu.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_plus_one_24.xml.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_plus_one_24.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_fragment_product_list.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\fragment_product_list.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_activity_order_detail.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/activity_order_detail.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_foodie_logo.jpg.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\foodie_logo.jpg"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/drawable_ic_food_empty.png.flat",
-        "source": "com.example.foodie.app-main-47:/drawable/ic_food_empty.png"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_back.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_back.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.foodie.app-main-47:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_fragment_register.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\fragment_register.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.foodie.app-main-47:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_fragment_register.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/fragment_register.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_header_layout.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\header_layout.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_product_detail_layput.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/product_detail_layput.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_product_cart.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\product_cart.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.foodie.app-main-47:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_exposure_neg_1_24.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_exposure_neg_1_24.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_header_layout.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/header_layout.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_fragment_dashboard.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\fragment_dashboard.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_fragment_profile.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/fragment_profile.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\fragment_profile.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.foodie.app-main-47:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\mipmap-anydpi\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.foodie.app-debug-45:/layout_fragment_notifications.xml.flat",
-        "source": "com.example.foodie.app-main-47:/layout/fragment_notifications.xml"
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_fragment_feedback_list.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\fragment_feedback_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_home_black_24dp.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_home_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\mipmap-anydpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_icon_order_success.png.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\icon_order_success.png"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_notifications_black_24dp.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_fragment_order_list.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\fragment_order_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_activity_base.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\activity_base.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_activity_product_detail.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\activity_product_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_avata.png.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_avata.png"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\layout_activity_search.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\layout\\activity_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_menu.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_more_vert.xml.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_more_vert.xml"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-debug-49:\\drawable_ic_food.webp.flat",
+        "source": "C:\\Users\\LINH\\.gradle\\daemon\\8.7\\com.example.foodie.app-main-51:\\drawable\\ic_food.webp"
     }
 ]

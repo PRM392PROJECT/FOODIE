@@ -9,12 +9,45 @@
         android:targetSdkVersion="34" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Include required permissions for Google Maps API to run. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <queries>
+
+        <!-- Needs to be explicitly declared on Android R+ -->
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
 
     <permission
         android:name="com.example.foodie.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="com.example.foodie.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true" />
+
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -32,13 +65,30 @@
         android:theme="@style/Theme.Foodie"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.foodie.ui.cart.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.foodie.ui.order.OrderSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.foodie.ui.home.SearchActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="com.example.foodie.ui.profile.EditAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.foodie.ui.profile.EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.foodie.ui.order.OrderDetailActivity"
             android:exported="false" />
         <activity
             android:name="com.example.foodie.ui.authen.AuthenActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.foodie.BaseActivity"
             android:exported="false" />
         <activity
             android:name="com.example.foodie.ui.product.ProductDetailActivity"
@@ -54,6 +104,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Needs to be explicitly declared on P+ -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

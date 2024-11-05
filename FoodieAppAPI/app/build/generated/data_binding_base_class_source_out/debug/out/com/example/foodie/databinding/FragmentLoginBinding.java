@@ -4,12 +4,12 @@ package com.example.foodie.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.foodie.R;
@@ -19,33 +19,37 @@ import java.lang.String;
 
 public final class FragmentLoginBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final Button btnLogin;
+  public final AppCompatButton btnLogin;
 
   @NonNull
-  public final EditText edittextEmail;
+  public final EditText email;
 
   @NonNull
-  public final EditText edittextPassword;
+  public final TextView forGotPasswordBtn;
 
   @NonNull
-  public final ProgressBar progressBar2;
+  public final LinearLayout main;
 
-  private FragmentLoginBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnLogin,
-      @NonNull EditText edittextEmail, @NonNull EditText edittextPassword,
-      @NonNull ProgressBar progressBar2) {
+  @NonNull
+  public final EditText password;
+
+  private FragmentLoginBinding(@NonNull LinearLayout rootView, @NonNull AppCompatButton btnLogin,
+      @NonNull EditText email, @NonNull TextView forGotPasswordBtn, @NonNull LinearLayout main,
+      @NonNull EditText password) {
     this.rootView = rootView;
     this.btnLogin = btnLogin;
-    this.edittextEmail = edittextEmail;
-    this.edittextPassword = edittextPassword;
-    this.progressBar2 = progressBar2;
+    this.email = email;
+    this.forGotPasswordBtn = forGotPasswordBtn;
+    this.main = main;
+    this.password = password;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -70,32 +74,34 @@ public final class FragmentLoginBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btn_login;
-      Button btnLogin = ViewBindings.findChildViewById(rootView, id);
+      id = R.id.btnLogin;
+      AppCompatButton btnLogin = ViewBindings.findChildViewById(rootView, id);
       if (btnLogin == null) {
         break missingId;
       }
 
-      id = R.id.edittext_email;
-      EditText edittextEmail = ViewBindings.findChildViewById(rootView, id);
-      if (edittextEmail == null) {
+      id = R.id.email;
+      EditText email = ViewBindings.findChildViewById(rootView, id);
+      if (email == null) {
         break missingId;
       }
 
-      id = R.id.edittext_password;
-      EditText edittextPassword = ViewBindings.findChildViewById(rootView, id);
-      if (edittextPassword == null) {
+      id = R.id.forGotPasswordBtn;
+      TextView forGotPasswordBtn = ViewBindings.findChildViewById(rootView, id);
+      if (forGotPasswordBtn == null) {
         break missingId;
       }
 
-      id = R.id.progressBar2;
-      ProgressBar progressBar2 = ViewBindings.findChildViewById(rootView, id);
-      if (progressBar2 == null) {
+      LinearLayout main = (LinearLayout) rootView;
+
+      id = R.id.password;
+      EditText password = ViewBindings.findChildViewById(rootView, id);
+      if (password == null) {
         break missingId;
       }
 
-      return new FragmentLoginBinding((ConstraintLayout) rootView, btnLogin, edittextEmail,
-          edittextPassword, progressBar2);
+      return new FragmentLoginBinding((LinearLayout) rootView, btnLogin, email, forGotPasswordBtn,
+          main, password);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -4,25 +4,65 @@ package com.example.foodie.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.foodie.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentRegisterBinding implements ViewBinding {
   @NonNull
-  private final FrameLayout rootView;
+  private final LinearLayout rootView;
 
-  private FragmentRegisterBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final AppCompatButton btnRegister;
+
+  @NonNull
+  public final EditText emailEdt;
+
+  @NonNull
+  public final EditText firstNameEdit;
+
+  @NonNull
+  public final EditText lastNameEdit;
+
+  @NonNull
+  public final LinearLayout main;
+
+  @NonNull
+  public final EditText moblileEdt;
+
+  @NonNull
+  public final EditText passWordEdt;
+
+  @NonNull
+  public final EditText repassWordEdt;
+
+  private FragmentRegisterBinding(@NonNull LinearLayout rootView,
+      @NonNull AppCompatButton btnRegister, @NonNull EditText emailEdt,
+      @NonNull EditText firstNameEdit, @NonNull EditText lastNameEdit, @NonNull LinearLayout main,
+      @NonNull EditText moblileEdt, @NonNull EditText passWordEdt,
+      @NonNull EditText repassWordEdt) {
     this.rootView = rootView;
+    this.btnRegister = btnRegister;
+    this.emailEdt = emailEdt;
+    this.firstNameEdit = firstNameEdit;
+    this.lastNameEdit = lastNameEdit;
+    this.main = main;
+    this.moblileEdt = moblileEdt;
+    this.passWordEdt = passWordEdt;
+    this.repassWordEdt = repassWordEdt;
   }
 
   @Override
   @NonNull
-  public FrameLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +83,58 @@ public final class FragmentRegisterBinding implements ViewBinding {
 
   @NonNull
   public static FragmentRegisterBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.btnRegister;
+      AppCompatButton btnRegister = ViewBindings.findChildViewById(rootView, id);
+      if (btnRegister == null) {
+        break missingId;
+      }
 
-    return new FragmentRegisterBinding((FrameLayout) rootView);
+      id = R.id.emailEdt;
+      EditText emailEdt = ViewBindings.findChildViewById(rootView, id);
+      if (emailEdt == null) {
+        break missingId;
+      }
+
+      id = R.id.firstNameEdit;
+      EditText firstNameEdit = ViewBindings.findChildViewById(rootView, id);
+      if (firstNameEdit == null) {
+        break missingId;
+      }
+
+      id = R.id.lastNameEdit;
+      EditText lastNameEdit = ViewBindings.findChildViewById(rootView, id);
+      if (lastNameEdit == null) {
+        break missingId;
+      }
+
+      LinearLayout main = (LinearLayout) rootView;
+
+      id = R.id.moblileEdt;
+      EditText moblileEdt = ViewBindings.findChildViewById(rootView, id);
+      if (moblileEdt == null) {
+        break missingId;
+      }
+
+      id = R.id.passWordEdt;
+      EditText passWordEdt = ViewBindings.findChildViewById(rootView, id);
+      if (passWordEdt == null) {
+        break missingId;
+      }
+
+      id = R.id.repassWordEdt;
+      EditText repassWordEdt = ViewBindings.findChildViewById(rootView, id);
+      if (repassWordEdt == null) {
+        break missingId;
+      }
+
+      return new FragmentRegisterBinding((LinearLayout) rootView, btnRegister, emailEdt,
+          firstNameEdit, lastNameEdit, main, moblileEdt, passWordEdt, repassWordEdt);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

@@ -55,15 +55,43 @@ namespace Foodie.DataAccessLayer.DAO
 
         public async Task<bool> DeleteById(int id)
         {
-            var product = await _context.Products.FindAsync(id);
+            var product = await _context.Products
+                .Include(p => p.CartItems)
+                .Include(p => p.OrderItems)
+                .Include(p => p.FavoriteProducts)
+                .Include(p => p.ProductImages)
+                .Include(p=>p.ProductFeedbacks)
+                .FirstOrDefaultAsync(p => p.ProductId == id);
+
             if (product != null)
             {
-                _context.Products.Remove(product);
-                return await _context.SaveChangesAsync() > 0;
+                try
+                {
+                    _context.CartItems.RemoveRange(product.CartItems);
+                    _context.OrderItems.RemoveRange(product.OrderItems);
+                    _context.FavoriteProducts.RemoveRange(product.FavoriteProducts);
+                    _context.ProductImages.RemoveRange(product.ProductImages); 
+                    _context.ProductFeedbacks.RemoveRange(product.ProductFeedbacks);
+                    _context.Entry(product).State = EntityState.Deleted;
+
+                    return await _context.SaveChangesAsync() > 0;
+                }
+                catch (DbUpdateException ex)
+                {
+                    var innerExceptionMessage = ex.InnerException?.Message ?? ex.Message;
+                    throw new Exception($"An error occurred while deleting the product: {innerExceptionMessage}");
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"An unexpected error occurred: {ex.Message}");
+                }
             }
 
             return false;
         }
+
+
+
 
         public async Task<IEnumerable<Product>> GetAll()
         {

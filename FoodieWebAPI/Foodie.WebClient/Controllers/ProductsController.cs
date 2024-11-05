@@ -22,6 +22,8 @@ namespace Foodie.WebClient.Controllers
         [HttpGet("/Products/Detail/{productId}")]
         public IActionResult Detail([FromRoute] int productId)
         {
+            var userId = Request.Cookies["UserId"];
+            ViewBag.UserId = int.Parse(userId);
             return View(productId);
         }
     }

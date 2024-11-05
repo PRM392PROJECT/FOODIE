@@ -1,5 +1,7 @@
 package com.example.foodie.ui.home;
 
+import android.content.Context;
+
 import com.example.foodie.models.Category;
 import com.example.foodie.service.ApiClient;
 import com.example.foodie.service.ApiService;
@@ -14,9 +16,11 @@ import retrofit2.Response;
 public class HomePresenter {
     private ApiService apiService ;
     private IHomeView view;
-    public HomePresenter(IHomeView view){
+    private Context context;
+    public HomePresenter(IHomeView view,Context context){
         this.view = view;
-        apiService = ApiClient.getClient().create(ApiService.class);
+        this.context = context;
+        apiService = ApiClient.getClient(context).create(ApiService.class);
     }
     public void getFoodCategory() {
         Call<List<Category>> call = apiService.getFoodCategories();
@@ -25,7 +29,6 @@ public class HomePresenter {
             public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     List<Category> categoryFoods = response.body();
-                    categoryFoods.add(new Category(0,"All"));
                     categoryFoods.sort(Comparator.comparingInt(Category::getCategoryId));
                     view.loadTablayout(categoryFoods);
                 } else {

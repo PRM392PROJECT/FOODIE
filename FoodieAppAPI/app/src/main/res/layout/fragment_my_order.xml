@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
     tools:context=".ui.orderHistory.MyOrderFragment">
 
     <!-- Top Panel with Tabs -->
@@ -12,7 +13,7 @@
         android:id="@+id/topPanel"
         android:layout_width="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_height="100dp">
+        android:layout_height="wrap_content">
 
         <!-- TabLayout for tabs OnGoing and History -->
         <com.google.android.material.tabs.TabLayout
@@ -38,9 +39,12 @@
 
     <!-- ViewPager2 for switching between fragments -->
     <androidx.viewpager2.widget.ViewPager2
-        android:layout_below="@id/topPanel"
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/topPanel"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </RelativeLayout>

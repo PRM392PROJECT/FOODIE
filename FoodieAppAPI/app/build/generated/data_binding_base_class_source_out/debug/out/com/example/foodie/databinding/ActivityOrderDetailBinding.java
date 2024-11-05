@@ -12,10 +12,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.foodie.R;
+import com.example.foodie.customview.NoScrollListView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -31,10 +31,10 @@ public final class ActivityOrderDetailBinding implements ViewBinding {
   public final ImageButton btnBack;
 
   @NonNull
-  public final Button btnPlaceOrder;
+  public final Button btnOrder;
 
   @NonNull
-  public final RecyclerView listviewOrderDetail;
+  public final NoScrollListView listviewOrderDetail;
 
   @NonNull
   public final RelativeLayout main;
@@ -52,38 +52,38 @@ public final class ActivityOrderDetailBinding implements ViewBinding {
   public final TextView totalPay;
 
   @NonNull
-  public final TextView tvAddress;
+  public final TextView userAddress;
 
   @NonNull
-  public final TextView tvFirstName;
+  public final TextView userFirstName;
 
   @NonNull
-  public final TextView tvLastName;
+  public final TextView userLastname;
 
   @NonNull
-  public final TextView tvPhoneNumber;
+  public final TextView userPhone;
 
   private ActivityOrderDetailBinding(@NonNull RelativeLayout rootView,
-      @NonNull ConstraintLayout bottomPanel, @NonNull ImageButton btnBack,
-      @NonNull Button btnPlaceOrder, @NonNull RecyclerView listviewOrderDetail,
-      @NonNull RelativeLayout main, @NonNull ScrollView scrollView,
-      @NonNull ConstraintLayout topPanel, @NonNull TextView totalItem, @NonNull TextView totalPay,
-      @NonNull TextView tvAddress, @NonNull TextView tvFirstName, @NonNull TextView tvLastName,
-      @NonNull TextView tvPhoneNumber) {
+      @NonNull ConstraintLayout bottomPanel, @NonNull ImageButton btnBack, @NonNull Button btnOrder,
+      @NonNull NoScrollListView listviewOrderDetail, @NonNull RelativeLayout main,
+      @NonNull ScrollView scrollView, @NonNull ConstraintLayout topPanel,
+      @NonNull TextView totalItem, @NonNull TextView totalPay, @NonNull TextView userAddress,
+      @NonNull TextView userFirstName, @NonNull TextView userLastname,
+      @NonNull TextView userPhone) {
     this.rootView = rootView;
     this.bottomPanel = bottomPanel;
     this.btnBack = btnBack;
-    this.btnPlaceOrder = btnPlaceOrder;
+    this.btnOrder = btnOrder;
     this.listviewOrderDetail = listviewOrderDetail;
     this.main = main;
     this.scrollView = scrollView;
     this.topPanel = topPanel;
     this.totalItem = totalItem;
     this.totalPay = totalPay;
-    this.tvAddress = tvAddress;
-    this.tvFirstName = tvFirstName;
-    this.tvLastName = tvLastName;
-    this.tvPhoneNumber = tvPhoneNumber;
+    this.userAddress = userAddress;
+    this.userFirstName = userFirstName;
+    this.userLastname = userLastname;
+    this.userPhone = userPhone;
   }
 
   @Override
@@ -125,14 +125,14 @@ public final class ActivityOrderDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnPlaceOrder;
-      Button btnPlaceOrder = ViewBindings.findChildViewById(rootView, id);
-      if (btnPlaceOrder == null) {
+      id = R.id.btnOrder;
+      Button btnOrder = ViewBindings.findChildViewById(rootView, id);
+      if (btnOrder == null) {
         break missingId;
       }
 
       id = R.id.listview_order_detail;
-      RecyclerView listviewOrderDetail = ViewBindings.findChildViewById(rootView, id);
+      NoScrollListView listviewOrderDetail = ViewBindings.findChildViewById(rootView, id);
       if (listviewOrderDetail == null) {
         break missingId;
       }
@@ -163,33 +163,33 @@ public final class ActivityOrderDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvAddress;
-      TextView tvAddress = ViewBindings.findChildViewById(rootView, id);
-      if (tvAddress == null) {
+      id = R.id.user_address;
+      TextView userAddress = ViewBindings.findChildViewById(rootView, id);
+      if (userAddress == null) {
         break missingId;
       }
 
-      id = R.id.tvFirstName;
-      TextView tvFirstName = ViewBindings.findChildViewById(rootView, id);
-      if (tvFirstName == null) {
+      id = R.id.user_firstName;
+      TextView userFirstName = ViewBindings.findChildViewById(rootView, id);
+      if (userFirstName == null) {
         break missingId;
       }
 
-      id = R.id.tvLastName;
-      TextView tvLastName = ViewBindings.findChildViewById(rootView, id);
-      if (tvLastName == null) {
+      id = R.id.user_lastname;
+      TextView userLastname = ViewBindings.findChildViewById(rootView, id);
+      if (userLastname == null) {
         break missingId;
       }
 
-      id = R.id.tvPhoneNumber;
-      TextView tvPhoneNumber = ViewBindings.findChildViewById(rootView, id);
-      if (tvPhoneNumber == null) {
+      id = R.id.user_phone;
+      TextView userPhone = ViewBindings.findChildViewById(rootView, id);
+      if (userPhone == null) {
         break missingId;
       }
 
       return new ActivityOrderDetailBinding((RelativeLayout) rootView, bottomPanel, btnBack,
-          btnPlaceOrder, listviewOrderDetail, main, scrollView, topPanel, totalItem, totalPay,
-          tvAddress, tvFirstName, tvLastName, tvPhoneNumber);
+          btnOrder, listviewOrderDetail, main, scrollView, topPanel, totalItem, totalPay,
+          userAddress, userFirstName, userLastname, userPhone);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

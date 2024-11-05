@@ -46,10 +46,16 @@ namespace Foodie.DataAccessLayer.DAO
             return image;
         }
 
-        public async Task<bool> Delete(ProductImage productImage)
+        public async Task<bool> Delete(int productImageId)
         {
-            _context.ProductImages.Remove(productImage);
-            return await _context.SaveChangesAsync() > 0;
+            var image = await _context.ProductImages.FirstOrDefaultAsync(p => p.ImageId == productImageId);
+            if (image != null)
+            {
+                _context.ProductImages.Remove(image);
+                return await _context.SaveChangesAsync() > 0;
+            }
+
+            return false;
         }
 
         public async Task<IEnumerable<ProductImage>> GetByProductId(int productId)

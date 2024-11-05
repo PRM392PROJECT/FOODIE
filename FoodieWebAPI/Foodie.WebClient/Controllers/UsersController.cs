@@ -58,7 +58,7 @@ namespace Foodie.WebClient.Controllers
                 var user = token.User;
                 var cookieOptions = new CookieOptions
                 {
-                    Expires = DateTime.Now.AddMinutes(5)
+                    Expires = DateTime.Now.AddHours(1)
                 };
                 Response.Cookies.Append("UserRoleId", user.RoleId.ToString(), cookieOptions);
                 Response.Cookies.Append("UserId", user.UserId.ToString(), cookieOptions);
@@ -83,6 +83,11 @@ namespace Foodie.WebClient.Controllers
             Response.Cookies.Delete("UserRestaurentId");
             Response.Cookies.Delete("AuthToken");
             return RedirectToAction("Login", "Users");
+        }
+
+        public IActionResult Register()
+        {
+            return View();
         }
 
         public IActionResult GetView(int roleId)

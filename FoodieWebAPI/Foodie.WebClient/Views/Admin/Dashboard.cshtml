@@ -1,2 +1,97 @@
-﻿
-<h2>Admin</h2>
+﻿@await Html.PartialAsync("_Header_Admin")
+
+<!-- Bootstrap CDN -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-pzjw8f+ua7Kw1TIq7sZ13WqRY6hx0FT1kkvRITa4txGxzG97R7mRwaAJYqH4t00b" crossorigin="anonymous">
+
+<div class="container my-4">
+    <h2 class="text-center mb-4">Danh Sách Người Dùng</h2>
+
+    <!-- Button to load more users -->
+   
+
+    <!-- User Table -->
+    <div class="table-responsive">
+        <table id="userTable" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>User ID</th>
+                <th>Họ</th>
+                <th>Tên</th>
+                <th>Số điện thoại</th>
+                <th>Email</th>
+                <th>Địa chỉ</th>
+                <th>Ngày tạo</th>
+                <th>Ngày cập nhật</th>
+                <th>Vai trò</th>
+            </tr>
+            </thead>
+            <tbody id="userTableBody">
+            <!-- User data will be appended here -->
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center mb-3">
+        <button id="loadMoreBtn" class="btn btn-primary" onclick="loadMore()">More</button>
+    </div>
+</div>
+
+<script>
+    let currentPage = 0; // Start from page 0, as loadMore will increment it to 1
+    const pageSize = 1;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadMore(); // Load the first page of data on page load
+    });
+
+    async function getUser(page) {
+        const api = `http://localhost:7059/api/users/get-page?pageNumber=${page}&pageSize=${pageSize}`;
+        const token = '@Html.Raw(ViewBag.Token)';
+
+        try {
+            const response = await fetch(api, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                appendUsersToTable(data.items);
+                console.log(data.items);
+
+                if (currentPage >= data.totalPages) {
+                    document.getElementById("loadMoreBtn").style.display = "none";
+                }
+            } else {
+                console.log('Failed to load users');
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    function appendUsersToTable(users) {
+        const tableBody = document.getElementById("userTableBody");
+        users.forEach(user => {
+            const row = `<tr>
+                    <td>${user.userId}</td>
+                    <td>${user.firstName}</td>
+                    <td>${user.lastName}</td>
+                    <td>${user.phoneNumber}</td>
+                    <td>${user.email}</td>
+                    <td>${user.address || ''}</td>
+                    <td>${user.createAt ? new Date(user.createAt).toLocaleString() : ''}</td>
+                    <td>${user.upDateAt ? new Date(user.upDateAt).toLocaleString() : ''}</td>
+                    <td>${user.roleName}</td>
+                </tr>`;
+            tableBody.insertAdjacentHTML('beforeend', row);
+        });
+    }
+
+    function loadMore() {
+        currentPage++; // Increment page before loading
+        getUser(currentPage);
+    }
+</script>

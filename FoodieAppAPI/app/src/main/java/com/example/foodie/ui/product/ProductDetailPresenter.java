@@ -1,5 +1,7 @@
 package com.example.foodie.ui.product;
 
+import android.content.Context;
+
 import com.example.foodie.models.Feedback;
 import com.example.foodie.models.Product;
 import com.example.foodie.models.ViewPage;
@@ -16,9 +18,11 @@ public class ProductDetailPresenter {
     private ApiService apiService;
     private IProductDetailView view;
     private int foodId;
+    private Context context;
 
-    public ProductDetailPresenter(IProductDetailView view) {
-        apiService = ApiClient.getClient().create(ApiService.class);
+    public ProductDetailPresenter(IProductDetailView view,Context context) {
+        this.context = context;
+        apiService = ApiClient.getClient(context).create(ApiService.class);
         this.view = view;
     }
 

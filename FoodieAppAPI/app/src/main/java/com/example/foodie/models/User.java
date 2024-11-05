@@ -1,6 +1,8 @@
 package com.example.foodie.models;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private int userId;
     private String firstName;
     private String lastName;

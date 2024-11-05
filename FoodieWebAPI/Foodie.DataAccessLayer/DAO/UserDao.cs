@@ -15,10 +15,27 @@ namespace Foodie.DataAccessLayer.DAO
 
         public async Task<User> Create(User entity)
         {
-            await _context.Users.AddAsync(entity);
-            await _context.SaveChangesAsync();
-            return entity;
+            if (entity == null)
+                throw new ArgumentNullException(nameof(entity));
+
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                await _context.Users.AddAsync(entity);
+                await _context.Carts.AddAsync(new Cart { User = entity });
+
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                return entity;
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                throw; // Rethrow the exception to handle it upstream if necessary
+            }
         }
+
 
         public async Task<bool> Delete(User entity)
         {

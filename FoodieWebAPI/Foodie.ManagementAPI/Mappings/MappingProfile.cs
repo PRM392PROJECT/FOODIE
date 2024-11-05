@@ -54,6 +54,14 @@ namespace Foodie.ManagementAPI.Mappings
 
             CreateMap<Order, OrderResponse>();
             CreateMap<OrderItem, OrderItemResponse>();
+
+            CreateMap<CartItemRequest, CartItem>();
+            CreateMap<CartItem, CartItemResponse>()
+                .ForMember(dest=>dest.ProductName,otp=>otp.MapFrom(src=>src.Product.Name))
+                .ForMember(dest=>dest.RestaurantId,otp=>otp.MapFrom(src=>src.Product.RestaurantId))
+                .ForMember(dest=>dest.ProductImageUrl,
+                    otp=>otp.MapFrom(src=>src.Product.ProductImages.FirstOrDefault().ImageUrl));
+            CreateMap<Cart, CartResponse>();
         }
     }
 }

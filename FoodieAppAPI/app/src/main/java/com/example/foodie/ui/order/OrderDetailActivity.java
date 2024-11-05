@@ -1,28 +1,40 @@
 package com.example.foodie.ui.order;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.foodie.R;
 import com.example.foodie.databinding.ActivityOrderDetailBinding;
+import com.example.foodie.models.Order;
+import com.example.foodie.models.OrderItem;
+import com.example.foodie.models.User;
+import com.example.foodie.untils.UserInfoManager;
 
 import java.util.ArrayList;
 
 public class OrderDetailActivity extends AppCompatActivity implements View.OnClickListener, IOrderView {
     private ActivityOrderDetailBinding binding;
+    private static final String EXTRA_ORDER = "extra_order";
     private OrderPresenter presenter;
+    private Order order;
+    private OrderItemAdapter adapter;
+
+    public static Intent newIntent(Context context, Order order) {
+        Intent intent = new Intent(context, OrderDetailActivity.class);
+        intent.putExtra(EXTRA_ORDER, order);
+        return intent;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityOrderDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-<<<<<<< Updated upstream
-        presenter = new OrderPresenter(this,this);
-        binding.btnBack.setOnClickListener(this);
-        binding.btnPlaceOrder.setOnClickListener(this);
-=======
 
         order = (Order) getIntent().getSerializableExtra(EXTRA_ORDER);
         if (order == null) {
@@ -38,33 +50,23 @@ public class OrderDetailActivity extends AppCompatActivity implements View.OnCli
         adapter = new OrderItemAdapter(this, new ArrayList<>());
         binding.listviewOrderDetail.setAdapter(adapter);
         showOrder();
->>>>>>> Stashed changes
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == binding.btnBack.getId()) {
             finish();
-<<<<<<< Updated upstream
-        }else if(v.getId() == binding.btnPlaceOrder.getId()){
-            presenter.order(1,1);
-=======
         } else if (v.getId() == binding.btnOrder.getId()) {
             orderNow();
->>>>>>> Stashed changes
         }
     }
 
     @Override
     public void orderSuccess() {
-<<<<<<< Updated upstream
-
-=======
         Intent intent = new Intent(this, OrderSuccessActivity.class);
         startActivity(intent);
         setResult(RESULT_OK); // Set result code to indicate success
         finish();
->>>>>>> Stashed changes
     }
 
     @Override
@@ -87,9 +89,6 @@ public class OrderDetailActivity extends AppCompatActivity implements View.OnCli
         Log.e("OrderDetailActivity", message);
         // Show error dialog/toast here
     }
-<<<<<<< Updated upstream
-}
-=======
 
     @Override
     public void showOrder() {
@@ -120,4 +119,3 @@ public class OrderDetailActivity extends AppCompatActivity implements View.OnCli
         presenter.order(order);
     }
 }
->>>>>>> Stashed changes

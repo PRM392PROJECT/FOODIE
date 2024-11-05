@@ -45,12 +45,12 @@ public class LoginFragment extends Fragment implements ILoginView , View.OnClick
 
     @Override
     public void showLoading() {
-        binding.progressBar2.setVisibility(View.VISIBLE);
+
     }
 
     @Override
     public void hideLoading() {
-        binding.progressBar2.setVisibility(View.GONE);
+
     }
 
     @Override
@@ -74,9 +74,9 @@ public class LoginFragment extends Fragment implements ILoginView , View.OnClick
     @Override
     public void onClick(View v) {
         if(v.getId() == binding.btnLogin.getId()){
-            String email = binding.edittextEmail.getText().toString();
-            String password = binding.edittextPassword.getText().toString();
-            presenter.login(email,password);
+            String email = binding.email.getText().toString();
+            String password = binding.password.getText().toString();
+            presenter.login2(email,password);
         }
     }
 }

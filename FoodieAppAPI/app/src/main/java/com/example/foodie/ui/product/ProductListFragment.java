@@ -1,5 +1,6 @@
 package com.example.foodie.ui.product;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,21 +30,24 @@ public class ProductListFragment extends Fragment implements IProductListView {
     private List<Product> foods;
     private ProductListPresenter presenter;
     private int categoryId;
-    public ProductListFragment() {
-        // Required empty public constructor
+    private boolean isLoadData = false;
+    private Context context;
+    public ProductListFragment(Context context) {
+         this.context = context;
     }
-     public static ProductListFragment newInstance(int categoryId) {
+     public static ProductListFragment newInstance(Context context,int categoryId) {
         Bundle args = new Bundle();
         args.putInt(ARG_CATEGORY_ID, categoryId);
-        ProductListFragment fragment = new ProductListFragment();
+        ProductListFragment fragment = new ProductListFragment(context);
         fragment.setArguments(args);
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        presenter = new ProductListPresenter(this);
+        presenter = new ProductListPresenter(this,requireContext());
         foods = new ArrayList<>();
         if (getArguments() != null) {
             categoryId = getArguments().getInt(ARG_CATEGORY_ID);
@@ -68,9 +73,13 @@ public class ProductListFragment extends Fragment implements IProductListView {
         gridView.setOnItemClickListener((parent, getView1, position, id) -> {
             Object selectedItem = parent.getItemAtPosition(position);
             if (selectedItem instanceof Product) {
-                Product selectedFood = (Product) selectedItem;
-                Intent intent = ProductDetailActivity.newIntent(getContext(),selectedFood.getProductId());
-                startActivity(intent);
+               try{
+                   Product selectedFood = (Product) selectedItem;
+                   Intent intent = ProductDetailActivity.newIntent(getActivity(),selectedFood.getProductId());
+                   startActivity(intent);
+               }catch(Exception ex){
+                   Log.e("False detail" , ex.getMessage());
+               }
             }
         });
 
@@ -79,29 +88,49 @@ public class ProductListFragment extends Fragment implements IProductListView {
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
     }
-    public boolean isFoodsEmpty(){
-        return foods.isEmpty();
-    }
 
     public void loadFoods(){
-        presenter.getFoodByCategory(categoryId);
+        if(isAdded()){
+            requireActivity().runOnUiThread(()->{
+                presenter.getFoodByCategory(categoryId);
+                binding.gridFoodList.smoothScrollToPosition(0,0);
+            });
+        }
     }
 
     public void showFoods(List<Product> foods) {
-        adapter.updateData(foods);
+        if(isAdded()){
+            requireActivity().runOnUiThread(()->{
+                if(adapter == null){
+                    adapter = new ProductAdapter(getContext(),new ArrayList<>());
+                }
+                adapter.updateData(foods);
+                isLoadData = true;
+            });
+        }
     }
+
 
     public void showLoadingFood() {
-        binding.progressBar.setVisibility(View.VISIBLE);
+        if(isAdded()){
+            requireActivity().runOnUiThread(()->{
+                binding.progressBar.setVisibility(View.VISIBLE);
+            });
+        }
     }
 
+
     public void hideLoadingFood() {
-        binding.progressBar.setVisibility(View.GONE);
+        if (isAdded()) {  // Đảm bảo rằng Fragment vẫn được gắn vào Activity
+            requireActivity().runOnUiThread(() -> {
+                binding.progressBar.setVisibility(View.GONE);
+            });
+        }
     }
 
     @Override
     public void showError(String s) {
-        Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+        Toast.makeText(requireContext(), s, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -112,5 +141,9 @@ public class ProductListFragment extends Fragment implements IProductListView {
     @Override
     public void hideFoodEmpty() {
         binding.foodEmpty.setVisibility(View.GONE);
+    }
+
+    public boolean isLoadData(){
+        return  isLoadData;
     }
 }

@@ -2,6 +2,10 @@
 <div class="container">
     <div id="productList" class="container-fluid">
         <h2>Danh Sách Sản Phẩm</h2>
+        <div class="mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm sản phẩm..." 
+            />
+        </div>
         <div class="row" id="products">
 
         </div>
@@ -9,16 +13,21 @@
 
 </div>
 <script>
+    let products =[];
     document.addEventListener('DOMContentLoaded', async () => {
-        await fetchProducts();
+        products = await fetchProducts();
+        showProduct(products);
     });
+    document.getElementById('searchInput').addEventListener('input', function (){
+        filterProducts(products);
+    });
+
     async function fetchProducts() {
         try {
             const email = '@Html.Raw(ViewBag.Email)';
-            const pageNumber = 1; 
-            const pageSize = 1000; 
+            const pageNumber = 1;
+            const pageSize = 1000;
             const token = '@Html.Raw(ViewBag.Token)';
-
             const response = await fetch(`http://localhost:7059/api/products/get-by-email/${email}?pageNumber=${pageNumber}&pageSize=${pageSize}`, {
                 method: 'GET',
                 headers: {
@@ -26,18 +35,40 @@
                 }
             });
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                return [];
             }
             const data = await response.json();
-            console.log(data);
-            const productsContainer = document.getElementById('products');
-            productsContainer.innerHTML = '';
 
-            data.items.forEach(product => {
-                // Lấy URL hình ảnh, và nếu không có thì sử dụng URL hình ảnh thay thế
-                const imageUrl = product.images[0]?.imageUrl || 'https://c8.alamy.com/comp/2EA6NCD/not-food-grade-plastic-vector-sign-isolated-not-food-safe-material-wine-glass-and-fork-symbol-2EA6NCD.jpg';
+            // Chuyển đổi dữ liệu thành mảng các đối tượng sản phẩm
+            const productsArray = data.items.map(item => ({
+                productId: item.productId,
+                restaurantId: item.restaurantId,
+                categoryId: item.categoryId,
+                categoryName: item.categoryName,
+                name: item.name,
+                description: item.description,
+                price: item.price,
+                createAt: new Date(item.createAt), 
+                upDateAt: new Date(item.upDateAt), 
+                images: item.images.map(img => img.imageUrl)
+            }));
 
-                const productCard = `
+            return productsArray;
+
+        } catch (error) {
+            console.error('Error fetching products:', error);
+            return [];
+        }
+    }
+
+    function showProduct(products) {
+        const productsContainer = document.getElementById('products');
+        productsContainer.innerHTML = '';
+
+        products.forEach(product => {
+            const imageUrl = product.images[0] || 'https://c8.alamy.com/comp/2EA6NCD/not-food-grade-plastic-vector-sign-isolated-not-food-safe-material-wine-glass-and-fork-symbol-2EA6NCD.jpg';
+
+            const productCard = `
         <div class="col-md-4">
             <div class="card mb-4">
                 <img 
@@ -55,14 +86,20 @@
                 </div>
             </div>
         </div>
-    `;
-                productsContainer.innerHTML += productCard;
-            });
-
-        } catch (error) {
-            console.error('Error fetching products:', error);
-        }
+        `;
+            productsContainer.innerHTML += productCard;
+        });
     }
+
+    function filterProducts(productList) {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        console.log(searchTerm);
+        const filteredProducts = productList.filter(product =>
+            product.name.toLowerCase().includes(searchTerm)
+        );
+        showProduct(filteredProducts); 
+    }
+
 </script>
 <style>
     .card {

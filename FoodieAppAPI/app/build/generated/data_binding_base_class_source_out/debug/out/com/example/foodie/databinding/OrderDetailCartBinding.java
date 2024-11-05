@@ -44,7 +44,7 @@ public final class OrderDetailCartBinding implements ViewBinding {
   public final TextView foodprice;
 
   @NonNull
-  public final TextView orderDetails;
+  public final TextView orderDate;
 
   @NonNull
   public final TextView orderStatus;
@@ -52,7 +52,7 @@ public final class OrderDetailCartBinding implements ViewBinding {
   private OrderDetailCartBinding(@NonNull CardView rootView, @NonNull Button btnRate,
       @NonNull Button btnReOrder, @NonNull ConstraintLayout categoryStatusContainer,
       @NonNull TextView foodCategory, @NonNull ImageView foodImage, @NonNull TextView foodname,
-      @NonNull TextView foodprice, @NonNull TextView orderDetails, @NonNull TextView orderStatus) {
+      @NonNull TextView foodprice, @NonNull TextView orderDate, @NonNull TextView orderStatus) {
     this.rootView = rootView;
     this.btnRate = btnRate;
     this.btnReOrder = btnReOrder;
@@ -61,7 +61,7 @@ public final class OrderDetailCartBinding implements ViewBinding {
     this.foodImage = foodImage;
     this.foodname = foodname;
     this.foodprice = foodprice;
-    this.orderDetails = orderDetails;
+    this.orderDate = orderDate;
     this.orderStatus = orderStatus;
   }
 
@@ -134,9 +134,9 @@ public final class OrderDetailCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.orderDetails;
-      TextView orderDetails = ViewBindings.findChildViewById(rootView, id);
-      if (orderDetails == null) {
+      id = R.id.orderDate;
+      TextView orderDate = ViewBindings.findChildViewById(rootView, id);
+      if (orderDate == null) {
         break missingId;
       }
 
@@ -147,7 +147,7 @@ public final class OrderDetailCartBinding implements ViewBinding {
       }
 
       return new OrderDetailCartBinding((CardView) rootView, btnRate, btnReOrder,
-          categoryStatusContainer, foodCategory, foodImage, foodname, foodprice, orderDetails,
+          categoryStatusContainer, foodCategory, foodImage, foodname, foodprice, orderDate,
           orderStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);

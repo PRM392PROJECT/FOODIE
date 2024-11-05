@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.foodie.app-mergeDebugResources-43:/values-port/values-port.xml",
+            "outputFile": "com.example.foodie.app-mergeDebugResources-47:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-4\\65d2397a8054c570ef6ffe6243793174\\transformed\\appcompat-1.7.0\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\LINH\\.gradle\\caches\\transforms-4\\4a91557e60c58ff289b519089760011e\\transformed\\appcompat-1.7.0\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

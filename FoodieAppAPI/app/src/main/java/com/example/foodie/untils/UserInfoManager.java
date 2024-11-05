@@ -3,20 +3,18 @@ package com.example.foodie.untils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.foodie.models.Token;
 import com.example.foodie.models.User;
-
-import android.content.Context;
-import android.content.SharedPreferences;
 
 public class UserInfoManager {
 
     private static final String USER_PREFS_NAME = "UserPrefs";
-
+    private static final String TOKEN_PREFS_NAME = "TokenPrefs";
     public static User getUserInfo(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(USER_PREFS_NAME, Context.MODE_PRIVATE);
         User user = new User();
-        // Lấy dữ liệu từ SharedPreferences
-        user.setUserId(sharedPreferences.getInt("userId", -1));  // -1 là giá trị mặc định nếu không tìm thấy dữ liệu
+
+        user.setUserId(sharedPreferences.getInt("userId", -1));
         user.setFirstName(sharedPreferences.getString("firstName", null));
         user.setLastName(sharedPreferences.getString("lastName", null));
         user.setEmail(sharedPreferences.getString("userEmail", null));
@@ -34,7 +32,6 @@ public class UserInfoManager {
         SharedPreferences sharedPreferences = context.getSharedPreferences(USER_PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        // Lưu các thông tin của người dùng
         editor.putInt("userId", user.getUserId());
         editor.putString("firstName", user.getFirstName());
         editor.putString("lastName", user.getLastName());
@@ -45,12 +42,26 @@ public class UserInfoManager {
         editor.putInt("roleId", user.getRoleId());
         editor.putString("roleName", user.getRoleName());
 
-        editor.apply(); // Lưu thay đổi vào SharedPreferences
+        editor.apply();
     }
     public static void clearUserInfo(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(USER_PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
+        editor.apply();
+    }
+    public static Token getToken(Context context){
+        SharedPreferences sharedPreferences = context.getSharedPreferences(TOKEN_PREFS_NAME, Context.MODE_PRIVATE);
+        Token token = new Token();
+        token.setTokenString(sharedPreferences.getString("tokenString",null));
+        token.setExpiration(sharedPreferences.getString("expiration",null));
+        return token;
+    }
+    public static void saveToken(Token token,Context context){
+        SharedPreferences sharedPreferences = context.getSharedPreferences(TOKEN_PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("tokenString",token.getTokenString());
+        editor.putString("expiration",token.getExpiration());
         editor.apply();
     }
 }

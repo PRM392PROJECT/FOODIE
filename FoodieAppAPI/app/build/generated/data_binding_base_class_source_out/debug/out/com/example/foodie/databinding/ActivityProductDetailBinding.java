@@ -6,8 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -47,6 +49,9 @@ public final class ActivityProductDetailBinding implements ViewBinding {
   public final TextView productDescription;
 
   @NonNull
+  public final ImageView productImages;
+
+  @NonNull
   public final TextView productName;
 
   @NonNull
@@ -54,6 +59,9 @@ public final class ActivityProductDetailBinding implements ViewBinding {
 
   @NonNull
   public final RatingBar ratingBar;
+
+  @NonNull
+  public final SeekBar seekBarQuantity;
 
   @NonNull
   public final TextView storeName;
@@ -65,8 +73,10 @@ public final class ActivityProductDetailBinding implements ViewBinding {
       @NonNull ConstraintLayout bottom, @NonNull ImageButton btnBack,
       @NonNull Button buttonAddToCart, @NonNull Button buttonOrder, @NonNull Flow flow,
       @NonNull NoScrollListView listviewFeedback, @NonNull TextView productDescription,
-      @NonNull TextView productName, @NonNull TextView productPrice, @NonNull RatingBar ratingBar,
-      @NonNull TextView storeName, @NonNull ConstraintLayout topPanel) {
+      @NonNull ImageView productImages, @NonNull TextView productName,
+      @NonNull TextView productPrice, @NonNull RatingBar ratingBar,
+      @NonNull SeekBar seekBarQuantity, @NonNull TextView storeName,
+      @NonNull ConstraintLayout topPanel) {
     this.rootView = rootView;
     this.bottom = bottom;
     this.btnBack = btnBack;
@@ -75,9 +85,11 @@ public final class ActivityProductDetailBinding implements ViewBinding {
     this.flow = flow;
     this.listviewFeedback = listviewFeedback;
     this.productDescription = productDescription;
+    this.productImages = productImages;
     this.productName = productName;
     this.productPrice = productPrice;
     this.ratingBar = ratingBar;
+    this.seekBarQuantity = seekBarQuantity;
     this.storeName = storeName;
     this.topPanel = topPanel;
   }
@@ -151,6 +163,12 @@ public final class ActivityProductDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.product_images;
+      ImageView productImages = ViewBindings.findChildViewById(rootView, id);
+      if (productImages == null) {
+        break missingId;
+      }
+
       id = R.id.product_name;
       TextView productName = ViewBindings.findChildViewById(rootView, id);
       if (productName == null) {
@@ -169,6 +187,12 @@ public final class ActivityProductDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.seekBarQuantity;
+      SeekBar seekBarQuantity = ViewBindings.findChildViewById(rootView, id);
+      if (seekBarQuantity == null) {
+        break missingId;
+      }
+
       id = R.id.store_name;
       TextView storeName = ViewBindings.findChildViewById(rootView, id);
       if (storeName == null) {
@@ -182,8 +206,8 @@ public final class ActivityProductDetailBinding implements ViewBinding {
       }
 
       return new ActivityProductDetailBinding((RelativeLayout) rootView, bottom, btnBack,
-          buttonAddToCart, buttonOrder, flow, listviewFeedback, productDescription, productName,
-          productPrice, ratingBar, storeName, topPanel);
+          buttonAddToCart, buttonOrder, flow, listviewFeedback, productDescription, productImages,
+          productName, productPrice, ratingBar, seekBarQuantity, storeName, topPanel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

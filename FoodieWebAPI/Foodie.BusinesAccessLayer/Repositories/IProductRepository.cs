@@ -38,5 +38,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
         Task<int> CountProductByEmail(string email);
 
         Task<ProductImage> UpdatePImage(ProductImage productImage);
+        
+        Task<bool> DeleteImageById(int imageId);
     }
 }

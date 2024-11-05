@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.foodie.app-mergeDebugResources-43:/values-w1240dp-v13/values-w1240dp-v13.xml",
+            "outputFile": "com.example.foodie.app-mergeDebugResources-47:/values-w1240dp-v13/values-w1240dp-v13.xml",
             "map": [
                 {
-                    "source": "E:\\Fall 2024\\PRM391\\Project\\FOODIE\\FoodieAppAPI\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
+                    "source": "E:\\Project\\FOODIE\\FoodieAppAPI\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "17",
+                        "startOffsets": "16",
                         "endColumns": "58",
-                        "endOffsets": "71"
+                        "endOffsets": "70"
                     },
                     "to": {
                         "startLines": "2",

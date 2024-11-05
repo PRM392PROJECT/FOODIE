@@ -9,171 +9,287 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:5:5-67
-11-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:5:22-64
-12
-13    <permission
-13-->[androidx.core:core:1.13.0] C:\Users\Admin\.gradle\caches\transforms-4\8e58b3b169a9e652681d2ea070de60dc\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
-14        android:name="com.example.foodie.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-14-->[androidx.core:core:1.13.0] C:\Users\Admin\.gradle\caches\transforms-4\8e58b3b169a9e652681d2ea070de60dc\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
-15        android:protectionLevel="signature" />
-15-->[androidx.core:core:1.13.0] C:\Users\Admin\.gradle\caches\transforms-4\8e58b3b169a9e652681d2ea070de60dc\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
-16
-17    <uses-permission android:name="com.example.foodie.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-17-->[androidx.core:core:1.13.0] C:\Users\Admin\.gradle\caches\transforms-4\8e58b3b169a9e652681d2ea070de60dc\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
-17-->[androidx.core:core:1.13.0] C:\Users\Admin\.gradle\caches\transforms-4\8e58b3b169a9e652681d2ea070de60dc\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
-18
-19    <application
-19-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:7:5-42:19
-20        android:allowBackup="true"
-20-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:8:9-35
-21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-21-->[androidx.core:core:1.13.0] C:\Users\Admin\.gradle\caches\transforms-4\8e58b3b169a9e652681d2ea070de60dc\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
-22        android:dataExtractionRules="@xml/data_extraction_rules"
-22-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:9:9-65
-23        android:debuggable="true"
-24        android:extractNativeLibs="false"
-25        android:fullBackupContent="@xml/backup_rules"
-25-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:10:9-54
-26        android:icon="@mipmap/ic_launcher"
-26-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:11:9-43
-27        android:label="@string/app_name"
-27-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:12:9-41
-28        android:networkSecurityConfig="@xml/network_security_config"
-28-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:13:9-69
-29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:14:9-54
-30        android:supportsRtl="true"
-30-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:15:9-35
-31        android:testOnly="true"
-32        android:theme="@style/Theme.Foodie"
-32-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:16:9-44
-33        android:usesCleartextTraffic="true" >
-33-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:17:9-44
-34        <activity
-34-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:19:9-21:40
-35            android:name="com.example.foodie.ui.order.OrderDetailActivity"
-35-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:20:13-57
-36            android:exported="false" />
-36-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:21:13-37
-37        <activity
-37-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:22:9-24:40
-38            android:name="com.example.foodie.ui.authen.AuthenActivity"
-38-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:23:13-53
-39            android:exported="false" />
-39-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:24:13-37
-40        <activity
-40-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:25:9-27:40
-41            android:name="com.example.foodie.BaseActivity"
-41-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:26:13-41
-42            android:exported="false" />
-42-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:27:13-37
-43        <activity
-43-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:28:9-30:40
-44            android:name="com.example.foodie.ui.product.ProductDetailActivity"
-44-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:29:13-61
-45            android:exported="false" />
-45-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:30:13-37
-46        <activity
-46-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:31:9-41:20
-47            android:name="com.example.foodie.MainActivity"
-47-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:32:13-41
-48            android:configChanges="orientation|screenSize"
-48-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:33:13-59
-49            android:exported="true"
-49-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:34:13-36
-50            android:label="@string/app_name" >
-50-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:35:13-45
-51            <intent-filter>
-51-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:36:13-40:29
-52                <action android:name="android.intent.action.MAIN" />
-52-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:37:17-69
-52-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:37:25-66
-53
-54                <category android:name="android.intent.category.LAUNCHER" />
-54-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:39:17-77
-54-->E:\Fall 2024\PRM391\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:39:27-74
-55            </intent-filter>
-56        </activity>
-57
-58        <provider
-58-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\34fb0d77f5d9e373999a6ff874f5da6a\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-59            android:name="androidx.startup.InitializationProvider"
-59-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\34fb0d77f5d9e373999a6ff874f5da6a\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-60            android:authorities="com.example.foodie.androidx-startup"
-60-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\34fb0d77f5d9e373999a6ff874f5da6a\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-61            android:exported="false" >
-61-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\34fb0d77f5d9e373999a6ff874f5da6a\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-62            <meta-data
-62-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\34fb0d77f5d9e373999a6ff874f5da6a\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-63                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-63-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\34fb0d77f5d9e373999a6ff874f5da6a\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-64                android:value="androidx.startup" />
-64-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\34fb0d77f5d9e373999a6ff874f5da6a\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-65            <meta-data
-65-->[androidx.lifecycle:lifecycle-process:2.8.5] C:\Users\Admin\.gradle\caches\transforms-4\c1e5fc80037739d37d9944755adb16d4\transformed\lifecycle-process-2.8.5\AndroidManifest.xml:29:13-31:52
-66                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-66-->[androidx.lifecycle:lifecycle-process:2.8.5] C:\Users\Admin\.gradle\caches\transforms-4\c1e5fc80037739d37d9944755adb16d4\transformed\lifecycle-process-2.8.5\AndroidManifest.xml:30:17-78
-67                android:value="androidx.startup" />
-67-->[androidx.lifecycle:lifecycle-process:2.8.5] C:\Users\Admin\.gradle\caches\transforms-4\c1e5fc80037739d37d9944755adb16d4\transformed\lifecycle-process-2.8.5\AndroidManifest.xml:31:17-49
-68            <meta-data
-68-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-69                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-69-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-70                android:value="androidx.startup" />
-70-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-71        </provider>
-72
-73        <uses-library
-73-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-4\1256777002737ef8520dba5eb8229967\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
-74            android:name="androidx.window.extensions"
-74-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-4\1256777002737ef8520dba5eb8229967\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
-75            android:required="false" />
-75-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-4\1256777002737ef8520dba5eb8229967\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
-76        <uses-library
-76-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-4\1256777002737ef8520dba5eb8229967\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
-77            android:name="androidx.window.sidecar"
-77-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-4\1256777002737ef8520dba5eb8229967\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
-78            android:required="false" />
-78-->[androidx.window:window:1.0.0] C:\Users\Admin\.gradle\caches\transforms-4\1256777002737ef8520dba5eb8229967\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
-79
-80        <receiver
-80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-81            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-82            android:directBootAware="false"
-82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-83            android:enabled="true"
-83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-84            android:exported="true"
-84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-85            android:permission="android.permission.DUMP" >
-85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-86            <intent-filter>
-86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-87                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-88            </intent-filter>
-89            <intent-filter>
-89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-90                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-91            </intent-filter>
-92            <intent-filter>
-92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-93                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-94            </intent-filter>
-95            <intent-filter>
-95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-96                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-96-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-96-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Admin\.gradle\caches\transforms-4\4228c14e90b5101a054798897ce01bff\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-97            </intent-filter>
-98        </receiver>
-99    </application>
-100
-101</manifest>
+11-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:5:5-67
+11-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:6:5-79
+12-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+13-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:7:5-81
+13-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:7:22-78
+14
+15    <!-- Include required permissions for Google Maps API to run. -->
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\LINH\.gradle\caches\transforms-4\2300f961656be4158a4e5c358d65ed4c\transformed\play-services-maps-18.0.0\AndroidManifest.xml:23:5-79
+16-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\LINH\.gradle\caches\transforms-4\2300f961656be4158a4e5c358d65ed4c\transformed\play-services-maps-18.0.0\AndroidManifest.xml:23:22-76
+17
+18    <uses-feature
+18-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\LINH\.gradle\caches\transforms-4\2300f961656be4158a4e5c358d65ed4c\transformed\play-services-maps-18.0.0\AndroidManifest.xml:26:5-28:35
+19        android:glEsVersion="0x00020000"
+19-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\LINH\.gradle\caches\transforms-4\2300f961656be4158a4e5c358d65ed4c\transformed\play-services-maps-18.0.0\AndroidManifest.xml:27:9-41
+20        android:required="true" />
+20-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\LINH\.gradle\caches\transforms-4\2300f961656be4158a4e5c358d65ed4c\transformed\play-services-maps-18.0.0\AndroidManifest.xml:28:9-32
+21
+22    <queries>
+22-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\LINH\.gradle\caches\transforms-4\2300f961656be4158a4e5c358d65ed4c\transformed\play-services-maps-18.0.0\AndroidManifest.xml:30:5-34:15
+23
+24        <!-- Needs to be explicitly declared on Android R+ -->
+25        <package android:name="com.google.android.apps.maps" />
+25-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\LINH\.gradle\caches\transforms-4\2300f961656be4158a4e5c358d65ed4c\transformed\play-services-maps-18.0.0\AndroidManifest.xml:33:9-64
+25-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\LINH\.gradle\caches\transforms-4\2300f961656be4158a4e5c358d65ed4c\transformed\play-services-maps-18.0.0\AndroidManifest.xml:33:18-61
+26    </queries>
+27
+28    <permission
+28-->[androidx.core:core:1.13.0] C:\Users\LINH\.gradle\caches\transforms-4\ef1e2bb1eafe337c2b4f2bbdb8821661\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+29        android:name="com.example.foodie.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+29-->[androidx.core:core:1.13.0] C:\Users\LINH\.gradle\caches\transforms-4\ef1e2bb1eafe337c2b4f2bbdb8821661\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+30        android:protectionLevel="signature" />
+30-->[androidx.core:core:1.13.0] C:\Users\LINH\.gradle\caches\transforms-4\ef1e2bb1eafe337c2b4f2bbdb8821661\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+31
+32    <uses-permission android:name="com.example.foodie.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+32-->[androidx.core:core:1.13.0] C:\Users\LINH\.gradle\caches\transforms-4\ef1e2bb1eafe337c2b4f2bbdb8821661\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+32-->[androidx.core:core:1.13.0] C:\Users\LINH\.gradle\caches\transforms-4\ef1e2bb1eafe337c2b4f2bbdb8821661\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+33
+34    <supports-screens
+34-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:11:5-14:40
+35        android:anyDensity="true"
+35-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:12:9-34
+36        android:largeScreens="true"
+36-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:13:9-36
+37        android:normalScreens="true" />
+37-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:14:9-37
+38
+39    <uses-feature
+39-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:16:5-18:36
+40        android:name="android.hardware.location.network"
+40-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:17:9-57
+41        android:required="false" />
+41-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:18:9-33
+42    <uses-feature
+42-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:19:5-21:36
+43        android:name="android.hardware.location.gps"
+43-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:20:9-53
+44        android:required="false" />
+44-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:21:9-33
+45    <uses-feature
+45-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:22:5-24:36
+46        android:name="android.hardware.telephony"
+46-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:23:9-50
+47        android:required="false" />
+47-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:24:9-33
+48    <uses-feature
+48-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:25:5-27:36
+49        android:name="android.hardware.wifi"
+49-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:26:9-45
+50        android:required="false" />
+50-->[org.osmdroid:osmdroid-android:6.1.10] C:\Users\LINH\.gradle\caches\transforms-4\8afcef7ffbe4eb2d27aa2bc7cf2ec5c1\transformed\osmdroid-android-6.1.10\AndroidManifest.xml:27:9-33
+51
+52    <application
+52-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:9:5-61:19
+53        android:allowBackup="true"
+53-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:10:9-35
+54        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+54-->[androidx.core:core:1.13.0] C:\Users\LINH\.gradle\caches\transforms-4\ef1e2bb1eafe337c2b4f2bbdb8821661\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+55        android:dataExtractionRules="@xml/data_extraction_rules"
+55-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:11:9-65
+56        android:debuggable="true"
+57        android:extractNativeLibs="false"
+58        android:fullBackupContent="@xml/backup_rules"
+58-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:12:9-54
+59        android:icon="@mipmap/ic_launcher"
+59-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:13:9-43
+60        android:label="@string/app_name"
+60-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:14:9-41
+61        android:networkSecurityConfig="@xml/network_security_config"
+61-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:15:9-69
+62        android:roundIcon="@mipmap/ic_launcher_round"
+62-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:16:9-54
+63        android:supportsRtl="true"
+63-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:17:9-35
+64        android:testOnly="true"
+65        android:theme="@style/Theme.Foodie"
+65-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:18:9-44
+66        android:usesCleartextTraffic="true" >
+66-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:19:9-44
+67        <activity
+67-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:21:9-23:40
+68            android:name="com.example.foodie.ui.cart.CartActivity"
+68-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:22:13-49
+69            android:exported="false" />
+69-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:23:13-37
+70        <activity
+70-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:24:9-26:40
+71            android:name="com.example.foodie.ui.order.OrderSuccessActivity"
+71-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:25:13-58
+72            android:exported="false" />
+72-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:26:13-37
+73        <activity
+73-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:27:9-29:40
+74            android:name="com.example.foodie.ui.home.SearchActivity"
+74-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:28:13-51
+75            android:exported="false" />
+75-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:29:13-37
+76
+77        <meta-data
+77-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:31:9-33:55
+78            android:name="com.google.android.geo.API_KEY"
+78-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:32:13-58
+79            android:value="@string/google_maps_key" />
+79-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:33:13-52
+80
+81        <activity
+81-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:35:9-37:40
+82            android:name="com.example.foodie.ui.profile.EditAddressActivity"
+82-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:36:13-59
+83            android:exported="false" />
+83-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:37:13-37
+84        <activity
+84-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:38:9-40:40
+85            android:name="com.example.foodie.ui.profile.EditProfileActivity"
+85-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:39:13-59
+86            android:exported="false" />
+86-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:40:13-37
+87        <activity
+87-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:41:9-43:40
+88            android:name="com.example.foodie.ui.order.OrderDetailActivity"
+88-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:42:13-57
+89            android:exported="false" />
+89-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:43:13-37
+90        <activity
+90-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:44:9-46:40
+91            android:name="com.example.foodie.ui.authen.AuthenActivity"
+91-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:45:13-53
+92            android:exported="false" />
+92-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:46:13-37
+93        <activity
+93-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:47:9-49:40
+94            android:name="com.example.foodie.ui.product.ProductDetailActivity"
+94-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:48:13-61
+95            android:exported="false" />
+95-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:49:13-37
+96        <activity
+96-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:50:9-60:20
+97            android:name="com.example.foodie.MainActivity"
+97-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:51:13-41
+98            android:configChanges="orientation|screenSize"
+98-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:52:13-59
+99            android:exported="true"
+99-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:53:13-36
+100            android:label="@string/app_name" >
+100-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:54:13-45
+101            <intent-filter>
+101-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:55:13-59:29
+102                <action android:name="android.intent.action.MAIN" />
+102-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:56:17-69
+102-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:56:25-66
+103
+104                <category android:name="android.intent.category.LAUNCHER" />
+104-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:58:17-77
+104-->E:\Project\FOODIE\FoodieAppAPI\app\src\main\AndroidManifest.xml:58:27-74
+105            </intent-filter>
+106        </activity>
+107        <!-- Needs to be explicitly declared on P+ -->
+108        <uses-library
+108-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\LINH\.gradle\caches\transforms-4\2300f961656be4158a4e5c358d65ed4c\transformed\play-services-maps-18.0.0\AndroidManifest.xml:39:9-41:40
+109            android:name="org.apache.http.legacy"
+109-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\LINH\.gradle\caches\transforms-4\2300f961656be4158a4e5c358d65ed4c\transformed\play-services-maps-18.0.0\AndroidManifest.xml:40:13-50
+110            android:required="false" />
+110-->[com.google.android.gms:play-services-maps:18.0.0] C:\Users\LINH\.gradle\caches\transforms-4\2300f961656be4158a4e5c358d65ed4c\transformed\play-services-maps-18.0.0\AndroidManifest.xml:41:13-37
+111
+112        <activity
+112-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\LINH\.gradle\caches\transforms-4\fe80660bc9ecbb198e6cac4fae3d01f3\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+113            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+113-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\LINH\.gradle\caches\transforms-4\fe80660bc9ecbb198e6cac4fae3d01f3\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+114            android:exported="false"
+114-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\LINH\.gradle\caches\transforms-4\fe80660bc9ecbb198e6cac4fae3d01f3\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+115            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+115-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\LINH\.gradle\caches\transforms-4\fe80660bc9ecbb198e6cac4fae3d01f3\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+116
+117        <meta-data
+117-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\LINH\.gradle\caches\transforms-4\afa5c29ac2da9dd75729406c8ce0331a\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+118            android:name="com.google.android.gms.version"
+118-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\LINH\.gradle\caches\transforms-4\afa5c29ac2da9dd75729406c8ce0331a\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+119            android:value="@integer/google_play_services_version" />
+119-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\LINH\.gradle\caches\transforms-4\afa5c29ac2da9dd75729406c8ce0331a\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+120
+121        <provider
+121-->[androidx.emoji2:emoji2:1.3.0] C:\Users\LINH\.gradle\caches\transforms-4\57e4b3366b2b4372fb587b583d2d9ccb\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+122            android:name="androidx.startup.InitializationProvider"
+122-->[androidx.emoji2:emoji2:1.3.0] C:\Users\LINH\.gradle\caches\transforms-4\57e4b3366b2b4372fb587b583d2d9ccb\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+123            android:authorities="com.example.foodie.androidx-startup"
+123-->[androidx.emoji2:emoji2:1.3.0] C:\Users\LINH\.gradle\caches\transforms-4\57e4b3366b2b4372fb587b583d2d9ccb\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+124            android:exported="false" >
+124-->[androidx.emoji2:emoji2:1.3.0] C:\Users\LINH\.gradle\caches\transforms-4\57e4b3366b2b4372fb587b583d2d9ccb\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+125            <meta-data
+125-->[androidx.emoji2:emoji2:1.3.0] C:\Users\LINH\.gradle\caches\transforms-4\57e4b3366b2b4372fb587b583d2d9ccb\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+126                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+126-->[androidx.emoji2:emoji2:1.3.0] C:\Users\LINH\.gradle\caches\transforms-4\57e4b3366b2b4372fb587b583d2d9ccb\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+127                android:value="androidx.startup" />
+127-->[androidx.emoji2:emoji2:1.3.0] C:\Users\LINH\.gradle\caches\transforms-4\57e4b3366b2b4372fb587b583d2d9ccb\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+128            <meta-data
+128-->[androidx.lifecycle:lifecycle-process:2.8.5] C:\Users\LINH\.gradle\caches\transforms-4\7bd5bba5098395ca477f329f3441373d\transformed\lifecycle-process-2.8.5\AndroidManifest.xml:29:13-31:52
+129                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+129-->[androidx.lifecycle:lifecycle-process:2.8.5] C:\Users\LINH\.gradle\caches\transforms-4\7bd5bba5098395ca477f329f3441373d\transformed\lifecycle-process-2.8.5\AndroidManifest.xml:30:17-78
+130                android:value="androidx.startup" />
+130-->[androidx.lifecycle:lifecycle-process:2.8.5] C:\Users\LINH\.gradle\caches\transforms-4\7bd5bba5098395ca477f329f3441373d\transformed\lifecycle-process-2.8.5\AndroidManifest.xml:31:17-49
+131            <meta-data
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+132                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+133                android:value="androidx.startup" />
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+134        </provider>
+135
+136        <uses-library
+136-->[androidx.window:window:1.0.0] C:\Users\LINH\.gradle\caches\transforms-4\64404bca9ddef3b72a514a6ca2d03c7d\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+137            android:name="androidx.window.extensions"
+137-->[androidx.window:window:1.0.0] C:\Users\LINH\.gradle\caches\transforms-4\64404bca9ddef3b72a514a6ca2d03c7d\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+138            android:required="false" />
+138-->[androidx.window:window:1.0.0] C:\Users\LINH\.gradle\caches\transforms-4\64404bca9ddef3b72a514a6ca2d03c7d\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+139        <uses-library
+139-->[androidx.window:window:1.0.0] C:\Users\LINH\.gradle\caches\transforms-4\64404bca9ddef3b72a514a6ca2d03c7d\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+140            android:name="androidx.window.sidecar"
+140-->[androidx.window:window:1.0.0] C:\Users\LINH\.gradle\caches\transforms-4\64404bca9ddef3b72a514a6ca2d03c7d\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+141            android:required="false" />
+141-->[androidx.window:window:1.0.0] C:\Users\LINH\.gradle\caches\transforms-4\64404bca9ddef3b72a514a6ca2d03c7d\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+142
+143        <receiver
+143-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+144            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+145            android:directBootAware="false"
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+146            android:enabled="true"
+146-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+147            android:exported="true"
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+148            android:permission="android.permission.DUMP" >
+148-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+149            <intent-filter>
+149-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+150                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+151            </intent-filter>
+152            <intent-filter>
+152-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+153                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+153-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+153-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+154            </intent-filter>
+155            <intent-filter>
+155-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+156                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+157            </intent-filter>
+158            <intent-filter>
+158-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+159                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+159-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+159-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\LINH\.gradle\caches\transforms-4\6422c09cf066caef0a88497e77046851\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+160            </intent-filter>
+161        </receiver>
+162    </application>
+163
+164</manifest>

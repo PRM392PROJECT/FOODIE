@@ -6,4 +6,6 @@ public interface IOrderView {
     void showLoading();
     void hideLoading();
     void showError(String message);
+    void showOrder();
+    void orderNow();
 }

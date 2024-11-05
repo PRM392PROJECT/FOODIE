@@ -25,27 +25,28 @@ namespace Foodie.DataAccessLayer.DAO
             return entity;
         }
 
+        public async Task<CartItem> AddItemToCart(CartItem cartItem)
+        {
+            _context.CartItems.Add(cartItem);
+            await _context.SaveChangesAsync();
+            return cartItem;
+        }
+
         public async Task<bool> Delete(Cart entity)
         {
             _context.Carts.Remove(entity);
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public async Task<bool> DeleteById(int id)
+        public async Task<bool> DeleteItemById(int id)
         {
-            var cart = _context.Carts.FirstOrDefault(c => c.CartId == id);
-            if (cart != null)
+            var cartItem = await _context.CartItems.FirstOrDefaultAsync(c => c.CartItemId == id);
+            if (cartItem != null)
             {
-                _context.Carts.Remove(cart);
+                _context.CartItems.Remove(cartItem);
                 return await _context.SaveChangesAsync() > 0;
             }
-
             return false;
-        }
-
-        public async Task<IEnumerable<Cart>> GetAll()
-        {
-            return await _context.Carts.ToListAsync();
         }
 
         public async Task<Cart> GetById(int userId)
@@ -55,6 +56,7 @@ namespace Foodie.DataAccessLayer.DAO
             {
                 var cartItems = await _context.CartItems
                     .Include(c => c.Product)
+                    .ThenInclude(p=>p.ProductImages)
                     .Where(c => c.CartId == cart.CartId)
                     .ToListAsync();
                 cart.CartItems = cartItems;
@@ -62,11 +64,25 @@ namespace Foodie.DataAccessLayer.DAO
 
             return cart;
         }
+        
 
         public async Task<bool> Update(Cart entity)
         {
             _context.Carts.Update(entity);
             return await _context.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> UpdateCartItem(int cartItemId, int quantity)
+        {
+            var cartItem = await _context.CartItems.FirstOrDefaultAsync(c => c.CartItemId == cartItemId);
+            if (cartItem != null)
+            {
+                cartItem.Quantity = quantity;
+                return await _context.SaveChangesAsync()>0;
+                
+            }
+
+            return false;
         }
     }
 }

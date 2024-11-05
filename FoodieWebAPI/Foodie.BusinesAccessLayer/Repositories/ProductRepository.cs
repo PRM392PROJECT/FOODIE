@@ -202,5 +202,10 @@ namespace Foodie.BusinesAccessLayer.Repositories
 
             return null;
         }
+
+        public async Task<bool> DeleteImageById(int imageId)
+        {
+            return await _productImageDao.Delete(imageId);
+        }
     }
 }

@@ -11,8 +11,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+import com.example.foodie.R;
 import com.example.foodie.databinding.ActivityProductDetailBinding;
 import com.example.foodie.models.Feedback;
+import com.example.foodie.models.Order;
+import com.example.foodie.models.OrderItem;
 import com.example.foodie.models.Product;
 import com.example.foodie.models.User;
 import com.example.foodie.ui.authen.AuthenActivity;
@@ -29,19 +33,11 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
     private int foodId;
     private FeedBackAdapter adapter;
     private ProductDetailPresenter presenter;
-<<<<<<< Updated upstream
-    private int numberFeedback=3;
-    private int pageFeedback=1;
-
-    public ProductDetailActivity(){
-        presenter = new ProductDetailPresenter(this);
-=======
     private int numberFeedback = 3;
     private int pageFeedback = 1;
     private Product product;
 
     public ProductDetailActivity() {
->>>>>>> Stashed changes
     }
 
     public static Intent newIntent(Context context, int foodId) {
@@ -53,17 +49,6 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< Updated upstream
-        EdgeToEdge.enable(this);
-        binding = ActivityProductDetailBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        binding.btnBack.setOnClickListener(this);
-        binding.buttonAddToCart.setOnClickListener(this);
-        binding.buttonOrder.setOnClickListener(this);
-        adapter = new FeedBackAdapter(new ArrayList<>(), this);
-        binding.listviewFeedback.setAdapter(adapter);
-        foodId = (Integer) getIntent().getSerializableExtra(EXTRA_PRODUCT);
-=======
         binding = ActivityProductDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -71,7 +56,6 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
         initUI();
 
         foodId = getIntent().getIntExtra(EXTRA_PRODUCT, 0);
->>>>>>> Stashed changes
         if (foodId == 0) {
             finish();
             return;
@@ -95,27 +79,18 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         if (v == binding.btnBack) {
             finish();
-<<<<<<< Updated upstream
-        }if(v.getId() == binding.buttonAddToCart.getId()){
-        }
-        if(v.getId() == binding.buttonOrder.getId()){
-=======
         } else if (v == binding.buttonAddToCart) {
             // Add to Cart functionality here
         } else if (v == binding.buttonOrder) {
->>>>>>> Stashed changes
             showOrder();
         }
     }
 
     @Override
     public void loadFoodDetail(Product product) {
+        this.product = product;
         if (product != null) {
             binding.productPrice.setText(String.format("%s$", product.getPrice()));
-<<<<<<< Updated upstream
-            binding.productName.setText(String.format("%s", product.getName()));
-            binding.productDescription.setText(String.format("%s", product.getDescription()));
-=======
             binding.productName.setText(product.getName());
             binding.productDescription.setText(product.getDescription());
             Glide.with(this)
@@ -123,7 +98,6 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
                     .placeholder(R.drawable.ic_food)
                     .error(R.drawable.ic_food)
                     .into(binding.productImages);
->>>>>>> Stashed changes
         }
     }
 
@@ -145,20 +119,11 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
     @Override
     public void showOrder() {
         User user = UserInfoManager.getUserInfo(this);
-<<<<<<< Updated upstream
-        if(user !=null){
-            Intent intent = new Intent(this, OrderDetailActivity.class);
-            startActivity(intent);
-        }
-        else{
-            // Hiển thị thông báo yêu cầu đăng nhập
-=======
         if (user != null) {
             Order order = createOrder(user);
             Intent intent = OrderDetailActivity.newIntent(this, order);
             startActivityForResult(intent, 100);
         } else {
->>>>>>> Stashed changes
             showLoginDialog(this);
         }
     }
@@ -194,14 +159,11 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100 && resultCode == AuthenActivity.RESULT_OK) {
             showOrder();
-<<<<<<< Updated upstream
-=======
         } else if (requestCode == 100 && resultCode == OrderDetailActivity.RESULT_OK && data != null) {
             String orderStatus = data.getStringExtra("orderStatus");
             if ("success".equals(orderStatus)) {
                 finish();
             }
->>>>>>> Stashed changes
         }
     }
 
@@ -210,9 +172,6 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
         // Handle quantity change if needed
     }
 
-<<<<<<< Updated upstream
-}
-=======
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
         // Additional handling if needed
@@ -228,4 +187,3 @@ public class ProductDetailActivity extends AppCompatActivity implements View.OnC
         // Display cart functionality if implemented
     }
 }
->>>>>>> Stashed changes

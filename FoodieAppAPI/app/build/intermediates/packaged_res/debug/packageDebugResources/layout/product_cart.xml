@@ -15,7 +15,7 @@
         android:background="@android:color/transparent">
         <androidx.cardview.widget.CardView
             android:id="@+id/cardFoodImage"
-            android:layout_width="120dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             app:cardCornerRadius="50dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
                 android:clipToOutline="true"
                 android:adjustViewBounds="true"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_food" />
+                android:src="@drawable/ic_food_load" />
         </androidx.cardview.widget.CardView>
 
         <TextView

@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.foodie.databinding.ActivityMainBinding;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,14 +36,13 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Ẩn ActionBar nếu nó có
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
         home = new HomeFragment();
         favorite = new FavoriteFragment();
         profile = new ProfileFragment();
-        history = new MyOrderFragment();
+        history = new MyOrderFragment(this);
         setNavBottom();
     }
 
@@ -57,27 +57,49 @@ public class MainActivity extends AppCompatActivity {
         transaction.add(R.id.content, history, "History").hide(history);
         transaction.commit();
 
-        // Tự động chọn home khi mở ứng dụng
-        binding.navView.setSelectedItemId(R.id.navigation_home);
+        binding.navView.post(() -> {
+            binding.navView.setSelectedItemId(R.id.navigation_home);
+        });
         binding.navView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if(item.getItemId() == R.id.navigation_home){
                     showFragment(home);
+                    home.loadData();
                     return true;
                 }else if(item.getItemId() == R.id.navigation_favorite){
                     showFragment(favorite);
+                    favorite.loadData();
                     return true;
                 }
                 else if(item.getItemId() == R.id.navigation_history){
                     showFragment(history);
+                    history.loadData();
                     return true;
                 }
                 else if(item.getItemId() == R.id.navigation_profile){
                     showFragment(profile);
+                    profile.loadData();
                     return true;
                 }
                 return false;
+            }
+        });
+        binding.navView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
+                if(item.getItemId()== R.id.navigation_home){
+                    home.reset();
+                }
+                else if(item.getItemId() == R.id.navigation_favorite){
+                    favorite.reset();
+                }
+                else if(item.getItemId() == R.id.navigation_history){
+                    history.reset();
+                }
+                else if(item.getItemId() == R.id.navigation_profile){
+                    profile.reset();
+                }
             }
         });
     }
@@ -92,17 +114,6 @@ public class MainActivity extends AppCompatActivity {
         for (Fragment fra : fragments) {
             if (fra != fragment) {
                 transaction.hide(fra);
-            }
-        }
-        if (fragment.isVisible()) {
-            if (fragment instanceof HomeFragment) {
-                ((HomeFragment) fragment).reset();
-            } else if (fragment instanceof FavoriteFragment) {
-//                ((FavoriteFragment) fragment).reset();
-            } else if (fragment instanceof MyOrderFragment) {
-                ((MyOrderFragment) fragment).reset();
-            } else if (fragment instanceof ProfileFragment) {
-                ((ProfileFragment) fragment).reset();
             }
         }
         // Hiện fragment

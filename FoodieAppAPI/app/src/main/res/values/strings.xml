@@ -19,4 +19,6 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_order_detail">Order overview</string>
+    <string name="google_maps_key">AIzaSyBvykpU8b3vz73E0KdgpaofXWeTVMzAxAs</string>
+    <string name="BASE_URL_API">http://192.168.0.121:7059/api/</string>
 </resources>

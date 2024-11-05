@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.foodie.R;
 import com.example.foodie.models.Product;
 
@@ -46,7 +48,12 @@ public class ProductAdapter extends BaseAdapter {
         TextView textViewName = convertView.findViewById(R.id.food_name);
         TextView textViewPrice = convertView.findViewById(R.id.food_price);
         // Có thể thêm ImageView nếu bạn có ảnh thực phẩm
-
+        ImageView imageView = convertView.findViewById(R.id.foodImage);
+        Glide.with(context)
+                .load( !food.getImages().isEmpty()? food.getImages().get(0).getImageUrl() :"")
+                .placeholder(R.drawable.ic_food_load)
+                .error(R.drawable.ic_food_load)
+                .into(imageView);
         textViewName.setText(food.getName());
         textViewPrice.setText(String.valueOf(food.getPrice()));
 

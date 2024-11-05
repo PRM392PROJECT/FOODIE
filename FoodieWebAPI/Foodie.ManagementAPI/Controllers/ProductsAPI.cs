@@ -232,4 +232,34 @@ public class ProductsAPI : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+    [HttpDelete("delete/{productId}")]
+    public async Task<IActionResult> deleteProduct([FromRoute] int productId)
+    {
+        try
+        {
+            var result = await _productRepository.DeleteProductById(productId);
+            if (result)
+            {
+                return Ok(result);
+            }return NotFound();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpDelete("delete-product-image/{id}")]
+    public async Task<IActionResult> deleteImageProduct([FromRoute] int id)
+    {
+        try
+        {
+            var result = await _productRepository.DeleteImageById(id);
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return Conflict(ex.Message);
+        }
+    }
 }

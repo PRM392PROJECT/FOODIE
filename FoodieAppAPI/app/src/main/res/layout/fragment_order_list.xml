@@ -17,6 +17,7 @@
            <!-- Custom NoScrollListView that will handle its own scrolling -->
            <com.example.foodie.customview.NoScrollListView
                android:id="@+id/recyclerView"
+               android:visibility="visible"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
                tools:listitem="@layout/order_detail_cart" />
@@ -30,6 +31,13 @@
                android:layout_height="match_parent"
                android:layout_gravity="center"
                android:scaleType="centerInside"/>
+
        </LinearLayout>
    </ScrollView>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
 </FrameLayout>

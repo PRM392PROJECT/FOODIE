@@ -80,6 +80,7 @@
                                 </ul>
                                 <img width="200px" src="${productData.images[0].imageUrl}" alt="${productData.name}">
                                 <button class="order-button" onclick="orderProduct(${productData.productId})">Đặt hàng</button>
+                                <button class="order-button" onclick="addToCart(${productData.productId},${productData.price})">Add To Cart</button>
                             `;
 
             // Thay thế nội dung của phần tử product-detail bằng thông tin sản phẩm
@@ -89,9 +90,32 @@
             document.getElementById('product-detail').innerHTML = '<div class="error">Không thể tải chi tiết sản phẩm.</div>';
         }
     }
-
+    async function addToCart(productId,productPrice) {
+         const userId = @Html.Raw(ViewBag.UserId);
+         const cartItem = {
+             productId: productId,
+             quantity: 1,
+             price: productPrice,
+         };
+         const api =  `http://localhost:7059/api/carts/add-cart/${userId}`;
+         try{
+             const response = await fetch(api,{
+                    method: 'POST',
+                    headers: {
+                       'Content-Type': 'application/json',  
+                   },
+                   body: JSON.stringify(cartItem)
+             });
+             if (response.ok){
+                   alert('Added to cart successfully');
+                   window.location.href = '/Carts/Index';
+             }
+         }catch (error){
+             console.log(error);
+         }
+    }
     function orderProduct(productId) {
-        window.location.href = `/Orders/${productId}`;
+        window.location.href = `/Customers/OrderDetail/${productId}`;
     }
 
     // Gọi hàm fetchProductDetail khi trang được tải

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:layout_marginTop="50dp"
     tools:context=".ui.profile.ProfileFragment"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -157,6 +158,7 @@
 
             <!-- Log Out -->
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/next_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -186,6 +188,39 @@
                     android:contentDescription="Arrow"
                     android:src="@drawable/ic_navigate_next"/>
             </LinearLayout>
+            <!-- Log Out -->
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/next_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_login"
+                    android:contentDescription="Log In"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Log In"
+                    android:textSize="16sp"
+                    android:textColor="@color/black" />
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Arrow"
+                    android:src="@drawable/ic_navigate_next"/>
+            </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>

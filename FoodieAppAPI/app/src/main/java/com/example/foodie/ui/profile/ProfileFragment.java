@@ -14,11 +14,13 @@ import android.view.ViewGroup;
 import com.example.foodie.databinding.FragmentProfileBinding;
 import com.example.foodie.models.User;
 import com.example.foodie.ui.authen.AuthenActivity;
+import com.example.foodie.untils.UserInfoManager;
 
 public class ProfileFragment extends Fragment implements IProfileView ,View.OnClickListener{
 
     private FragmentProfileBinding binding;
     private ProfilePresenter presenter;
+    private boolean isLoadedData = false;
     public ProfileFragment() {
     }
 
@@ -39,6 +41,9 @@ public class ProfileFragment extends Fragment implements IProfileView ,View.OnCl
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.nextLogout.setOnClickListener(this);
+        binding.nextInfor.setOnClickListener(this);
+        binding.nextAddress.setOnClickListener(this);
+        binding.nextLogin.setOnClickListener(this);
         presenter.loadProfile();
     }
 
@@ -54,16 +59,36 @@ public class ProfileFragment extends Fragment implements IProfileView ,View.OnCl
 
     @Override
     public void loadProfile(User user) {
-        binding.email.setText(user.getEmail());
-        binding.fullName.setText(String.format("%s %s",user.getFirstName(),user.getLastName()));
+        if(user !=null){
+            binding.email.setText(user.getEmail());
+            binding.fullName.setText(String.format("%s %s",user.getFirstName(),user.getLastName()));
+            binding.nextLogin.setVisibility(View.GONE);
+            binding.nextLogout.setVisibility(View.VISIBLE);
+        }
+        else{
+            binding.email.setText("-----------");
+            binding.fullName.setText("-----------");
+            binding.nextLogin.setVisibility(View.VISIBLE);
+            binding.nextLogout.setVisibility(View.GONE);
+        }
+
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == binding.nextLogout.getId()){
-            presenter.logOut();
+        if(v.getId() == binding.nextLogin.getId()){
             Intent intent = new Intent(requireContext(), AuthenActivity.class);
             startActivityForResult(intent, 100);
+        }else if(v.getId() == binding.nextLogout.getId()){
+            presenter.logOut();
+        }
+        else if(v.getId() == binding.nextInfor.getId()){
+            Intent intent = new Intent(requireContext(),EditProfileActivity.class);
+            startActivity(intent);
+        }
+        else if(v.getId()== binding.nextAddress.getId()){
+            Intent intent = new Intent(requireContext(),EditAddressActivity.class);
+            startActivity(intent);
         }
     }
     @Override
@@ -76,5 +101,11 @@ public class ProfileFragment extends Fragment implements IProfileView ,View.OnCl
 
     public void reset() {
         presenter.loadProfile();
+    }
+
+    public void loadData() {
+        if(!isLoadedData){
+            presenter.loadProfile();
+        }
     }
 }

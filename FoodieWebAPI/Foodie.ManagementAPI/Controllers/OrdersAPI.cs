@@ -3,7 +3,6 @@ using Foodie.BusinesAccessLayer.Repositories;
 using Foodie.DataAccessLayer.Models;
 using Foodie.ManagementAPI.RequestDto;
 using Foodie.ManagementAPI.ResponseDto;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Foodie.ManagementAPI.Controllers

@@ -12,10 +12,12 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="food_item_height">250dp</dimen>
     <dimen name="food_item_width">200dp</dimen>
+    <string name="BASE_URL_API">http://192.168.0.121:7059/api/</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="app_name">Foodie</string>
     <string name="food_name">hamburger</string>
+    <string name="google_maps_key">AIzaSyBvykpU8b3vz73E0KdgpaofXWeTVMzAxAs</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="invalid_username">Not a valid username</string>
@@ -34,6 +36,9 @@
     <style name="Theme.Foodie" parent="Theme.Material3.Light.NoActionBar">
 
         <item name="android:windowBackground">#FFFFFF</item>
+    </style>
+    <style name="background_location">
+        <item name="android:background">#FFFFFF</item>
     </style>
     <style name="button_style">
         <item name="backgroundColor">#FA4A0C</item>

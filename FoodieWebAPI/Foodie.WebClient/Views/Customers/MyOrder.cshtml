@@ -1,0 +1,135 @@
+﻿@await Html.PartialAsync("_Header_Customer")
+
+<div id="orders-container" class="orders-container"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        getOrder();
+    });
+
+    function getOrder() {
+        const userId = '@Html.ViewBag.UserId';
+        const api = `http://localhost:7059/api/orders/get-order-by-userId/${userId}`;
+        fetch(api)
+            .then(response => response.json())
+            .then(data => displayOrders(data))
+            .catch(error => console.log(error));
+    }
+
+    function displayOrders(orders) {
+        const ordersContainer = document.getElementById('orders-container');
+        ordersContainer.innerHTML = ''; // Clear previous content
+
+        // Hiển thị tổng số đơn hàng
+        const totalOrdersMessage = document.createElement('div');
+        totalOrdersMessage.className = 'total-orders-message';
+        totalOrdersMessage.innerHTML = `<p>Tổng số đơn hàng: ${orders.length}</p>`;
+        ordersContainer.appendChild(totalOrdersMessage);
+
+        if (orders.length === 0) {
+            // Hiển thị thông báo nếu không có đơn hàng
+            const noOrdersMessage = document.createElement('div');
+            noOrdersMessage.className = 'no-orders-message';
+            noOrdersMessage.innerHTML = '<p>Không có đơn hàng nào.</p>';
+            ordersContainer.appendChild(noOrdersMessage);
+            return;
+        }
+
+        orders.forEach(order => {
+            const orderCard = document.createElement('div');
+            orderCard.className = 'order-card';
+
+            orderCard.innerHTML = `
+                <h3>Order ID: ${order.orderId}</h3>
+                <p><strong>Order Date:</strong> ${new Date(order.orderDate).toLocaleDateString()}</p>
+                <p><strong>Total Amount:</strong> $${order.totalAmount}</p>
+                <p><strong>Status:</strong> ${order.statusMessage}</p>
+                <div class="order-items">
+                    ${order.orderItems.map(item => `
+                        <div class="order-item">
+                            <img src="${item.product.images[0].imageUrl}" alt="${item.product.name}" class="product-image">
+                            <div>
+                                <h4>${item.product.name}</h4>
+                                <p>Quantity: ${item.quantity}</p>
+                                <p>Price: $${item.price}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            ordersContainer.appendChild(orderCard);
+        });
+    }
+</script>
+
+<style>
+    .orders-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 20px;
+    }
+
+    .total-orders-message {
+        padding: 10px;
+        background-color: #e8f5e9;
+        border: 1px solid #c8e6c9;
+        border-radius: 8px;
+        text-align: center;
+        color: #2e7d32;
+        font-weight: bold;
+    }
+
+    .order-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-card h3 {
+        margin: 0;
+        color: #333;
+    }
+
+    .order-card p {
+        margin: 8px 0;
+        color: #555;
+    }
+
+    .order-items {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .order-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .product-image {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .order-item h4 {
+        margin: 0;
+        color: #333;
+    }
+
+    .no-orders-message {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        text-align: center;
+        color: #777;
+    }
+</style>

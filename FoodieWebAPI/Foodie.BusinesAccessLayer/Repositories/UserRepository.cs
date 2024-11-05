@@ -8,10 +8,11 @@ namespace Foodie.BusinesAccessLayer.Repositories
     public class UserRepository : IUserRepository
     {
         private readonly UserDao _userDao;
-
+        private readonly CartDao _cartDao;
         public UserRepository(FOODIEContext context)
         {
             _userDao = new UserDao(context);
+            _cartDao = new CartDao(context);
         }
 
         public async Task<List<User>> GetUsers(int pageNumber, int pageSize)

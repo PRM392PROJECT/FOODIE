@@ -1,5 +1,58 @@
 [
   {
+    "ContainingType": "Foodie.ManagementAPI.Controllers.CartsAPI",
+    "Method": "AddCartItem",
+    "RelativePath": "api/carts/add-cart/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "cartItemRequest",
+        "Type": "Foodie.ManagementAPI.RequestDto.CartItemRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foodie.ManagementAPI.Controllers.CartsAPI",
+    "Method": "getCartsByUserId",
+    "RelativePath": "api/carts/get-by-user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foodie.ManagementAPI.Controllers.CartsAPI",
+    "Method": "RemoveCartItem",
+    "RelativePath": "api/carts/remove-cart-item/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Foodie.ManagementAPI.Controllers.CategoriesAPI",
     "Method": "GetCategories",
     "RelativePath": "api/categories",
@@ -117,6 +170,22 @@
   },
   {
     "ContainingType": "Foodie.ManagementAPI.Controllers.ProductsAPI",
+    "Method": "deleteProduct",
+    "RelativePath": "api/products/delete/{productId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foodie.ManagementAPI.Controllers.ProductsAPI",
     "Method": "GetPageProductOfRestaurant",
     "RelativePath": "api/products/get-by-email/{email}",
     "HttpMethod": "GET",
@@ -185,6 +254,22 @@
   },
   {
     "ContainingType": "Foodie.ManagementAPI.Controllers.ProductsAPI",
+    "Method": "getImageById",
+    "RelativePath": "api/products/get-image-by-id/{productId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foodie.ManagementAPI.Controllers.ProductsAPI",
     "Method": "GetPageProduct",
     "RelativePath": "api/products/get-page",
     "HttpMethod": "GET",
@@ -211,6 +296,27 @@
   },
   {
     "ContainingType": "Foodie.ManagementAPI.Controllers.ProductsAPI",
+    "Method": "CreateProductImage",
+    "RelativePath": "api/products/image/create/{productId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "productImageRequest",
+        "Type": "Foodie.ManagementAPI.RequestDto.ProductImageRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foodie.ManagementAPI.Controllers.ProductsAPI",
     "Method": "SearchProductByName",
     "RelativePath": "api/products/search-by-name/{productName}",
     "HttpMethod": "GET",
@@ -220,6 +326,22 @@
       {
         "Name": "productName",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Foodie.ManagementAPI.Controllers.ProductsAPI",
+    "Method": "UpdateImageProduct",
+    "RelativePath": "api/products/update-image-product",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "Foodie.ManagementAPI.RequestDto.ImageUpdate",
         "IsRequired": true
       }
     ],
@@ -240,7 +362,7 @@
       },
       {
         "Name": "request",
-        "Type": "Foodie.ManagementAPI.RequestDto.ProductRequest",
+        "Type": "Foodie.ManagementAPI.RequestDto.ProductUpdate",
         "IsRequired": true
       }
     ],
