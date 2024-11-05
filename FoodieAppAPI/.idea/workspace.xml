@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_product_detail.xml">
+        <config>
+          <theme>@style/Theme.Foodie</theme>
+        </config>
+      </layout>
+    </layouts>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d9f6a4a4-ebe0-49e5-a548-de407fcacf48" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/.vs/FoodieWebAPI/FileContentIndex/3b26957a-0ed6-4a4a-9fa4-6d43f74eab02.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/.vs/FoodieWebAPI/FileContentIndex/71334a4e-d987-4f60-8925-8b72896a2969.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/.vs/FoodieWebAPI/FileContentIndex/8ec94f7e-8961-4864-b9ea-a3bb91a45427.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/.vs/FoodieWebAPI/FileContentIndex/9a31b1d6-653c-4c3c-b28f-da999bdbc2ec.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/.vs/FoodieWebAPI/FileContentIndex/9fc6420a-ef3b-43ed-9708-c1722f72d1a1.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/.vs/FoodieWebAPI/FileContentIndex/e63a02f6-f27e-4ab8-bcee-5e5523fb21a3.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/.vs/FoodieWebAPI/FileContentIndex/f2e04663-c5f9-41d0-b68d-56a3fff39498.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/.vs/FoodieWebAPI/FileContentIndex/f35c0530-737a-4ef6-9897-e050d9de8cd8.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/.vs/FoodieWebAPI/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/.vs/FoodieWebAPI/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/.vs/FoodieWebAPI/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/.vs/FoodieWebAPI/v17/DocumentLayout.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/bin/Debug/net8.0/Foodie.BusinesAccessLayer.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/bin/Debug/net8.0/Foodie.BusinesAccessLayer.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/bin/Debug/net8.0/Foodie.BusinesAccessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/bin/Debug/net8.0/Foodie.BusinesAccessLayer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/bin/Debug/net8.0/Foodie.BusinesAccessLayer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/bin/Debug/net8.0/Foodie.BusinesAccessLayer.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/bin/Debug/net8.0/Foodie.DataAccessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/bin/Debug/net8.0/Foodie.DataAccessLayer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/bin/Debug/net8.0/Foodie.DataAccessLayer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/bin/Debug/net8.0/Foodie.DataAccessLayer.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/Foodie.BusinesAccessLayer.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/ref/Foodie.BusinesAccessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/ref/Foodie.BusinesAccessLayer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/refint/Foodie.BusinesAccessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Debug/net8.0/refint/Foodie.BusinesAccessLayer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Foodie.BusinesAccessLayer.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Foodie.BusinesAccessLayer.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Foodie.BusinesAccessLayer.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/Foodie.BusinesAccessLayer.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.BusinesAccessLayer/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/bin/Debug/net8.0/Foodie.DataAccessLayer.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/bin/Debug/net8.0/Foodie.DataAccessLayer.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/bin/Debug/net8.0/Foodie.DataAccessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/bin/Debug/net8.0/Foodie.DataAccessLayer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/bin/Debug/net8.0/Foodie.DataAccessLayer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/bin/Debug/net8.0/Foodie.DataAccessLayer.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/Foodie.DataAccessLayer.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/ref/Foodie.DataAccessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/ref/Foodie.DataAccessLayer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/refint/Foodie.DataAccessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Debug/net8.0/refint/Foodie.DataAccessLayer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Foodie.DataAccessLayer.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Foodie.DataAccessLayer.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Foodie.DataAccessLayer.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/Foodie.DataAccessLayer.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.DataAccessLayer/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.BusinesAccessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.BusinesAccessLayer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.BusinesAccessLayer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.BusinesAccessLayer.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.DataAccessLayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.DataAccessLayer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.DataAccessLayer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.DataAccessLayer.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.ManagementAPI.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.ManagementAPI.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.ManagementAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.ManagementAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.ManagementAPI.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.ManagementAPI.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.ManagementAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.ManagementAPI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/Foodie.Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/bin/Debug/net8.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/Foodie.ManagementAPI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/ref/Foodie.ManagementAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/ref/Foodie.ManagementAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/refint/Foodie.ManagementAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Debug/net8.0/refint/Foodie.ManagementAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Foodie.ManagementAPI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Foodie.ManagementAPI.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Foodie.ManagementAPI.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/Foodie.ManagementAPI.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.ManagementAPI/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/bin/Debug/net8.0/Foodie.Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/bin/Debug/net8.0/Foodie.Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/bin/Debug/net8.0/Foodie.Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/bin/Debug/net8.0/Foodie.Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/Foodie.Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/ref/Foodie.Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/ref/Foodie.Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/refint/Foodie.Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Debug/net8.0/refint/Foodie.Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Foodie.Service.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Foodie.Service.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Foodie.Service.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/Foodie.Service.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.Service/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/Foodie.WebClient.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Debug/net8.0/refint/Foodie.WebClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Foodie.WebClient.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Foodie.WebClient.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Foodie.WebClient.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/Foodie.WebClient.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodieWebAPI/Foodie.WebClient/obj/project.nuget.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\LDG\.android\avd\Pixel_8_Pro_API_35.avd)]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2oO4PHUDwLvBUcaAJCqMzughtfV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/PRM_392_Project/FOODIE/FoodieAppAPI"
+  }
+}]]></component>
+  <component name="RunManager" selected="Android App.FoodieAppAPI">
+    <configuration name="FoodieAppAPI" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Foodie.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Foodie.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Android App.app" />
+      <item itemvalue="Android App.FoodieAppAPI" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StandaloneScriptsStorage">
+    <option name="files">
+      <set>
+        <option value="$PROJECT_DIR$/build.gradle.kts" />
+      </set>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9f6a4a4-ebe0-49e5-a548-de407fcacf48" name="Changes" comment="" />
+      <created>1730727262427</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730727262427</updated>
+    </task>
+    <servers />
+  </component>
+</project>
