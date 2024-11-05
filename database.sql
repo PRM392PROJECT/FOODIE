@@ -12,6 +12,7 @@ CREATE TABLE Roles (
     RoleName NVARCHAR(50) NOT NULL UNIQUE
 );
 GO
+--ok
 
 -- Thêm dữ liệu vào bảng Roles
 INSERT INTO Roles (RoleName) VALUES ('Customer');
