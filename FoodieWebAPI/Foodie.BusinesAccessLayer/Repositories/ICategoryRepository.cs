@@ -10,14 +10,13 @@ namespace Foodie.BusinesAccessLayer.Repositories
     public interface ICategoryRepository
     {
         Task<CategoryProduct> CreateCate(CategoryProduct categoryProduct);
-        
-        Task<CategoryProduct> UpdateCate(int categoryId ,CategoryProduct categoryProduct);
-        
-        Task<bool> DeleteCate(int categoryId);
-        
-        Task<IEnumerable<CategoryProduct>> GetAllCate();
-        
-        Task<CategoryProduct> GetCateById(int categoryId);
 
+        Task<CategoryProduct> UpdateCate(int categoryId, CategoryProduct categoryProduct);
+
+        Task<bool> DeleteCate(int categoryId);
+
+        Task<IEnumerable<CategoryProduct>> GetAllCate();
+
+        Task<CategoryProduct> GetCateById(int categoryId);
     }
 }

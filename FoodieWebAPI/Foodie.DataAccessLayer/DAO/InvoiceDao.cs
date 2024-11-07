@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Foodie.DataAccessLayer.DAO
 {
-    public class InvoiceDao 
+    public class InvoiceDao
     {
         private readonly FOODIEContext _context;
 
@@ -42,6 +42,7 @@ namespace Foodie.DataAccessLayer.DAO
                 _context.Invoices.Remove(invoice);
                 return await _context.SaveChangesAsync() > 0;
             }
+
             return false;
         }
 
@@ -53,7 +54,6 @@ namespace Foodie.DataAccessLayer.DAO
         public async Task<Invoice> GetById(int id)
         {
             return await _context.Invoices.FirstOrDefaultAsync(i => i.InvoiceId == id);
-
         }
 
         public async Task<bool> Update(Invoice entity)

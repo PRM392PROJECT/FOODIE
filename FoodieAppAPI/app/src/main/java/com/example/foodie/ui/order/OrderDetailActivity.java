@@ -6,11 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.foodie.R;
 import com.example.foodie.databinding.ActivityOrderDetailBinding;
@@ -19,7 +15,9 @@ import com.example.foodie.models.OrderItem;
 import com.example.foodie.models.User;
 import com.example.foodie.untils.UserInfoManager;
 
-public class OrderDetailActivity extends AppCompatActivity implements View.OnClickListener,IOrderView {
+import java.util.ArrayList;
+
+public class OrderDetailActivity extends AppCompatActivity implements View.OnClickListener, IOrderView {
     private ActivityOrderDetailBinding binding;
     private static final String EXTRA_ORDER = "extra_order";
     private OrderPresenter presenter;
@@ -35,23 +33,30 @@ public class OrderDetailActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         binding = ActivityOrderDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         order = (Order) getIntent().getSerializableExtra(EXTRA_ORDER);
-        showOrder();
-        Log.i("Order",order.toString());
-        binding.listviewOrderDetail.setAdapter(adapter);
-        presenter = new OrderPresenter(this,this);
+        if (order == null) {
+            Log.e("OrderDetailActivity", "Order is null");
+            finish();
+            return;
+        }
+
+        presenter = new OrderPresenter(this, this);
         binding.btnBack.setOnClickListener(this);
         binding.btnOrder.setOnClickListener(this);
+
+        adapter = new OrderItemAdapter(this, new ArrayList<>());
+        binding.listviewOrderDetail.setAdapter(adapter);
+        showOrder();
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == binding.btnBack.getId()){
+        if (v.getId() == binding.btnBack.getId()) {
             finish();
-        }else if(v.getId() == binding.btnOrder.getId()){
+        } else if (v.getId() == binding.btnOrder.getId()) {
             orderNow();
         }
     }
@@ -60,45 +65,55 @@ public class OrderDetailActivity extends AppCompatActivity implements View.OnCli
     public void orderSuccess() {
         Intent intent = new Intent(this, OrderSuccessActivity.class);
         startActivity(intent);
+        setResult(RESULT_OK); // Set result code to indicate success
+        finish();
     }
 
     @Override
     public void orderFailed(String message) {
-
+        showError(message);
     }
 
     @Override
     public void showLoading() {
-
+        // Show loading logic here
     }
 
     @Override
     public void hideLoading() {
-
+        // Hide loading logic here
     }
 
     @Override
     public void showError(String message) {
-
+        Log.e("OrderDetailActivity", message);
+        // Show error dialog/toast here
     }
+
     @Override
-    public void showOrder(){
+    public void showOrder() {
         User user = UserInfoManager.getUserInfo(this);
-        if(order!=null){
-            double totalPay =0.0;
-            for(OrderItem item : order.getOrderItems()){
-                totalPay +=(item.getProduct().getPrice()*item.getQuantity());
+        if (order != null && order.getOrderItems() != null) {
+            double totalPay = 0;
+            int totalQuantity = 0;
+            for (OrderItem item : order.getOrderItems()) {
+                totalPay += item.getProduct().getPrice() * item.getQuantity();
+                totalQuantity += item.getQuantity();
             }
-            binding.totalItem.setText(String.format("Total (%d items)",order.getOrderItems().size()));
-            binding.totalPay.setText(totalPay+"đ");
+            binding.totalItem.setText(String.format("Total (%d items)", totalQuantity));
+            binding.totalPay.setText(totalPay + "đ");
             order.setTotalAmount(totalPay);
-            adapter = new OrderItemAdapter(this,order.getOrderItems());
-            binding.userFirstName.setText(user.getFirstName());
-            binding.userLastname.setText(user.getLastName());
-            binding.userPhone.setText(user.getPhoneNumber());
-            binding.userAddress.setText(user.getAddress());
+
+            if (user != null) {
+                binding.userFirstName.setText(user.getFirstName());
+                binding.userLastname.setText(user.getLastName());
+                binding.userPhone.setText(user.getPhoneNumber());
+                binding.userAddress.setText(user.getAddress());
+            }
+            adapter.updateData(order.getOrderItems());
         }
     }
+
     @Override
     public void orderNow() {
         presenter.order(order);

@@ -12,12 +12,12 @@ namespace Foodie.BusinesAccessLayer.Repositories
     public class CategoryRepository : ICategoryRepository
     {
         private readonly CategoryDao _categoryDao;
-        
+
         public CategoryRepository(FOODIEContext context)
         {
             _categoryDao = new CategoryDao(context);
         }
-       
+
         public async Task<CategoryProduct> CreateCate(CategoryProduct categoryProduct)
         {
             if (categoryProduct == null || string.IsNullOrWhiteSpace(categoryProduct.CategoryName))
@@ -26,7 +26,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
             }
 
             var existingCategory = await _categoryDao.GetByName(categoryProduct.CategoryName);
-            if (existingCategory!=null)
+            if (existingCategory != null)
             {
                 throw new Exception($"Danh mục '{categoryProduct.CategoryName}' đã tồn tại.");
             }
@@ -45,7 +45,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
         {
             try
             {
-                var cate =  await _categoryDao.GetById(categoryId);
+                var cate = await _categoryDao.GetById(categoryId);
                 if (cate == null) return false;
                 return await _categoryDao.Delete(cate);
             }
@@ -85,6 +85,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
             {
                 throw new Exception("Category name is exit");
             }
+
             try
             {
                 var cateExit = await _categoryDao.GetById(categoryId);
@@ -93,6 +94,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
                     cateExit.CategoryName = categoryProduct.CategoryName;
                     await _categoryDao.Update(cateExit);
                 }
+
                 return cateExit;
             }
             catch (Exception ex)

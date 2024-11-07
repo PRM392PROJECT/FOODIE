@@ -10,7 +10,6 @@ namespace Foodie.DataAccessLayer.Models
         public int ProductId { get; set; }
         public string ImageUrl { get; set; } = null!;
         public int OrderIndex { get; set; }
-        [JsonIgnore]
-        public virtual Product Product { get; set; } = null!;
+        [JsonIgnore] public virtual Product Product { get; set; } = null!;
     }
 }

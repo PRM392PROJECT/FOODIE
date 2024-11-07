@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Foodie.DataAccessLayer.DAO
 {
-    public class OrderDao 
+    public class OrderDao
     {
         private readonly FOODIEContext _context;
 
@@ -41,12 +41,22 @@ namespace Foodie.DataAccessLayer.DAO
                 _context.Orders.Remove(order);
                 return await _context.SaveChangesAsync() > 0;
             }
+
             return false;
         }
 
         public async Task<IEnumerable<Order>> GetAll()
         {
             return await _context.Orders.ToListAsync();
+        }  
+        public async Task<IEnumerable<Order>> GetBySalerId(int salerId)
+        {
+   
+            return await _context.Orders
+                .Include(o=>o.Restaurant)
+                .Include(o=>o.OrderItems).ThenInclude(p=>p.Product).ThenInclude(p=>p.ProductImages)
+                .Where(o=>o.Restaurant.ManagerId == salerId && o.OrderItems.Count()!=0)
+                .ToListAsync();
         }
 
         public async Task<Order> GetById(int id)
@@ -59,10 +69,11 @@ namespace Foodie.DataAccessLayer.DAO
             _context.Orders.Update(entity);
             return await _context.SaveChangesAsync() > 0;
         }
+
         public async Task<IEnumerable<Order>> GetByUserId(int userId)
         {
-            var orders =  await _context.Orders
-                .Include(o=>o.OrderItems).ThenInclude(p=>p.Product).ThenInclude(p=>p.ProductImages)
+            var orders = await _context.Orders
+                .Include(o => o.OrderItems).ThenInclude(p => p.Product).ThenInclude(p => p.ProductImages)
                 .Where(o => o.UserId == userId)
                 .ToListAsync();
             return orders;

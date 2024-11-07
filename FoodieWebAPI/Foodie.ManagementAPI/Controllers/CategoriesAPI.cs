@@ -14,11 +14,13 @@ namespace Foodie.ManagementAPI.Controllers
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
+
         public CategoriesAPI(ICategoryRepository categoryRepository, IMapper mapper)
         {
             _categoryRepository = categoryRepository;
             _mapper = mapper;
         }
+
         // ok
         [HttpGet]
         [EnableQuery]
@@ -38,6 +40,7 @@ namespace Foodie.ManagementAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
         // ok
         [HttpPost("create")]
         public async Task<IActionResult> CreateCategory([FromBody] CategoryRequest categoryRequest)
@@ -54,6 +57,5 @@ namespace Foodie.ManagementAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
     }
 }

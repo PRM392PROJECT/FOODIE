@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FEFF5722"
+    tools:context=".ui.cart.CartActivity"
+    android:padding="16dp">
+
+    <!-- Top Panel for Back Button and Cart Title -->
+    <LinearLayout
+        android:background="#FFFFFF"
+        android:id="@+id/topPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="#7A7373"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_back"
+            app:tint="#FFFFFF" />
+
+        <!-- Cart Title -->
+        <TextView
+            android:id="@+id/cartTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cart"
+            android:textSize="24sp"
+            android:textColor="#000000"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- Cart Items List -->
+    <com.example.foodie.customview.NoScrollListView
+        android:id="@+id/recyclerViewCart"
+        android:layout_below="@id/topPanel"
+        android:layout_above="@id/bottomPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/order_item_cart"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
+
+    <!-- Footer Section -->
+    <LinearLayout
+        android:id="@+id/bottomPanel"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="16dp">
+
+        <!-- Delivery Address Label and Address -->
+        <TextView
+            android:id="@+id/deliveryAddressLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DELIVERY ADDRESS"
+            android:textColor="#A1A1A1"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/deliveryAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2118 Thornridge Cir. Syracuse"
+            android:textColor="#333333"
+            android:paddingTop="4dp" />
+
+        <!-- Total Amount Display -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/totalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TOTAL:"
+                android:textColor="#A1A1A1" />
+
+            <TextView
+                android:id="@+id/totalAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="$96"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- Place Order Button -->
+        <Button
+            android:id="@+id/placeOrderButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF6F00"
+            android:text="PLACE ORDER"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:paddingVertical="12dp" />
+    </LinearLayout>
+</RelativeLayout>

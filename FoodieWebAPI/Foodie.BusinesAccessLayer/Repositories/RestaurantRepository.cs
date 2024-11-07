@@ -54,7 +54,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
         {
             try
             {
-                return await _restaurantDao.GetRestaurants(pageNumber,pageSize);
+                return await _restaurantDao.GetRestaurants(pageNumber, pageSize);
             }
             catch (Exception ex)
             {
@@ -74,7 +74,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
             }
         }
 
-        public async Task<bool> Update(int restaurantId,Restaurant restaurant)
+        public async Task<bool> Update(int restaurantId, Restaurant restaurant)
         {
             try
             {
@@ -88,6 +88,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
                     restaurantExit.Status = restaurant.Status;
                     return await _restaurantDao.Update(restaurantExit);
                 }
+
                 return false;
             }
             catch (Exception ex)
@@ -95,7 +96,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
                 throw new Exception("Error updating restaurant: " + ex.Message);
             }
         }
-       
+
         public async Task<int> Count()
         {
             return await _restaurantDao.Count();

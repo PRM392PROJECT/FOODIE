@@ -2,11 +2,14 @@ package com.example.foodie.ui.product;
 
 import android.content.Context;
 
+import com.example.foodie.models.CartItemPost;
 import com.example.foodie.models.Feedback;
 import com.example.foodie.models.Product;
+import com.example.foodie.models.User;
 import com.example.foodie.models.ViewPage;
 import com.example.foodie.service.ApiClient;
 import com.example.foodie.service.ApiService;
+import com.example.foodie.untils.UserInfoManager;
 
 import java.util.List;
 
@@ -64,5 +67,29 @@ public class ProductDetailPresenter {
             }
         });
 
+    }
+    public void addTocart(int foodId, int quantity, double price) {
+        User user = UserInfoManager.getUserInfo(context);
+        if (user != null) {
+            CartItemPost cartItemPost = new CartItemPost(foodId, quantity, price);
+            Call<CartItemPost> call = apiService.addToCart(user.getUserId(), cartItemPost);
+            call.enqueue(new Callback<CartItemPost>() {
+                @Override
+                public void onResponse(Call<CartItemPost> call, Response<CartItemPost> response) {
+                    if (response.isSuccessful()) {
+                        view.addTocartSuccess(); // Check if this line is being reached
+                    } else {
+                        view.showError("Failed to add item to cart. Please try again.");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<CartItemPost> call, Throwable t) {
+                    view.showError("An error occurred: " + t.getMessage());
+                }
+            });
+        } else {
+            view.showError("User not logged in.");
+        }
     }
 }

@@ -4,38 +4,47 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Foodie.WebClient.Controllers
 {
+    [CheckLoginCookie("Saler")]
     public class SellersController : Controller
     {
         private readonly HttpClient _httpClient;
-        public SellersController(HttpClient httpClient) 
+
+        public SellersController(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
+
         public IActionResult Dashboard()
         {
+            var token = Request.Cookies["AuthToken"];
+            var email = Request.Cookies["UserEmail"];
+            ViewBag.Token = token;
+            ViewBag.Email = email;
             return View();
         }
+
         [HttpGet]
         public IActionResult CreateFood()
         {
-            ProductRequest p = new ProductRequest();
-            p.RestaurantId = int.Parse(Request.Cookies["UserRestaurentId"]);
-            return View(p);
+            var restaurantId = int.Parse(Request.Cookies["UserRestaurentId"]);
+            ViewBag.RestaurantId = restaurantId;
+            return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> CreateFood(ProductRequest product)
         {
             product.RestaurantId = int.Parse(Request.Cookies["UserRestaurentId"]);
             if (!ModelState.IsValid)
             {
-                return View(product); 
+                return View(product);
             }
 
             try
             {
                 var response = await _httpClient.PostAsJsonAsync("http://localhost:7059/api/products/create", product);
-                response.EnsureSuccessStatusCode(); 
-                var result = await response.Content.ReadFromJsonAsync<ProductRequest>(); 
+                response.EnsureSuccessStatusCode();
+                var result = await response.Content.ReadFromJsonAsync<ProductRequest>();
                 return RedirectToAction("Dashboard");
             }
             catch (HttpRequestException ex)
@@ -44,22 +53,25 @@ namespace Foodie.WebClient.Controllers
                 return View(product);
             }
         }
+
         [HttpGet("Sellers/EditProduct/{productId}")]
         public async Task<IActionResult> EditProduct(int productId)
         {
-            var response = await _httpClient.GetAsync($"http://localhost:7059/api/products/get-byId/{productId}");
-            if (response.IsSuccessStatusCode)
-            {
-                var product = await response.Content.ReadFromJsonAsync<ProductResponse>();
-                return View(product);
-            }
-            return View();
+            return View(productId);
         }
 
-        //[HttpPost("Sellers/EditProduct/{productId}")]
-        public async Task<IActionResult> EditProduct(ProductResponse productResponse)
+        [HttpGet("Sellers/UpdateImageProduct/{productId}")]
+        public async Task<IActionResult> UpdateImageProduct(int productId)
         {
-            return View(productResponse);
+            return View(productId);
+        }
+
+        [HttpGet("Sellers/Orders")]
+        public async Task<IActionResult> Orders()
+        {
+            var userId = Request.Cookies["UserId"];
+            ViewBag.UserId = userId;
+            return View();
         }
     }
 }

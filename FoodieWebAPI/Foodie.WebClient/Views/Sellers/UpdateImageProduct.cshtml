@@ -1,0 +1,195 @@
+﻿@await Html.PartialAsync("_Header_Seller")
+
+<div class="container-fluid">
+    <button onclick="addImage()" class="btn-info">More Image</button>
+    <table class="tab-content table table-bordered">
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>ImageUrl</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody id="imagebody">
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .image-url-input {
+        max-width: 300px; /* Điều chỉnh chiều rộng tối đa theo nhu cầu */
+        width: 100%; /* Chiều rộng 100% trong hàng */
+    }
+    .btn-save {
+        background-color: #28a745; /* Màu xanh cho nút Save */
+        color: white; /* Màu chữ trắng */
+    }
+    .btn-delete {
+        background-color: #dc3545; /* Màu đỏ cho nút Delete */
+        color: white; /* Màu chữ trắng */
+    }
+    .btn-remove {
+        background-color: #ffc107; /* Màu vàng cho nút Remove */
+        color: white; /* Màu chữ trắng */
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        await getImages();
+    });
+
+    async function getImages() {
+        const productid = @Html.Raw(Model);
+        const api = `http://localhost:7059/api/products/get-image-by-id/${productid}`;
+
+        try {
+            const response = await fetch(api);
+            if (response.ok) {
+                const images = await response.json();
+                const imagesbody = document.getElementById("imagebody");
+                imagesbody.innerHTML = '';
+
+                images.forEach((image) => {
+                    const row = `
+                    <tr>
+                        <td>
+                            <img width="100px" src="${image.imageUrl}" 
+                                 onerror="this.onerror=null; this.src='https://c8.alamy.com/comp/2EA6NCD/not-food-grade-plastic-vector-sign-isolated-not-food-safe-material-wine-glass-and-fork-symbol-2EA6NCD.jpg';" class="preview-image"/>
+                        </td>
+                        <td>
+                            <input type="text" value="${image.imageUrl}" oninput="previewImage(this)" class="image-url-input"/>
+                            <input type="hidden" value="${image.imageId}" class="image-id-input"/>
+                        </td>
+                        <td>
+                            <button class="btn-save" onclick="updateImageUrl(this)">Save</button>
+                            <button class="btn-delete" onclick="deleteImage(this)">Delete</button>
+                        </td>
+                    </tr>`;
+                    imagesbody.innerHTML += row;
+                });
+            }
+        } catch (e) {
+            console.error("Error fetching images:", e);
+        }
+    }
+
+    async function updateImageUrl(button) {
+        const row = button.closest('tr');
+        const newImageUrl = row.querySelector('.image-url-input').value;
+        const imageId = row.querySelector('.image-id-input').value;
+        const api = `http://localhost:7059/api/products/update-image-product`;
+        const data = {
+            imageId: imageId,
+            imageUrl: newImageUrl
+        };
+
+        try {
+            const response = await fetch(api, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert("Image URL updated successfully!");
+            } else {
+                alert("Failed to update image URL.");
+            }
+        } catch (e) {
+            console.error("Error updating image URL:", e);
+            alert("Error occurred while updating the image URL.");
+        }
+    }
+
+    async function deleteImage(button) {
+        const row = button.closest('tr');
+        const imageId = row.querySelector('.image-id-input').value;
+        const api = `http://localhost:7059/api/products/delete-product-image/${imageId}`;
+
+        try {
+            const response = await fetch(api, {
+                method: 'DELETE',
+            });
+
+            if (response.ok) {
+                alert("Image deleted successfully!");
+                row.remove();
+            } else {
+                alert("Failed to delete image.");
+            }
+        } catch (e) {
+            console.error("Error deleting image:", e);
+            alert("Error occurred while deleting the image.");
+        }
+    }
+
+    function previewImage(input) {
+        const row = input.closest('tr');
+        const previewImg = row.querySelector('.preview-image');
+
+        previewImg.src = input.value;
+
+        previewImg.onerror = function() {
+            this.onerror = null;
+            this.src = 'https://c8.alamy.com/comp/2EA6NCD/not-food-grade-plastic-vector-sign-isolated-not-food-safe-material-wine-glass-and-fork-symbol-2EA6NCD.jpg';
+        };
+    }
+
+    function addImage(){
+        const imagesbody = document.getElementById("imagebody");
+        const newRow = `<tr>
+            <td>
+                <img width="100px" src="https://c8.alamy.com/comp/2EA6NCD/not-food-grade-plastic-vector-sign-isolated-not-food-safe-material-wine-glass-and-fork-symbol-2EA6NCD.jpg" class="preview-image"/>
+            </td>
+            <td>
+                <input type="text" value="" oninput="previewImage(this)" class="image-url-input"/>
+            </td>
+            <td>
+                <button class="btn-primary" onclick="createImage(this)">Save</button>
+                <button class="btn-remove" onclick="removeRow(this)">Remove</button>
+            </td>
+        </tr>`;
+        imagesbody.innerHTML += newRow;
+    }
+
+    function removeRow(button) {
+        const row = button.closest('tr');
+        row.remove(); // Xóa hàng khỏi bảng
+    }
+
+    async function createImage(Input) {
+        const row = Input.closest('tr');
+        const imageUrl = row.querySelector('.image-url-input').value;
+
+        const imagesbody = document.getElementById("imagebody");
+        const rows = imagesbody.querySelectorAll('tr');
+        const orderIndex = Array.from(rows).indexOf(row);
+
+        const data = {
+            imageUrl: imageUrl,
+            orderIndex: orderIndex + 1
+        };
+
+        try {
+            const api = `http://localhost:7059/api/products/image/create/${@Html.Raw(Model)}`;
+            const response = await fetch(api, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            if (response.ok) {
+                alert('Create image successfully!');
+                window.location.reload();
+            } else {
+                alert('Failed to create image!');
+            }
+        } catch (error) {
+            console.error("Error creating image:", error);
+        }
+    }
+</script>

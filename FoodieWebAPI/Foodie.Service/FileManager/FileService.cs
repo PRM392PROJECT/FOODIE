@@ -22,6 +22,7 @@ namespace Foodie.Service.FileManager
                 File.Delete(filePath);
                 return true;
             }
+
             return false;
         }
 

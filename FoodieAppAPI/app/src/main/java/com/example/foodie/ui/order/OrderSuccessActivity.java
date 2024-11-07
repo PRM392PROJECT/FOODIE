@@ -34,8 +34,6 @@ public class OrderSuccessActivity extends AppCompatActivity  {
                 finish(); // Đóng OrderSuccessActivity
             }
         });
-
-
     }
 
 }

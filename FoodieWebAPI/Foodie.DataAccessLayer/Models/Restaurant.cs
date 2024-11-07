@@ -27,11 +27,8 @@ namespace Foodie.DataAccessLayer.Models
         public int Status { get; set; }
 
         public virtual User? Manager { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<Order> ?Orders { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<Product> ?Products { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<RestaurantLocation> ?RestaurantLocations { get; set; }
+        [JsonIgnore] public virtual ICollection<Order>? Orders { get; set; }
+        [JsonIgnore] public virtual ICollection<Product>? Products { get; set; }
+        [JsonIgnore] public virtual ICollection<RestaurantLocation>? RestaurantLocations { get; set; }
     }
 }

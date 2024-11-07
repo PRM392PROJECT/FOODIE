@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Foodie.DataAccessLayer.DAO
 {
-    public class CategoryDao 
+    public class CategoryDao
     {
         private readonly FOODIEContext _context;
 
@@ -24,7 +24,7 @@ namespace Foodie.DataAccessLayer.DAO
         public async Task<CategoryProduct> Create(CategoryProduct entity)
         {
             _context.CategoryProducts.Add(entity);
-            await  _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return entity;
         }
 
@@ -42,19 +42,18 @@ namespace Foodie.DataAccessLayer.DAO
                 _context.CategoryProducts.Remove(category);
                 return await _context.SaveChangesAsync() > 0;
             }
+
             return false;
         }
 
-        public async Task<IEnumerable<CategoryProduct>>  GetAll()
+        public async Task<IEnumerable<CategoryProduct>> GetAll()
         {
             return await _context.CategoryProducts.ToListAsync();
-
         }
 
-        public async Task<CategoryProduct>  GetById(int id)
+        public async Task<CategoryProduct> GetById(int id)
         {
             return await _context.CategoryProducts.FirstOrDefaultAsync(c => c.CategoryId == id);
-
         }
 
         public async Task<bool> Update(CategoryProduct entity)

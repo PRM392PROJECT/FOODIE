@@ -21,6 +21,5 @@ namespace Foodie.ManagementAPI.RequestDto
         public string? Email { get; set; }
 
         public string? Address { get; set; }
-
     }
 }

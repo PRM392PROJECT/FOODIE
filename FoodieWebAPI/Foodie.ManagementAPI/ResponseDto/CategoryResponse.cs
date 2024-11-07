@@ -1,5 +1,4 @@
-﻿
-namespace Foodie.ManagementAPI.ResponseDto
+﻿namespace Foodie.ManagementAPI.ResponseDto
 {
     public class CategoryResponse
     {

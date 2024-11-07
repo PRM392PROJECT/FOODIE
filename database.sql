@@ -1,194 +1,374 @@
-﻿-- Sử dụng cơ sở dữ liệu FOODIE
-use master
-go
-CREATE DATABASE FOODIE;
+﻿USE [FOODIE]
 GO
-USE FOODIE;
+/****** Object:  Table [dbo].[CartItems]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
 GO
-
--- Tạo bảng Roles để quản lý các vai trò
-CREATE TABLE Roles (
-    RoleId INT IDENTITY(1,1) PRIMARY KEY,
-    RoleName NVARCHAR(50) NOT NULL UNIQUE
-);
+SET QUOTED_IDENTIFIER ON
 GO
-
--- Thêm dữ liệu vào bảng Roles
-INSERT INTO Roles (RoleName) VALUES ('Customer');
-INSERT INTO Roles (RoleName) VALUES ('Saler');
-INSERT INTO Roles (RoleName) VALUES ('Shipper');
-INSERT INTO Roles (RoleName) VALUES ('Admin');
+CREATE TABLE [dbo].[CartItems](
+	[CartItemId] [int] IDENTITY(1,1) NOT NULL,
+	[CartId] [int] NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[Price] [decimal](10, 2) NOT NULL,
+	[CreateAt] [datetime] NULL,
+	[UpDateAt] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CartItemId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
 GO
-
--- Tạo bảng Users
-CREATE TABLE Users (
-    UserId INT IDENTITY(1,1) PRIMARY KEY,
-    FirstName NVARCHAR(100) NOT NULL,
-    LastName NVARCHAR(100) NOT NULL,
-    PhoneNumber NVARCHAR(20) NOT NULL UNIQUE,
-    Email NVARCHAR(100) NULL UNIQUE,
-    PasswordHash NVARCHAR(255) NOT NULL,
-    [Address] NVARCHAR(255),
-    CreateAt DATETIME DEFAULT GETDATE(),
-	UpDateAt DATETIME DEFAULT GETDATE(),
-    AvatarUrl NVARCHAR(255),
-    RoleId INT,
-    FOREIGN KEY (RoleId) REFERENCES Roles(RoleId)
-);
+/****** Object:  Table [dbo].[Carts]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
 GO
-
--- Tạo bảng Restaurants
-CREATE TABLE Restaurants (
-    RestaurantId INT IDENTITY(1,1) PRIMARY KEY,
-    Name NVARCHAR(100) NOT NULL,
-    Location NVARCHAR(255),
-    PhoneNumber NVARCHAR(20),
-    TimeOpen Time not null,
-	TimeClose Time not null,
-    CreateAt DATETIME DEFAULT GETDATE(),
-	UpDateAt DATETIME DEFAULT GETDATE(),
-    ManagerId INT,
-    AvatarUrl NVARCHAR(255), -- Ảnh đại diện của nhà hàng
-    CoverImageUrl NVARCHAR(255), -- Ảnh bìa của nhà hàng
-	Status INT NOT NULL DEFAULT  0,
-    FOREIGN KEY (ManagerId) REFERENCES Users(UserId)
-);
+SET QUOTED_IDENTIFIER ON
 GO
-
--- Tạo bảng CategoryProduct để quản lý các danh mục sản phẩm
-CREATE TABLE CategoryProduct (
-    CategoryId INT IDENTITY(1,1) PRIMARY KEY,
-    CategoryName NVARCHAR(100) NOT NULL UNIQUE
-);
+CREATE TABLE [dbo].[Carts](
+	[CartId] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[CreatedAt] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CartId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
 GO
-
--- Tạo bảng Product để quản lý các sản phẩm
-CREATE TABLE Products (
-    ProductId INT IDENTITY(1,1) PRIMARY KEY,
-    RestaurantId INT NOT NULL,
-    CategoryId INT NOT NULL,
-    Name NVARCHAR(100) NOT NULL,
-    Description NVARCHAR(255),
-    Price DECIMAL(10,2) NOT NULL,
-	CreateAt DATETIME DEFAULT GETDATE(),
-	UpDateAt DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (RestaurantId) REFERENCES Restaurants(RestaurantId),
-    FOREIGN KEY (CategoryId) REFERENCES CategoryProduct(CategoryId)
-);
+/****** Object:  Table [dbo].[CategoryProduct]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
 GO
-
--- Tạo bảng ProductImages để quản lý các hình ảnh của sản phẩm
-CREATE TABLE ProductImages (
-    ImageId INT IDENTITY(1,1) PRIMARY KEY,
-    ProductId INT NOT NULL,
-    ImageUrl NVARCHAR(255) NOT NULL,
-	OrderIndex INT Not null,
-    FOREIGN KEY (ProductId) REFERENCES Products(ProductId)
-);
+SET QUOTED_IDENTIFIER ON
 GO
-
--- Tạo bảng ProductFeedback để quản lý phản hồi của sản phẩm
-CREATE TABLE ProductFeedbacks (
-    FeedbackId INT IDENTITY(1,1) PRIMARY KEY,
-    ProductId INT NOT NULL,
-    UserId INT NOT NULL,
-    Rating INT CHECK (Rating >= 1 AND Rating <= 5),
-    Comment NVARCHAR(1000),
-    CreatedAt DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (ProductId) REFERENCES Products(ProductId),
-    FOREIGN KEY (UserId) REFERENCES Users(UserId)
-);
+CREATE TABLE [dbo].[CategoryProduct](
+	[CategoryId] [int] IDENTITY(1,1) NOT NULL,
+	[CategoryName] [nvarchar](100) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CategoryId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[CategoryName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
 GO
-
--- Tạo bảng FavoriteProducts để quản lý sản phẩm yêu thích của khách hàng
-CREATE TABLE FavoriteProducts (
-    UserId INT NOT NULL,
-    ProductId INT NOT NULL,
-    CreatedAt DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (UserId) REFERENCES Users(UserId),
-    FOREIGN KEY (ProductId) REFERENCES Products(ProductId),
-    PRIMARY KEY (UserId, ProductId)
-);
+/****** Object:  Table [dbo].[FavoriteProducts]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
 GO
-
--- Tạo bảng Orders để quản lý các đơn hàng
-CREATE TABLE Orders (
-    OrderId INT IDENTITY(1,1) PRIMARY KEY,
-    UserId INT NOT NULL,
-    RestaurantId INT NOT NULL,
-    OrderDate DATETIME DEFAULT GETDATE(),
-    TotalAmount DECIMAL(10,2) NOT NULL,
-    Status NVARCHAR(50),
-    FOREIGN KEY (UserId) REFERENCES Users(UserId),
-    FOREIGN KEY (RestaurantId) REFERENCES Restaurants(RestaurantId)
-);
+SET QUOTED_IDENTIFIER ON
 GO
-
--- Tạo bảng OrderItems để quản lý các sản phẩm trong đơn hàng
-CREATE TABLE OrderItems (
-    OrderItemId INT IDENTITY(1,1) PRIMARY KEY,
-    OrderId INT NOT NULL,
-    ProductId INT NOT NULL,
-    Quantity INT NOT NULL,
-    Price DECIMAL(10,2) NOT NULL,
-    FOREIGN KEY (OrderId) REFERENCES Orders(OrderId),
-    FOREIGN KEY (ProductId) REFERENCES Products(ProductId)
-);
+CREATE TABLE [dbo].[FavoriteProducts](
+	[UserId] [int] NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[CreatedAt] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC,
+	[ProductId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
 GO
-
--- Tạo bảng UserLocations để quản lý vị trí người dùng
-CREATE TABLE UserLocations (
-    LocationId INT IDENTITY(1,1) PRIMARY KEY,
-    UserId INT NOT NULL,
-    Latitude DECIMAL(9,6) NOT NULL, -- Lưu vĩ độ với độ chính xác 6 chữ số sau dấu phẩy
-    Longitude DECIMAL(9,6) NOT NULL, -- Lưu kinh độ với độ chính xác 6 chữ số sau dấu phẩy
-    UpdatedAt DATETIME DEFAULT GETDATE(), -- Thời gian cập nhật vị trí
-    FOREIGN KEY (UserId) REFERENCES Users(UserId)
-);
+/****** Object:  Table [dbo].[Invoices]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
 GO
-
--- Tạo bảng RestaurantLocations để quản lý vị trí nhà hàng
-CREATE TABLE RestaurantLocations (
-    LocationId INT IDENTITY(1,1) PRIMARY KEY,
-    RestaurantId INT NOT NULL,
-    Latitude DECIMAL(9,6) NOT NULL, -- Lưu vĩ độ với độ chính xác 6 chữ số sau dấu phẩy
-    Longitude DECIMAL(9,6) NOT NULL, -- Lưu kinh độ với độ chính xác 6 chữ số sau dấu phẩy
-    UpdatedAt DATETIME DEFAULT GETDATE(), -- Thời gian cập nhật vị trí
-    FOREIGN KEY (RestaurantId) REFERENCES Restaurants(RestaurantId)
-);
+SET QUOTED_IDENTIFIER ON
 GO
-
--- Tạo bảng Cart để quản lý giỏ hàng của người dùng
-CREATE TABLE Carts (
-    CartId INT IDENTITY(1,1) PRIMARY KEY,
-    UserId INT NOT NULL,
-    CreatedAt DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (UserId) REFERENCES Users(UserId)
-);
+CREATE TABLE [dbo].[Invoices](
+	[InvoiceId] [int] IDENTITY(1,1) NOT NULL,
+	[OrderId] [int] NOT NULL,
+	[InvoiceDate] [datetime] NULL,
+	[TotalAmount] [decimal](10, 2) NOT NULL,
+	[Status] [nvarchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[InvoiceId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
 GO
-
--- Tạo bảng CartItem để quản lý các sản phẩm trong giỏ hàng
-CREATE TABLE CartItems (
-    CartItemId INT IDENTITY(1,1) PRIMARY KEY,
-    CartId INT NOT NULL,
-    ProductId INT NOT NULL,
-    Quantity INT NOT NULL,
-    Price DECIMAL(10,2) NOT NULL,
-	CreateAt DATETIME DEFAULT GETDATE(),
-	UpDateAt DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (CartId) REFERENCES Carts(CartId),
-    FOREIGN KEY (ProductId) REFERENCES Products(ProductId)
-);
+/****** Object:  Table [dbo].[OrderItems]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
 GO
-
--- Tạo bảng Invoices để quản lý các hóa đơn
-CREATE TABLE Invoices (
-    InvoiceId INT IDENTITY(1,1) PRIMARY KEY, -- ID hóa đơn
-    OrderId INT NOT NULL, -- ID đơn hàng liên quan
-    InvoiceDate DATETIME DEFAULT GETDATE(), -- Ngày lập hóa đơn
-    TotalAmount DECIMAL(10,2) NOT NULL, -- Số tiền tổng cộng
-    Status NVARCHAR(50), -- Trạng thái hóa đơn
-    FOREIGN KEY (OrderId) REFERENCES Orders(OrderId) -- Khóa ngoại liên kết với bảng Orders
-);
+SET QUOTED_IDENTIFIER ON
 GO
-
+CREATE TABLE [dbo].[OrderItems](
+	[OrderItemId] [int] IDENTITY(1,1) NOT NULL,
+	[OrderId] [int] NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[Price] [decimal](10, 2) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[OrderItemId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Orders]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Orders](
+	[OrderId] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[RestaurantId] [int] NOT NULL,
+	[OrderDate] [datetime] NULL,
+	[TotalAmount] [decimal](10, 2) NOT NULL,
+	[Status] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[OrderId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ProductFeedbacks]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ProductFeedbacks](
+	[FeedbackId] [int] IDENTITY(1,1) NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[UserId] [int] NOT NULL,
+	[Rating] [int] NULL,
+	[Comment] [nvarchar](1000) NULL,
+	[CreatedAt] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[FeedbackId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ProductImages]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ProductImages](
+	[ImageId] [int] IDENTITY(1,1) NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[ImageUrl] [nvarchar](255) NOT NULL,
+	[OrderIndex] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ImageId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Products]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Products](
+	[ProductId] [int] IDENTITY(1,1) NOT NULL,
+	[RestaurantId] [int] NOT NULL,
+	[CategoryId] [int] NOT NULL,
+	[Name] [nvarchar](100) NOT NULL,
+	[Description] [nvarchar](255) NULL,
+	[Price] [decimal](10, 2) NOT NULL,
+	[CreateAt] [datetime] NULL,
+	[UpDateAt] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ProductId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[RestaurantLocations]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[RestaurantLocations](
+	[LocationId] [int] IDENTITY(1,1) NOT NULL,
+	[RestaurantId] [int] NOT NULL,
+	[Latitude] [decimal](9, 6) NOT NULL,
+	[Longitude] [decimal](9, 6) NOT NULL,
+	[UpdatedAt] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[LocationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Restaurants]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Restaurants](
+	[RestaurantId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](100) NOT NULL,
+	[Location] [nvarchar](255) NULL,
+	[PhoneNumber] [nvarchar](20) NULL,
+	[TimeOpen] [time](7) NOT NULL,
+	[TimeClose] [time](7) NOT NULL,
+	[CreateAt] [datetime] NULL,
+	[UpDateAt] [datetime] NULL,
+	[ManagerId] [int] NULL,
+	[AvatarUrl] [nvarchar](255) NULL,
+	[CoverImageUrl] [nvarchar](255) NULL,
+	[Status] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[RestaurantId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Roles]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Roles](
+	[RoleId] [int] IDENTITY(1,1) NOT NULL,
+	[RoleName] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[RoleId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[RoleName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserLocations]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserLocations](
+	[LocationId] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[Latitude] [decimal](9, 6) NOT NULL,
+	[Longitude] [decimal](9, 6) NOT NULL,
+	[UpdatedAt] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[LocationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 11/7/2024 12:04:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Users](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [nvarchar](100) NOT NULL,
+	[LastName] [nvarchar](100) NOT NULL,
+	[PhoneNumber] [nvarchar](20) NOT NULL,
+	[Email] [nvarchar](100) NULL,
+	[PasswordHash] [nvarchar](255) NOT NULL,
+	[Address] [nvarchar](255) NULL,
+	[CreateAt] [datetime] NULL,
+	[UpDateAt] [datetime] NULL,
+	[AvatarUrl] [nvarchar](255) NULL,
+	[RoleId] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[PhoneNumber] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[Email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[CartItems] ADD  DEFAULT (getdate()) FOR [CreateAt]
+GO
+ALTER TABLE [dbo].[CartItems] ADD  DEFAULT (getdate()) FOR [UpDateAt]
+GO
+ALTER TABLE [dbo].[Carts] ADD  DEFAULT (getdate()) FOR [CreatedAt]
+GO
+ALTER TABLE [dbo].[FavoriteProducts] ADD  DEFAULT (getdate()) FOR [CreatedAt]
+GO
+ALTER TABLE [dbo].[Invoices] ADD  DEFAULT (getdate()) FOR [InvoiceDate]
+GO
+ALTER TABLE [dbo].[Orders] ADD  DEFAULT (getdate()) FOR [OrderDate]
+GO
+ALTER TABLE [dbo].[ProductFeedbacks] ADD  DEFAULT (getdate()) FOR [CreatedAt]
+GO
+ALTER TABLE [dbo].[Products] ADD  DEFAULT (getdate()) FOR [CreateAt]
+GO
+ALTER TABLE [dbo].[Products] ADD  DEFAULT (getdate()) FOR [UpDateAt]
+GO
+ALTER TABLE [dbo].[RestaurantLocations] ADD  DEFAULT (getdate()) FOR [UpdatedAt]
+GO
+ALTER TABLE [dbo].[Restaurants] ADD  DEFAULT (getdate()) FOR [CreateAt]
+GO
+ALTER TABLE [dbo].[Restaurants] ADD  DEFAULT (getdate()) FOR [UpDateAt]
+GO
+ALTER TABLE [dbo].[Restaurants] ADD  DEFAULT ((0)) FOR [Status]
+GO
+ALTER TABLE [dbo].[UserLocations] ADD  DEFAULT (getdate()) FOR [UpdatedAt]
+GO
+ALTER TABLE [dbo].[Users] ADD  DEFAULT (getdate()) FOR [CreateAt]
+GO
+ALTER TABLE [dbo].[Users] ADD  DEFAULT (getdate()) FOR [UpDateAt]
+GO
+ALTER TABLE [dbo].[CartItems]  WITH CHECK ADD FOREIGN KEY([CartId])
+REFERENCES [dbo].[Carts] ([CartId])
+GO
+ALTER TABLE [dbo].[CartItems]  WITH CHECK ADD FOREIGN KEY([ProductId])
+REFERENCES [dbo].[Products] ([ProductId])
+GO
+ALTER TABLE [dbo].[Carts]  WITH CHECK ADD FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([UserId])
+GO
+ALTER TABLE [dbo].[FavoriteProducts]  WITH CHECK ADD FOREIGN KEY([ProductId])
+REFERENCES [dbo].[Products] ([ProductId])
+GO
+ALTER TABLE [dbo].[FavoriteProducts]  WITH CHECK ADD FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([UserId])
+GO
+ALTER TABLE [dbo].[Invoices]  WITH CHECK ADD FOREIGN KEY([OrderId])
+REFERENCES [dbo].[Orders] ([OrderId])
+GO
+ALTER TABLE [dbo].[OrderItems]  WITH CHECK ADD FOREIGN KEY([OrderId])
+REFERENCES [dbo].[Orders] ([OrderId])
+GO
+ALTER TABLE [dbo].[OrderItems]  WITH CHECK ADD FOREIGN KEY([ProductId])
+REFERENCES [dbo].[Products] ([ProductId])
+GO
+ALTER TABLE [dbo].[Orders]  WITH CHECK ADD FOREIGN KEY([RestaurantId])
+REFERENCES [dbo].[Restaurants] ([RestaurantId])
+GO
+ALTER TABLE [dbo].[Orders]  WITH CHECK ADD FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([UserId])
+GO
+ALTER TABLE [dbo].[ProductFeedbacks]  WITH CHECK ADD FOREIGN KEY([ProductId])
+REFERENCES [dbo].[Products] ([ProductId])
+GO
+ALTER TABLE [dbo].[ProductFeedbacks]  WITH CHECK ADD FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([UserId])
+GO
+ALTER TABLE [dbo].[ProductImages]  WITH CHECK ADD FOREIGN KEY([ProductId])
+REFERENCES [dbo].[Products] ([ProductId])
+GO
+ALTER TABLE [dbo].[Products]  WITH CHECK ADD FOREIGN KEY([CategoryId])
+REFERENCES [dbo].[CategoryProduct] ([CategoryId])
+GO
+ALTER TABLE [dbo].[Products]  WITH CHECK ADD FOREIGN KEY([RestaurantId])
+REFERENCES [dbo].[Restaurants] ([RestaurantId])
+GO
+ALTER TABLE [dbo].[RestaurantLocations]  WITH CHECK ADD FOREIGN KEY([RestaurantId])
+REFERENCES [dbo].[Restaurants] ([RestaurantId])
+GO
+ALTER TABLE [dbo].[Restaurants]  WITH CHECK ADD FOREIGN KEY([ManagerId])
+REFERENCES [dbo].[Users] ([UserId])
+GO
+ALTER TABLE [dbo].[UserLocations]  WITH CHECK ADD FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([UserId])
+GO
+ALTER TABLE [dbo].[Users]  WITH CHECK ADD FOREIGN KEY([RoleId])
+REFERENCES [dbo].[Roles] ([RoleId])
+GO
+ALTER TABLE [dbo].[ProductFeedbacks]  WITH CHECK ADD CHECK  (([Rating]>=(1) AND [Rating]<=(5)))
+GO

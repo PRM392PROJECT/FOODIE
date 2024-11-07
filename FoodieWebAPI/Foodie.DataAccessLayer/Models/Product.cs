@@ -30,7 +30,7 @@ namespace Foodie.DataAccessLayer.Models
         public virtual ICollection<FavoriteProduct> FavoriteProducts { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
         public virtual ICollection<ProductFeedback> ProductFeedbacks { get; set; }
-        
+
         public virtual ICollection<ProductImage> ProductImages { get; set; }
     }
 }

@@ -2,6 +2,8 @@ package com.example.foodie.service;
 
 import android.media.session.MediaSession;
 
+import com.example.foodie.models.Cart;
+import com.example.foodie.models.CartItemPost;
 import com.example.foodie.models.Category;
 import com.example.foodie.models.Feedback;
 import com.example.foodie.models.Login;
@@ -10,6 +12,7 @@ import com.example.foodie.models.OrderRequest;
 import com.example.foodie.models.Product;
 import com.example.foodie.models.Token;
 import com.example.foodie.models.User;
+import com.example.foodie.models.UserRegister;
 import com.example.foodie.models.UserUpdateRequest;
 import com.example.foodie.models.ViewPage;
 
@@ -58,4 +61,11 @@ public interface ApiService {
     Call<Order> createOrder(@Body OrderRequest orderRequest);
     @POST("users/authen/login")
     Call<Token> login2(@Body Login login);
+    @POST("users/create")
+    Call<UserRegister> register(@Body UserRegister userRegister);
+
+    @GET("carts/get-by-user/{userId}")
+    Call<Cart> getCart(@Path("userId") int userId);
+    @POST("carts/add-cart/{userId}")
+    Call<CartItemPost> addToCart(@Path("userId") int userId, @Body CartItemPost cartItemPost);
 }

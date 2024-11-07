@@ -9,8 +9,8 @@ namespace Foodie.BusinesAccessLayer.Repositories
 {
     public interface IProductFeedbackRepository
     {
-        Task<IEnumerable<ProductFeedback>> GetFeedback(int productId,int pageNumber,int pageSize);
-       
+        Task<IEnumerable<ProductFeedback>> GetFeedback(int productId, int pageNumber, int pageSize);
+
         Task<ProductFeedback> GetFeedbackById(int productId);
 
         Task<ProductFeedback> CreateFeedback(ProductFeedback feedback);

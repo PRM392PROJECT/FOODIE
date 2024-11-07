@@ -11,5 +11,6 @@ namespace Foodie.BusinesAccessLayer.Repositories
     {
         Task<Order> CreateOrder(Order order);
         Task<IEnumerable<Order>> GetOrdersByUserId(int userId);
+        Task<IEnumerable<Order>> GetOrdersBySalerId(int salerId);
     }
 }

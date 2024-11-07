@@ -22,7 +22,8 @@ namespace Foodie.ManagementAPI.Controllers
         private readonly IUserRepository _userRepository;
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
-        public UsersAPI(IConfiguration configuration,IUserRepository userRepository, IMapper mapper)
+        
+        public UsersAPI(IConfiguration configuration, IUserRepository userRepository, IMapper mapper)
         {
             _configuration = configuration;
             _userRepository = userRepository;
@@ -30,11 +31,10 @@ namespace Foodie.ManagementAPI.Controllers
         }
 
         //GET /userpage?pageNumber=1&pageSize=10 ok
-        [Authorize(Roles ="Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet("get-page")]
         public async Task<IActionResult> UserViewPage([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-
             try
             {
                 var users = await _userRepository.GetUsers(pageNumber, pageSize);
@@ -48,6 +48,7 @@ namespace Foodie.ManagementAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
         // Create user /create ok
         [HttpPost("create")]
         public async Task<IActionResult> CreateUser([FromBody] UserRequest userRequest)
@@ -56,6 +57,7 @@ namespace Foodie.ManagementAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
+
             try
             {
                 var user = _mapper.Map<User>(userRequest);
@@ -77,6 +79,7 @@ namespace Foodie.ManagementAPI.Controllers
             {
                 return BadRequest();
             }
+
             try
             {
                 var user = _mapper.Map<User>(userUpdateRequest);
@@ -87,6 +90,7 @@ namespace Foodie.ManagementAPI.Controllers
                     var userResponse = _mapper.Map<UserResponse>(user);
                     return Ok(userResponse);
                 }
+
                 return BadRequest();
             }
             catch (Exception ex)
@@ -95,8 +99,28 @@ namespace Foodie.ManagementAPI.Controllers
             }
         }
 
+        [HttpPut("update-address/{userId}")]
+        public async Task<IActionResult> UpdateAddressUser([FromRoute] int userId,[FromBody] string address)
+        {
+            try
+            {
+                var user = await _userRepository.GetUserById(userId);
+                if (user != null)
+                {
+                    user.Address = address;
+                    await _userRepository.UpdateAddress(userId, address);
+                    return Ok();
+                }
+
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return Conflict(ex.Message);
+            }
+        }
         //Detail user /get-byId ok
-        [Authorize(Policy ="Customer")]
+        //[Authorize(Policy = "Customer")]
         [HttpGet("get-byId/{userId}")]
         public async Task<IActionResult> DetailUser([FromRoute] int userId)
         {
@@ -111,6 +135,7 @@ namespace Foodie.ManagementAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
         //Login user /login
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] Login login)
@@ -150,8 +175,8 @@ namespace Foodie.ManagementAPI.Controllers
                 }
 
                 var userResponse = _mapper.Map<UserResponse>(user);
-                var tokenString = GenerateJwtToken(userResponse); 
-                var token = new Token(tokenString, DateTime.UtcNow.AddDays(7)); // Token hết hạn sau 1 giờ
+                var tokenString = GenerateJwtToken(userResponse);
+                var token = new Token(tokenString, DateTime.UtcNow.AddDays(7), userResponse); // Token hết hạn sau 1 giờ
                 return Ok(token);
             }
             catch (Exception ex)
@@ -159,17 +184,18 @@ namespace Foodie.ManagementAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
         private string GenerateJwtToken(UserResponse user)
         {
             var jwtSettings = _configuration.GetSection("JwtSettings");
 
             var claims = new[]
             {
-            new Claim(JwtRegisteredClaimNames.Sub, user.FirstName+user.LastName),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim(ClaimTypes.Role, user.RoleName),
-            new Claim("User",user.ToJson())
-              };
+                new Claim(JwtRegisteredClaimNames.Sub, user.FirstName + user.LastName),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.Role, user.RoleName),
+                new Claim("User", user.ToJson())
+            };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -184,7 +210,5 @@ namespace Foodie.ManagementAPI.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
     }
-
 }

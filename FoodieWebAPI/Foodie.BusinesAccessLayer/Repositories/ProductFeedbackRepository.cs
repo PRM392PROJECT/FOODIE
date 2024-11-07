@@ -7,7 +7,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
 {
     public class ProductFeedbackRepository : IProductFeedbackRepository
     {
-        private readonly  ProductFeedbackDao _productFeedbackDao;
+        private readonly ProductFeedbackDao _productFeedbackDao;
 
         public ProductFeedbackRepository(FOODIEContext context)
         {
@@ -23,7 +23,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
         {
             try
             {
-                feedback =  await _productFeedbackDao.Create(feedback);
+                feedback = await _productFeedbackDao.Create(feedback);
                 return feedback;
             }
             catch (Exception ex)
@@ -37,7 +37,8 @@ namespace Foodie.BusinesAccessLayer.Repositories
             try
             {
                 return await _productFeedbackDao.Delete(productId);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }

@@ -27,17 +27,13 @@ namespace Foodie.DataAccessLayer.Models
         public DateTime? UpDateAt { get; set; }
         public string? AvatarUrl { get; set; }
         public int? RoleId { get; set; }
-        
+
         public virtual Role? Role { get; set; }
-        public virtual ICollection<Cart> ?Carts { get; set; }
-        public virtual ICollection<FavoriteProduct> ?FavoriteProducts { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<Order> ?Orders { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<ProductFeedback> ?ProductFeedbacks { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<Restaurant> ?Restaurants { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<UserLocation> ?UserLocations { get; set; }
+        public virtual ICollection<Cart>? Carts { get; set; }
+        public virtual ICollection<FavoriteProduct>? FavoriteProducts { get; set; }
+        [JsonIgnore] public virtual ICollection<Order>? Orders { get; set; }
+        [JsonIgnore] public virtual ICollection<ProductFeedback>? ProductFeedbacks { get; set; }
+        [JsonIgnore] public virtual ICollection<Restaurant>? Restaurants { get; set; }
+        [JsonIgnore] public virtual ICollection<UserLocation>? UserLocations { get; set; }
     }
 }

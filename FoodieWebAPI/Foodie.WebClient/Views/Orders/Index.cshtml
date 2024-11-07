@@ -1,0 +1,69 @@
+﻿@await Html.PartialAsync("_Header_Customer")
+
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .order-detail {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .order-detail h2 {
+            margin: 0 0 10px;
+        }
+        .order-detail p {
+            margin: 10px 0;
+        }
+        .order-items {
+            margin-top: 20px;
+        }
+        .order-items table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .order-items th, .order-items td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .order-items th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+
+<div class="order-detail">
+    <h2>Chi tiết đơn hàng</h2>
+    <p><strong>ID đơn hàng:</strong> 0</p>
+    <p><strong>ID người dùng:</strong> 0</p>
+    <p><strong>ID nhà hàng:</strong> 0</p>
+    <p><strong>Tổng số tiền:</strong> 0.1 VNĐ</p>
+    <p><strong>Trạng thái:</strong> Đang xử lý</p>
+
+    <div class="order-items">
+        <h3>Sản phẩm trong đơn hàng</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>ID sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>0</td>
+                <td>2,147,483,647</td>
+                <td>0.1 VNĐ</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

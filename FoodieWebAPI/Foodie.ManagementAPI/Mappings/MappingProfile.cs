@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Drawing;
+using AutoMapper;
 using Foodie.DataAccessLayer.Models;
 using Foodie.ManagementAPI.RequestDto;
 using Foodie.ManagementAPI.ResponseDto;
@@ -8,32 +9,34 @@ namespace Foodie.ManagementAPI.Mappings
 {
     public class MappingProfile : Profile
     {
-        public MappingProfile() 
+        public MappingProfile()
         {
-
             CreateMap<Product, ProductResponse>()
                 .ForMember(dest => dest.CategoryName, otp => otp.MapFrom(src => src.Category.CategoryName))
-                .ForMember(dest=>dest.Images,otp=>otp.MapFrom(src=>src.ProductImages));
+                .ForMember(dest => dest.Images, otp => otp.MapFrom(src => src.ProductImages));
 
             CreateMap<ProductImage, ProductImageResponse>();
 
             CreateMap<ProductImageRequest, ProductImage>();
 
             CreateMap<ProductRequest, Product>()
-                .ForMember(dest=>dest.ProductImages,otp=>otp.MapFrom(src=>src.Images));
-
+                .ForMember(dest => dest.ProductImages, otp => otp.MapFrom(src => src.Images));
+            CreateMap<ProductUpdate, Product>();
             CreateMap<UserRequest, User>()
                 .ForMember(dest => dest.PasswordHash,
-                opt => opt.MapFrom(src => Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(src.Password))));
-           
+                    opt => opt.MapFrom(src =>
+                        Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(src.Password))));
+            CreateMap<ImageUpdate, ProductImage>();
             CreateMap<RestaurantRequest, Restaurant>();
-            
+
             CreateMap<Restaurant, RestaurantResponse>()
-                .ForMember(dest => dest.Manager,otp=>otp.MapFrom(src=>src.Manager));
+                .ForMember(dest => dest.Manager, otp => otp.MapFrom(src => src.Manager));
 
             CreateMap<User, UserResponse>()
-                .ForMember(dest => dest.RoleName, otp=>otp.MapFrom(src=>src.Role.RoleName))
-                .ForMember(dest => dest.RestaurantId, otp => otp.MapFrom(src => src.Restaurants.IsNullOrEmpty() ? 0:src.Restaurants.FirstOrDefault().RestaurantId));
+                .ForMember(dest => dest.RoleName, otp => otp.MapFrom(src => src.Role.RoleName))
+                .ForMember(dest => dest.RestaurantId,
+                    otp => otp.MapFrom(src =>
+                        src.Restaurants.IsNullOrEmpty() ? 0 : src.Restaurants.FirstOrDefault().RestaurantId));
 
             CreateMap<UserUpdateRequest, User>();
             CreateMap<ProductFeedback, ProductFeedbackResponse>()
@@ -52,7 +55,13 @@ namespace Foodie.ManagementAPI.Mappings
             CreateMap<Order, OrderResponse>();
             CreateMap<OrderItem, OrderItemResponse>();
 
-            
+            CreateMap<CartItemRequest, CartItem>();
+            CreateMap<CartItem, CartItemResponse>()
+                .ForMember(dest=>dest.ProductName,otp=>otp.MapFrom(src=>src.Product.Name))
+                .ForMember(dest=>dest.RestaurantId,otp=>otp.MapFrom(src=>src.Product.RestaurantId))
+                .ForMember(dest=>dest.ProductImageUrl,
+                    otp=>otp.MapFrom(src=>src.Product.ProductImages.FirstOrDefault().ImageUrl));
+            CreateMap<Cart, CartResponse>();
         }
     }
 }

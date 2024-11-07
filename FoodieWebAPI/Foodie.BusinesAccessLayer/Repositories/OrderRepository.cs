@@ -13,15 +13,19 @@ namespace Foodie.BusinesAccessLayer.Repositories
     public class OrderRepository : IOrderRepository
     {
         private readonly OrderDao orderDao;
-        public OrderRepository(FOODIEContext context) {
-           orderDao = new OrderDao(context);
+
+        public OrderRepository(FOODIEContext context)
+        {
+            orderDao = new OrderDao(context);
         }
+
         public async Task<Order> CreateOrder(Order order)
         {
             if (order.OrderItems.IsNullOrEmpty())
             {
                 throw new ArgumentNullException("OrderItem is Null or Empty");
             }
+
             try
             {
                 var total = order.OrderItems.Sum(o => o.Price * o.Quantity);
@@ -38,7 +42,12 @@ namespace Foodie.BusinesAccessLayer.Repositories
         public async Task<IEnumerable<Order>> GetOrdersByUserId(int userId)
         {
             var orders = await orderDao.GetByUserId(userId);
-            return orders.Where(o=>o.UserId == userId).ToList();
+            return orders.Where(o => o.UserId == userId).ToList();
+        }
+
+        public async Task<IEnumerable<Order>> GetOrdersBySalerId(int salerId)
+        {
+            return await orderDao.GetBySalerId(salerId);
         }
     }
 }

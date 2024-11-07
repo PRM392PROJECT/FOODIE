@@ -1,6 +1,4 @@
-﻿
-
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
@@ -12,8 +10,9 @@ namespace Foodie.Service.Models
         [DataType(DataType.Upload)]
         public IFormFile File { get; set; }
 
-        [Required(ErrorMessage ="Please input file name.")]
+        [Required(ErrorMessage = "Please input file name.")]
         public string FileName { get; set; }
-        public string ?FilePath { get; set; }
+
+        public string? FilePath { get; set; }
     }
 }

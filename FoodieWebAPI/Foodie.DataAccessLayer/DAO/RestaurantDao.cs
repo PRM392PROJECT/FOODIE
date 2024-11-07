@@ -4,9 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Foodie.DataAccessLayer.DAO
 {
-    public class RestaurantDao 
+    public class RestaurantDao
     {
         private readonly FOODIEContext _context;
+
         public RestaurantDao(FOODIEContext context)
         {
             _context = context;
@@ -34,7 +35,7 @@ namespace Foodie.DataAccessLayer.DAO
         {
             var rest = await _context.Restaurants.FirstOrDefaultAsync(r => r.RestaurantId == id);
             _context.Restaurants.Remove(rest);
-            return await _context.SaveChangesAsync() >0;
+            return await _context.SaveChangesAsync() > 0;
         }
 
         public async Task<IEnumerable<Restaurant>> GetAll()
@@ -44,10 +45,11 @@ namespace Foodie.DataAccessLayer.DAO
                 .ToListAsync();
             return rests;
         }
-        public async Task<IEnumerable<Restaurant>> GetRestaurants(int pageNumber,int pageSize)
+
+        public async Task<IEnumerable<Restaurant>> GetRestaurants(int pageNumber, int pageSize)
         {
             var rests = await _context.Restaurants
-                .Include(r => r.Manager).ThenInclude(u=>u.Role)
+                .Include(r => r.Manager).ThenInclude(u => u.Role)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
@@ -57,7 +59,7 @@ namespace Foodie.DataAccessLayer.DAO
         public async Task<Restaurant> GetById(int id)
         {
             var rests = await _context.Restaurants
-                .Include(r => r.Manager).ThenInclude(u=>u.Role)
+                .Include(r => r.Manager).ThenInclude(u => u.Role)
                 .FirstOrDefaultAsync(r => r.RestaurantId == id);
             return rests;
         }

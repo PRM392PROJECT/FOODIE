@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.foodie.R;
@@ -45,11 +46,17 @@ public class OrderItemAdapter extends BaseAdapter {
         OrderItem orderItem = orderItems.get(position);
         ImageView imageView = convertView.findViewById(R.id.foodImage);
         String urlImage = orderItem.getProduct().getImages().get(0).getImageUrl();
+        TextView priceFood = convertView.findViewById(R.id.foodprice);
+        priceFood.setText(orderItem.getProduct().getPrice()+"");
         Glide.with(context)
                 .load(urlImage)
                 .error(R.drawable.ic_food_load)
                 .placeholder(R.drawable.ic_food_load)
                 .into(imageView);
         return  convertView;
+    }
+    public  void updateData(List<OrderItem> orderItems){
+        this.orderItems = orderItems;
+        notifyDataSetChanged();
     }
 }

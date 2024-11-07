@@ -1,71 +1,45 @@
-﻿@model Foodie.ManagementAPI.RequestDto.ProductRequest
-
-@{
-    ViewData["Title"] = "Thêm Sản Phẩm Mới";
-}
-@await Html.PartialAsync("_Header_Seller")
+﻿@await Html.PartialAsync("_Header_Seller")
 
 <div class="container mt-5">
     <h2 class="text-center mb-4">Thêm Sản Phẩm Mới</h2>
 
-    @if (!ViewData.ModelState.IsValid)
-    {
-        <div class="alert alert-danger">
-            <ul>
-                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-                {
-                    <li>@error.ErrorMessage</li>
-                }
-            </ul>
-        </div>
-    }
-
-    <form id="createProductForm" method="post" enctype="multipart/form-data">
+    <form id="createProductForm">
         <div class="row mb-3">
             <div class="col-md-6">
-                <label asp-for="Name" class="form-label fw-bold">Tên Sản Phẩm</label>
-                <input asp-for="Name" class="form-control rounded-pill" placeholder="Nhập tên sản phẩm" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label name="Name" class="form-label fw-bold">Tên Sản Phẩm</label>
+                <input name="Name" class="form-control rounded-pill" placeholder="Nhập tên sản phẩm" required/>
             </div>
 
             <div class="col-md-6">
-                <label asp-for="Price" class="form-label fw-bold">Giá</label>
-                <input asp-for="Price" class="form-control rounded-pill" placeholder="Nhập giá sản phẩm" />
-                <span asp-validation-for="Price" class="text-danger"></span>
+                <label name="Price" class="form-label fw-bold">Giá</label>
+                <input name="Price" class="form-control rounded-pill" type="number" step="0.01" placeholder="Nhập giá sản phẩm" required/>
             </div>
         </div>
 
         <div class="mb-3">
-            <label asp-for="Description" class="form-label fw-bold">Mô Tả</label>
-            <textarea asp-for="Description" class="form-control rounded-3" rows="3" placeholder="Mô tả chi tiết về sản phẩm"></textarea>
+            <label name="Description" class="form-label fw-bold">Mô Tả</label>
+            <textarea name="Description" class="form-control rounded-3" rows="3" placeholder="Mô tả chi tiết về sản phẩm" required></textarea>
             <small class="form-text text-muted">Vui lòng cung cấp mô tả chi tiết về sản phẩm.</small>
-            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label asp-for="CategoryId" class="form-label fw-bold">Danh Mục</label>
-            <input asp-for="CategoryId" id="CategoryInput" />
-            <select asp-for="CategoryId" class="form-select rounded-pill" id="CategoryId" onchange="updateCategoryId(this)">
+            <label name="CategoryId" class="form-label fw-bold">Danh Mục</label>
+            <select name="CategoryId" class="form-select rounded-pill" id="CategoryId" required>
                 <option value="">Chọn danh mục</option>
+                <!-- Các tùy chọn danh mục sẽ được thêm vào đây -->
             </select>
-            <span asp-validation-for="CategoryId" class="text-danger"></span>
         </div>
 
-        <!-- Bốn vị trí nhập cho hình ảnh -->
-        <div class="row mb-3 text-center">
-            @for (int i = 0; i < 4; i++)
-            {
+        <!-- Vị trí nhập cho hình ảnh -->
+        <div class="mb-3" id="imagesContainer">
+            <label class="form-label fw-bold">Hình ảnh</label>
+            <div class="row" id="images">
                 <div class="col-md-3 mb-3">
-                    <label class="form-label fw-bold">Hình ảnh @(i + 1)</label>
-                    <input asp-for="Images[@i].ImageUrl" class="form-control rounded-pill" placeholder="Nhập URL hình ảnh" oninput="updateImagePreview(this, @i)" />
-                    <input asp-for="Images[@i].OrderIndex" value="@(i + 1)" type="number" hidden />
-                    <span asp-validation-for="Images[@i].ImageUrl" class="text-danger"></span>
-
-                    <!-- Thẻ img để hiển thị hình ảnh mặc định -->
-                    <img id="imagePreview_@i" class="img-fluid img-thumbnail mt-2 shadow-sm" style="max-width: 150px;"
-                         src="~/images/placeholder.png" />
+                    <input name="Images" class="form-control rounded-pill" placeholder="Nhập URL hình ảnh" oninput="updateImagePreview(this, 0)" required/>
+                    <img id="imagePreview_0" class="img-fluid img-thumbnail mt-2 shadow-sm" style="max-width: 150px;" src="~/images/placeholder.png"/>
                 </div>
-            }
+            </div>
+            <button type="button" class="btn btn-secondary mt-2" onclick="addImageField()">Thêm Hình Ảnh</button>
         </div>
 
         <div class="text-center">
@@ -75,31 +49,24 @@
 </div>
 
 <script>
-    async function fetchCategories() {
-        try {
-            const response = await fetch('http://localhost:7059/api/categories');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const categories = await response.json();
-            const categorySelect = document.getElementById('CategoryId');
+    let imageCount = 1; // Số lượng hình ảnh đã thêm
+    document.addEventListener('DOMContentLoaded',async ()=>{
+    await fetchCategories();
+    });
+    function addImageField() {
+        const imagesContainer = document.getElementById('images');
 
-            categories.forEach(category => {
-                if (category.categoryId > 0) {
-                    const option = document.createElement('option');
-                    option.value = category.categoryId;
-                    option.textContent = category.categoryName;
-                    categorySelect.appendChild(option);
-                }
-            });
-        } catch (error) {
-            console.error('Error fetching categories:', error);
-        }
-    }
+        // Tạo một trường hình ảnh mới
+        const newImageDiv = document.createElement('div');
+        newImageDiv.classList.add('col-md-3', 'mb-3');
 
-    function updateCategoryId(selectElement) {
-        const selectedValue = selectElement.value;
-        document.getElementById('CategoryInput').value = selectedValue; // Cập nhật giá trị cho input ẩn
+        newImageDiv.innerHTML = `
+            <input name="Images" class="form-control rounded-pill" placeholder="Nhập URL hình ảnh" oninput="updateImagePreview(this, ${imageCount})" required />
+            <img id="imagePreview_${imageCount}" class="img-fluid img-thumbnail mt-2 shadow-sm" style="max-width: 150px;" src="~/images/placeholder.png" />
+        `;
+
+        imagesContainer.appendChild(newImageDiv);
+        imageCount++; // Tăng số lượng hình ảnh
     }
 
     function updateImagePreview(input, index) {
@@ -113,15 +80,74 @@
             imagePreview.src = '~/images/placeholder.png'; // Hình ảnh mặc định nếu không có URL
         }
     }
-
-    window.onload = function () {
-        fetchCategories();
-        // Tự động hiển thị hình ảnh mặc định cho mỗi hình ảnh
-        for (let i = 0; i < 4; i++) {
-            const imagePreview = document.getElementById(`imagePreview_${i}`);
-            imagePreview.src = '~/images/placeholder.png'; // Đặt hình ảnh mặc định
+    async function fetchCategories() {
+        try {
+            const response = await fetch('http://localhost:7059/api/categories');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const categories = await response.json();
+            const categorySelect = document.getElementById('CategoryId');
+            categories.forEach(category => {
+                if (category.categoryId > 0) {
+                    const option = document.createElement('option');
+                    option.value = category.categoryId;
+                    option.textContent = category.categoryName;
+                    categorySelect.appendChild(option);
+                }
+            });
+        } catch (error) {
+            console.error('Error fetching categories:', error);
         }
-    };
+    }
+    document.getElementById('createProductForm').addEventListener('submit', async function (event) {
+        event.preventDefault(); // Ngăn chặn hành vi gửi form mặc định
+        
+        const formData = new FormData(this);
+        const restaurantId = '@Html.Raw(ViewBag.RestaurantId)';
+        const product = {
+            restaurantId: parseInt(restaurantId),
+            categoryId: parseInt(formData.get('CategoryId')),
+            name: formData.get('Name'),
+            description: formData.get('Description'),
+            price: parseFloat(formData.get('Price')),
+            images: []
+        };
+        console.log(product);
+        // Lấy thông tin hình ảnh
+        for (let i = 0; i < imageCount; i++) {
+            const imageUrl = formData.get('Images');
+            if (imageUrl) {
+                product.images.push({
+                    imageUrl: imageUrl,
+                    orderIndex: (i+1)
+                });
+            }
+        }
+        // Gửi dữ liệu tới API
+        try {
+            const response = await fetch('http://localhost:7059/api/products/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(product)
+            });
+
+            if (response.ok) {
+                alert('Sản phẩm đã được tạo thành công!');
+                location.reload(); 
+            } else {
+                const error = await response.json();
+                alert('Lỗi: ' + error.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Đã xảy ra lỗi khi tạo sản phẩm.');
+        }
+    });
+
+
 </script>
 
 <style>

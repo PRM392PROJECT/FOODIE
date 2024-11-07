@@ -15,7 +15,7 @@ namespace Foodie.ManagementAPI.Controllers
 
         private readonly IMapper _mapper;
 
-        public ProductFeedBacksAPI(IProductFeedbackRepository productFeedbackRepository,IMapper mapper)
+        public ProductFeedBacksAPI(IProductFeedbackRepository productFeedbackRepository, IMapper mapper)
         {
             _productFeedbackRepository = productFeedbackRepository;
             _mapper = mapper;
@@ -23,12 +23,13 @@ namespace Foodie.ManagementAPI.Controllers
 
         // ok
         [HttpGet("get-page")]
-        public async Task<IActionResult> GetPageFeedBack([FromQuery] int productId, [FromQuery]  int pageNumber =1, [FromQuery] int pageSIze =5)
+        public async Task<IActionResult> GetPageFeedBack([FromQuery] int productId, [FromQuery] int pageNumber = 1,
+            [FromQuery] int pageSIze = 5)
         {
             try
             {
-                var feedbacks =  await _productFeedbackRepository.GetFeedback(productId, pageNumber, pageSIze);
-                var total =  await _productFeedbackRepository.CountByProductId(productId);
+                var feedbacks = await _productFeedbackRepository.GetFeedback(productId, pageNumber, pageSIze);
+                var total = await _productFeedbackRepository.CountByProductId(productId);
                 var items = _mapper.Map<List<ProductFeedbackResponse>>(feedbacks);
                 var page = new ViewPage<ProductFeedbackResponse>(pageNumber, pageSIze, items, total);
                 return Ok(page);
@@ -38,6 +39,7 @@ namespace Foodie.ManagementAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
         // ok
         [HttpPost("create")]
         public async Task<IActionResult> CreateFeedBack([FromBody] ProductFeedbackRequest productFeedbackRequest)
@@ -46,6 +48,7 @@ namespace Foodie.ManagementAPI.Controllers
             {
                 return BadRequest(new { Message = "Invalid data submitted." });
             }
+
             try
             {
                 var feedback = _mapper.Map<ProductFeedback>(productFeedbackRequest);
@@ -59,6 +62,5 @@ namespace Foodie.ManagementAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
     }
 }

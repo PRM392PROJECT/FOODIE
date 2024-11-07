@@ -3,7 +3,6 @@ using Foodie.BusinesAccessLayer.Repositories;
 using Foodie.DataAccessLayer.Models;
 using Foodie.ManagementAPI.RequestDto;
 using Foodie.ManagementAPI.ResponseDto;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Foodie.ManagementAPI.Controllers
@@ -14,12 +13,13 @@ namespace Foodie.ManagementAPI.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IOrderRepository _orderRepository;
+
         public OrdersAPI(IMapper mapper, IOrderRepository orderRepository)
         {
             _mapper = mapper;
             _orderRepository = orderRepository;
-
         }
+
         [HttpPost("create-order")]
         public async Task<IActionResult> CreateOrder([FromBody] OrderRequest orderRequest)
         {
@@ -27,6 +27,7 @@ namespace Foodie.ManagementAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
+
             try
             {
                 var order = _mapper.Map<Order>(orderRequest);
@@ -39,6 +40,7 @@ namespace Foodie.ManagementAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
         [HttpGet("get-order-by-userId/{userId}")]
         public async Task<IActionResult> GetOrderByUserId(int userId)
         {
@@ -46,12 +48,28 @@ namespace Foodie.ManagementAPI.Controllers
             {
                 var orders = await _orderRepository.GetOrdersByUserId(userId);
                 var orderResponses = _mapper.Map<List<OrderResponse>>(orders);
-                orderResponses= orderResponses.OrderByDescending(o => o.OrderDate).ToList();
+                orderResponses = orderResponses.OrderByDescending(o => o.OrderDate).ToList();
                 return Ok(orderResponses);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("get-order-of-saler/{salerId}")]
+        public async Task<IActionResult> GetOrderOfSaler([FromRoute]int salerId)
+        {
+            try
+            {
+                var orders = await _orderRepository.GetOrdersBySalerId(salerId);
+                var orderResponses = _mapper.Map<List<OrderResponse>>(orders);
+                orderResponses = orderResponses.OrderByDescending(o => o.OrderDate).ToList();
+                return Ok(orderResponses);
+            }
+            catch (Exception ex)
+            {
+                return Conflict(ex.Message);
             }
         }
     }

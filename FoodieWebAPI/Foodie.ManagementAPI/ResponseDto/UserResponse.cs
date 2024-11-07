@@ -2,7 +2,10 @@
 {
     public class UserResponse
     {
-        public UserResponse() { }
+        public UserResponse()
+        {
+        }
+
         public int UserId { get; set; }
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
@@ -14,6 +17,6 @@
         public string? AvatarUrl { get; set; }
         public int RoleId { get; set; }
         public string RoleName { get; set; }
-        public int ?RestaurantId { get; set; }
+        public int? RestaurantId { get; set; }
     }
 }

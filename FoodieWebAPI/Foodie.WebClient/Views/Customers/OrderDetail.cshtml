@@ -1,0 +1,220 @@
+﻿@await Html.PartialAsync("_Header_Customer")
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f2f5;
+    }
+
+    .order-detail {
+        max-width: 600px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-detail h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #4A90E2;
+        margin-bottom: 10px;
+    }
+
+    .order-detail p {
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: #666;
+    }
+
+    .order-items h3 {
+        font-size: 20px;
+        margin-top: 20px;
+        color: #333;
+    }
+
+    .order-items table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        background-color: #fafafa;
+    }
+
+    .order-items th, .order-items td {
+        border: 1px solid #e0e0e0;
+        padding: 12px;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .order-items th {
+        background-color: #f2f7fa;
+        color: #333;
+    }
+
+    .button {
+        display: inline-block;
+        background-color: #4A90E2;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        text-align: center;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .button:hover {
+        background-color: #357ABD;
+        transform: scale(1.05);
+    }
+
+    .success-message, .error-message {
+        padding: 10px;
+        margin-top: 15px;
+        display: none;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .success-message {
+        color: #3c763d;
+        background-color: #dff0d8;
+        border: 1px solid #d6e9c6;
+    }
+
+    .error-message {
+        color: #a94442;
+        background-color: #f2dede;
+        border: 1px solid #ebccd1;
+    }
+    
+    
+    .order-detail h2, .order-items h3 {
+        font-size: 18px;
+    }
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+</style>
+
+<div class="container">
+    <div class="order-detail">
+        <h2>Chi tiết đơn hàng</h2>
+        <p><strong>ID nhà hàng:</strong> <span id="restaurantId">Loading...</span></p>
+        <p><strong>Tổng số tiền:</strong> <span id="totalAmount">Loading</span> VNĐ</p>
+        <p><strong>Trạng thái:</strong> Đang xử lý</p>
+
+        <div class="order-items">
+            <h3>Sản phẩm trong đơn hàng</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                </tr>
+                </thead>
+                <tbody id="orderItemsTableBody">
+                <tr>
+                    <td colspan="4">Loading...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button class="button" onclick="createOrder()">Đặt hàng</button>
+        <div class="success-message" id="successMessage">Đơn hàng đã được tạo thành công!</div>
+        <div class="error-message" id="errorMessage">Có lỗi xảy ra khi tạo đơn hàng. Vui lòng thử lại.</div>
+    </div>
+</div>
+
+<script>
+    let product = null;
+    let productId = @Html.Raw(Model);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchProductById(productId);
+    });
+
+    function fetchProductById(productId) {
+        const api = `http://localhost:7059/api/products/get-byId/${productId}`;
+
+        fetch(api)
+            .then(response => response.json())
+            .then(data => {
+                product = data;
+
+                document.getElementById("restaurantId").textContent = product.restaurantId;
+                document.getElementById("totalAmount").textContent = product.price;
+
+                const orderItemsTableBody = document.getElementById("orderItemsTableBody");
+                orderItemsTableBody.innerHTML = `
+                    <tr>
+                        <td>${product.productId}</td>
+                        <td>${product.name}</td>
+                        <td>1</td>
+                        <td>${product.price} VNĐ</td>
+                    </tr>
+                `;
+            })
+            .catch(error => {
+                document.getElementById("errorMessage").textContent = "Có lỗi xảy ra khi tải dữ liệu sản phẩm: " + error.message;
+                document.getElementById("errorMessage").style.display = "block";
+                console.error("Error fetching product:", error);
+            });
+    }
+
+    function createOrder() {
+        if (!product) {
+            alert("Product data not loaded. Please try again.");
+            return;
+        }
+
+        const orderData = {
+            userId: '@Html.ViewBag.UserId',
+            restaurantId: product.restaurantId,
+            totalAmount: product.price,
+            status: 1,
+            orderItems: [
+                {
+                    productId: product.productId,
+                    quantity: 1,
+                    price: product.price
+                }
+            ]
+        };
+
+        fetch("http://localhost:7059/api/orders/create-order", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(orderData)
+        })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById("successMessage").style.display = "block";
+                    document.getElementById("errorMessage").style.display = "none";
+                    alert('Order success');
+                    window.location.href='/Customers/MyOrder';
+                } else {
+                    throw new Error("Error creating order");
+                }
+            })
+            .catch(error => {
+                document.getElementById("errorMessage").textContent = "Có lỗi xảy ra khi tạo đơn hàng: " + error.message;
+                document.getElementById("errorMessage").style.display = "block";
+                document.getElementById("successMessage").style.display = "none";
+                console.error("Error:", error);
+            });
+    }
+</script>

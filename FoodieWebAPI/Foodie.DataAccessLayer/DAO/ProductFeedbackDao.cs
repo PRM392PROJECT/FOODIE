@@ -32,13 +32,13 @@ namespace Foodie.DataAccessLayer.DAO
                     UserId = p.UserId,
                     Rating = p.Rating,
                     Comment = p.Comment,
-                    User = new User 
+                    User = new User
                     {
                         UserId = p.User.UserId,
                         FirstName = p.User.FirstName,
                         LastName = p.User.LastName,
                         Email = p.User.Email,
-                        AvatarUrl  = p.User.AvatarUrl
+                        AvatarUrl = p.User.AvatarUrl
                     }
                 })
                 .ToListAsync();
@@ -53,15 +53,16 @@ namespace Foodie.DataAccessLayer.DAO
             await _context.SaveChangesAsync();
             return productFeedback;
         }
+
         public async Task<bool> Delete(int feedBackId)
         {
             var fd = await _context.ProductFeedbacks
                 .FirstOrDefaultAsync(x => x.FeedbackId == feedBackId);
             if (fd == null) return false;
             _context.ProductFeedbacks.Remove(fd);
-            return await _context.SaveChangesAsync()>0;
-        
+            return await _context.SaveChangesAsync() > 0;
         }
+
         public async Task<int> CountByProductId(int productId)
         {
             var total = await _context.ProductFeedbacks
@@ -73,8 +74,8 @@ namespace Foodie.DataAccessLayer.DAO
         public async Task<ProductFeedback> GetById(int id)
         {
             var fed = await _context.ProductFeedbacks
-                .Include(u=>u.User)
-                .FirstOrDefaultAsync(x=>x.FeedbackId == id);
+                .Include(u => u.User)
+                .FirstOrDefaultAsync(x => x.FeedbackId == id);
             return fed;
         }
     }

@@ -31,7 +31,7 @@ namespace Foodie.WebClient.Services
                 IssuerSigningKey = new SymmetricSecurityKey(key),
                 ValidateIssuer = false,
                 ValidateAudience = false,
-                ClockSkew = TimeSpan.Zero  // Optional: reduce the clock skew
+                ClockSkew = TimeSpan.Zero // Optional: reduce the clock skew
             };
 
             // Validate the token and get the claims

@@ -1,127 +1,182 @@
-﻿@model Foodie.ManagementAPI.ResponseDto.ProductResponse
-
-@{
-    ViewData["Title"] = "Thêm Sản Phẩm Mới";
-}
-@await Html.PartialAsync("_Header_Seller")
+﻿@await Html.PartialAsync("_Header_Seller")
 
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Thêm Sản Phẩm Mới</h2>
+    <h2 class="text-center mb-4">Edit Product</h2>
 
-    @if (!ViewData.ModelState.IsValid)
-    {
-        <div class="alert alert-danger">
-            <ul>
-                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-                {
-                    <li>@error.ErrorMessage</li>
-                }
-            </ul>
-        </div>
-    }
-
-    <form id="createProductForm" asp-action="EditProduct" method="post" enctype="multipart/form-data">
+    <form id="createProductForm">
         <div class="row mb-3">
             <div class="col-md-6">
-                <label asp-for="Name" class="form-label fw-bold">Tên Sản Phẩm</label>
-                <input asp-for="Name" class="form-control rounded-pill" placeholder="Nhập tên sản phẩm" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label for="Name" class="form-label fw-bold">Product Name</label>
+                <input name="Name" id="Name" class="form-control rounded-pill" placeholder="Enter product name" required />
             </div>
 
             <div class="col-md-6">
-                <label asp-for="Price" class="form-label fw-bold">Giá</label>
-                <input asp-for="Price" class="form-control rounded-pill" placeholder="Nhập giá sản phẩm" />
-                <span asp-validation-for="Price" class="text-danger"></span>
+                <label for="Price" class="form-label fw-bold">Price</label>
+                <input name="Price" id="Price" type="number" min="0" step="0.01" class="form-control rounded-pill" placeholder="Enter product price" required />
             </div>
         </div>
 
         <div class="mb-3">
-            <label asp-for="Description" class="form-label fw-bold">Mô Tả</label>
-            <textarea asp-for="Description" class="form-control rounded-3" rows="3" placeholder="Mô tả chi tiết về sản phẩm"></textarea>
-            <small class="form-text text-muted">Vui lòng cung cấp mô tả chi tiết về sản phẩm.</small>
-            <span asp-validation-for="Description" class="text-danger"></span>
+            <label for="Description" class="form-label fw-bold">Description</label>
+            <textarea name="Description" id="Description" class="form-control rounded-3" rows="3" placeholder="Detailed product description" required></textarea>
+            <small class="form-text text-muted">Please provide a detailed description of the product.</small>
         </div>
 
         <div class="mb-3">
-            <label asp-for="CategoryId" class="form-label fw-bold">Danh Mục</label>
-            <input asp-for="CategoryId" id="CategoryInput" />
-            <select asp-for="CategoryId" class="form-select rounded-pill" id="CategoryId" onchange="updateCategoryId(this)">
-                <option value="">Chọn danh mục</option>
+            <label for="CategoryId" class="form-label fw-bold">Category</label>
+            <input name="CategoryId" id="CategoryInput" type="hidden" />
+            <select name="CategoryId" class="form-select rounded-pill" id="CategoryId" onchange="updateCategoryId(this)" required>
+                <option value="">Select a category</option>
             </select>
-            <span asp-validation-for="CategoryId" class="text-danger"></span>
         </div>
 
-        <!-- Bốn vị trí nhập cho hình ảnh -->
-        <div class="row mb-3 text-center">
-            @if (Model.Images.Count>0)
-            {
-                @for (int i = 0; i < Model.Images.Count; i++)
-                {
-                    <div class="col-md-3 mb-3">
-                        <label class="form-label fw-bold">Hình ảnh @(i + 1)</label>
-                        <input asp-for="Images[@i].ImageUrl" class="form-control rounded-pill" placeholder="Nhập URL hình ảnh" oninput="updateImagePreview(this, @i)" />
-                        <input asp-for="Images[@i].OrderIndex" value="@(i + 1)" type="number" hidden />
-                        <span asp-validation-for="Images[@i].ImageUrl" class="text-danger"></span>
-
-                        <!-- Thẻ img để hiển thị hình ảnh mặc định -->
-                        <img id="imagePreview_@i" class="img-fluid img-thumbnail mt-2 shadow-sm" style="max-width: 150px;"
-                             src="@Model.Images[@i].ImageUrl" asp-srcfor />
-                    </div>
-                }
-            }
-        </div>
+        <!-- Image Input Section -->
+        <div class="row mb-3 text-center" id="images"></div>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-success btn-lg rounded-pill">Tạo Sản Phẩm</button>
+            <button type="button" id="btnUpdate" class="btn btn-success btn-lg rounded-pill">Save</button>
+            <button type="button" id="btnEditImage" class="btn btn-primary btn-lg rounded-pill">Edit Images</button>
+            <button type="button" id="btnDelete" class="btn btn-danger btn-lg rounded-pill" onclick="deleteProduct(@Html.Raw(Model))">Delete</button>
         </div>
     </form>
 </div>
 
-<script>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', async () => {
+        await fetchCategories();
+        await showProduct();
+    });
+
+    document.getElementById('btnUpdate').addEventListener('click', async () => {
+        if (validateForm()) {
+            await updateProduct();
+        } else {
+            alert("Please fill in all required fields correctly.");
+        }
+    });
+
+    document.getElementById('btnEditImage').addEventListener('click', () => {
+        window.location.href = `/Sellers/UpdateImageProduct/${@Html.Raw(Model)}`;
+    });
+
+    function validateForm() {
+        const name = document.getElementById('Name').value.trim();
+        const price = document.getElementById('Price').value.trim();
+        const description = document.getElementById('Description').value.trim();
+        const categoryId = document.getElementById('CategoryId').value;
+
+        return name && price && description && categoryId;
+    }
+
+    async function updateProduct() {
+        const productId = @Html.Raw(Model);
+        const api = `http://localhost:7059/api/products/update-product/${productId}`;
+        const productUpdate = {
+            categoryId: parseInt(document.getElementById('CategoryId').value),
+            name: document.getElementById('Name').value.trim(),
+            description: document.getElementById('Description').value.trim(),
+            price: parseFloat(document.getElementById('Price').value.trim())
+        };
+
+        try {
+            const response = await fetch(api, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(productUpdate)
+            });
+
+            if (response.ok) {
+                alert('Update successful');
+                window.location.href = '/sellers/dashboard';
+            } else {
+                alert('Update failed. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error updating product:', error);
+            alert('An error occurred while updating the product. Please try again later.');
+        }
+    }
+    async function deleteProduct(productId) {
+        const api = `http://localhost:7059/api/products/delete/${productId}`;
+
+        // Ask for user confirmation before deletion
+        const confirmed = confirm("Are you sure you want to delete this product?");
+        if (!confirmed) {
+            return; // Exit if the user cancels
+        }
+
+        try {
+            const response = await fetch(api, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                alert('Delete successful');
+                window.location.href = '/Sellers/Dashboard';
+            }
+        } catch (error) {
+            console.log('Error during deletion:', error);
+            alert('An error occurred while deleting the product.');
+        }
+    }
+
+    async function showProduct() {
+        const productId = @Html.Raw(Model);
+        const api = `http://localhost:7059/api/products/get-byId/${productId}`;
+
+        try {
+            const response = await fetch(api);
+
+            if (response.ok) {
+                const data = await response.json();
+                document.getElementById('Name').value = data.name;
+                document.getElementById('Price').value = data.price;
+                document.getElementById('Description').value = data.description;
+
+                const categorySelect = document.getElementById('CategoryId');
+                Array.from(categorySelect.options).forEach(option => {
+                    if (option.value == data.categoryId) {
+                        option.selected = true;
+                    }
+                });
+            } else {
+                alert('Failed to load product details.');
+            }
+        } catch (error) {
+            console.error('Error fetching product details:', error);
+            alert('An error occurred while loading the product details.');
+        }
+    }
+
     async function fetchCategories() {
         try {
             const response = await fetch('http://localhost:7059/api/categories');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const categories = await response.json();
-            const categorySelect = document.getElementById('CategoryId');
 
-            categories.forEach(category => {
-                if (category.categoryId > 0) {
-                    const option = document.createElement('option');
-                    option.value = category.categoryId;
-                    option.textContent = category.categoryName;
-                    categorySelect.appendChild(option);
-                }
-            });
+            if (response.ok) {
+                const categories = await response.json();
+                const categorySelect = document.getElementById('CategoryId');
+                categories.forEach(category => {
+                    if (category.categoryId > 0) {
+                        const option = document.createElement('option');
+                        option.value = category.categoryId;
+                        option.textContent = category.categoryName;
+                        categorySelect.appendChild(option);
+                    }
+                });
+            } else {
+                alert('Failed to load categories.');
+            }
         } catch (error) {
             console.error('Error fetching categories:', error);
+            alert('An error occurred while loading categories.');
         }
     }
 
     function updateCategoryId(selectElement) {
-        const selectedValue = selectElement.value;
-        document.getElementById('CategoryInput').value = selectedValue; // Cập nhật giá trị cho input ẩn
+        document.getElementById('CategoryInput').value = selectElement.value;
     }
-
-    function updateImagePreview(input, index) {
-        const fileInput = input.value;
-        const imagePreview = document.getElementById(`imagePreview_${index}`);
-
-        if (fileInput) {
-            imagePreview.src = fileInput;  // Hiển thị URL hình ảnh đã nhập
-            imagePreview.style.display = 'block'; // Hiển thị hình ảnh nếu có URL
-        } else {
-            imagePreview.src = '~/images/placeholder.png'; // Hình ảnh mặc định nếu không có URL
-        }
-    }
-
-    window.onload = function () {
-        fetchCategories();
-        // Tự động hiển thị hình ảnh mặc định cho mỗi hình ảnh
-
-    };
 </script>
 
 <style>
@@ -147,18 +202,5 @@
     .btn {
         padding: 10px 30px;
         font-size: 1.2rem;
-    }
-
-    .img-thumbnail {
-        border: none;
-        border-radius: 8px;
-    }
-
-    .row {
-        justify-content: space-between;
-    }
-
-    .shadow-sm {
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
     }
 </style>

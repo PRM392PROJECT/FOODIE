@@ -1,70 +1,90 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\",
+  "WorkspaceRootPath": "E:\\Project\\FOODIE\\FoodieWebAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.managementapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|solutionrelative:foodie.managementapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.managementapi\\controllers\\categoriesapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|solutionrelative:foodie.managementapi\\controllers\\categoriesapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62447484-D95C-41F3-8515-A6EA1F1248ED}|Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.dataaccesslayer\\dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62447484-D95C-41F3-8515-A6EA1F1248ED}|Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj|solutionrelative:foodie.dataaccesslayer\\dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.managementapi\\controllers\\productsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|solutionrelative:foodie.managementapi\\controllers\\productsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.managementapi\\controllers\\usersapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|solutionrelative:foodie.managementapi\\controllers\\usersapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.managementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.managementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|solutionrelative:foodie.managementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.webclient\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.webclient\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.webclient\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.webclient\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.webclient\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.webclient\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.webclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.webclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.managementapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|solutionrelative:foodie.managementapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.webclient\\views\\customers\\myorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\customers\\myorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88406271-FD1D-48DD-8E52-7D5AA81D7316}|Foodie.Service\\Foodie.Service.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.service\\foodie.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{88406271-FD1D-48DD-8E52-7D5AA81D7316}|Foodie.Service\\Foodie.Service.csproj|solutionrelative:foodie.service\\foodie.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.webclient\\views\\orders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\orders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.webclient\\foodie.webclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\foodie.webclient.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.webclient\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\fall 2024\\prm391\\project\\foodiewebapi\\foodie.webclient\\views\\users\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\users\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.webclient\\views\\sellers\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\sellers\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.webclient\\views\\sellers\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\sellers\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.webclient\\views\\customers\\editaddress.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\customers\\editaddress.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.webclient\\views\\customers\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\customers\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.managementapi\\controllers\\cartsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|solutionrelative:foodie.managementapi\\controllers\\cartsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.managementapi\\controllers\\usersapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|solutionrelative:foodie.managementapi\\controllers\\usersapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.managementapi\\controllers\\productsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|solutionrelative:foodie.managementapi\\controllers\\productsapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.managementapi\\controllers\\productfeedbacksapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|solutionrelative:foodie.managementapi\\controllers\\productfeedbacksapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.webclient\\views\\products\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\products\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.webclient\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.webclient\\views\\sellers\\editproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\sellers\\editproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.webclient\\views\\sellers\\createfood.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C453C2C-CE91-4561-B0B8-367D0D946DB5}|Foodie.WebClient\\Foodie.WebClient.csproj|solutionrelative:foodie.webclient\\views\\sellers\\createfood.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62447484-D95C-41F3-8515-A6EA1F1248ED}|Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.dataaccesslayer\\dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62447484-D95C-41F3-8515-A6EA1F1248ED}|Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj|solutionrelative:foodie.dataaccesslayer\\dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62447484-D95C-41F3-8515-A6EA1F1248ED}|Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.dataaccesslayer\\dbcontexts\\foodiecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62447484-D95C-41F3-8515-A6EA1F1248ED}|Foodie.DataAccessLayer\\Foodie.DataAccessLayer.csproj|solutionrelative:foodie.dataaccesslayer\\dbcontexts\\foodiecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|e:\\project\\foodie\\foodiewebapi\\foodie.managementapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F39F933D-E91A-4AE6-95CF-1912C73B3A27}|Foodie.ManagementAPI\\Foodie.ManagementAPI.csproj|solutionrelative:foodie.managementapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,724 +94,275 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 129,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:4:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:5:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:5:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:8:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:6:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:132:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:27:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{99a11807-c5db-4877-ad35-09b56a044012}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{9a7cebbb-dc5c-4986-bc49-962da46aa506}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:132:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0504ff91-9d61-11d0-a794-00a0c9110051}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:2:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{873151d0-cf2e-48cc-b4bf-ad0394f6a3c3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1377497384:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:15:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:16:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:17:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:14:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:13:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:12:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:11:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:10:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:9:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:8:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:7:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:6:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:5:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:4:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:3:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1928210406:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:350743133:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:13:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:9:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:16:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:10:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:11:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:7:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:26:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:28:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:133:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:134:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{f5cd1b51-c771-5648-966f-646d419b1e7c}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:147:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:148:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:143:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:144:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:145:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:146:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:142:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:139:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:140:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:141:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:138:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:135:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:139:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:137:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:138:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:38:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:69:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:14:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:15:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:29:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:34:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{80c411e8-fd5e-4b16-914b-0d9d84172cc1}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{93c5e7ad-af06-49e6-a756-b8f3eaca790d}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{c93a910a-0fa6-4307-93a4-f2bd61ec7828}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:30:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:31:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:134:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:134:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:135:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:133:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:35:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:2:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProductDao.cs",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.DataAccessLayer\\DAO\\ProductDao.cs",
-              "RelativeDocumentMoniker": "Foodie.DataAccessLayer\\DAO\\ProductDao.cs",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.DataAccessLayer\\DAO\\ProductDao.cs",
-              "RelativeToolTip": "Foodie.DataAccessLayer\\DAO\\ProductDao.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAASwFAAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T02:24:46.742Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductsAPI.cs",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\ProductsAPI.cs",
-              "RelativeDocumentMoniker": "Foodie.ManagementAPI\\Controllers\\ProductsAPI.cs",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\ProductsAPI.cs",
-              "RelativeToolTip": "Foodie.ManagementAPI\\Controllers\\ProductsAPI.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAAAIkAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T03:08:46.788Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Services\\TokenService.cs",
-              "RelativeDocumentMoniker": "Foodie.WebClient\\Services\\TokenService.cs",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Services\\TokenService.cs",
-              "RelativeToolTip": "Foodie.WebClient\\Services\\TokenService.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABoAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T02:29:20.234Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "Foodie.WebClient\\Controllers\\ProductsController.cs",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "Foodie.WebClient\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T02:27:38.189Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Foodie.WebClient\\Controllers\\HomeController.cs",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Foodie.WebClient\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T02:24:26.349Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\appsettings.json",
-              "RelativeDocumentMoniker": "Foodie.WebClient\\appsettings.json",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\appsettings.json",
-              "RelativeToolTip": "Foodie.WebClient\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-21T02:23:04.452Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.ManagementAPI\\Program.cs",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Program.cs",
               "RelativeDocumentMoniker": "Foodie.ManagementAPI\\Program.cs",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.ManagementAPI\\Program.cs",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Program.cs",
               "RelativeToolTip": "Foodie.ManagementAPI\\Program.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T02:22:17.793Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.ManagementAPI\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Foodie.ManagementAPI\\Properties\\launchSettings.json",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.ManagementAPI\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Foodie.ManagementAPI\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-21T03:02:13.188Z",
+              "WhenOpened": "2024-11-06T04:46:29.847Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Foodie.WebClient\\Controllers\\UsersController.cs",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Foodie.WebClient\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAwwEQAAAANAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Program.cs",
+              "RelativeDocumentMoniker": "Foodie.WebClient\\Program.cs",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Program.cs",
+              "RelativeToolTip": "Foodie.WebClient\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T02:20:00.199Z"
+              "WhenOpened": "2024-11-06T04:46:26.601Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "UsersAPI.cs",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\UsersAPI.cs",
-              "RelativeDocumentMoniker": "Foodie.ManagementAPI\\Controllers\\UsersAPI.cs",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\UsersAPI.cs",
-              "RelativeToolTip": "Foodie.ManagementAPI\\Controllers\\UsersAPI.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAAAKsAAAAQAAAAAAAAAA==",
+              "Title": "MyOrder.cshtml",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Customers\\MyOrder.cshtml",
+              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Customers\\MyOrder.cshtml",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Customers\\MyOrder.cshtml",
+              "RelativeToolTip": "Foodie.WebClient\\Views\\Customers\\MyOrder.cshtml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAgwEIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-06T04:33:27.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Orders\\Index.cshtml",
+              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Orders\\Index.cshtml",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Orders\\Index.cshtml",
+              "RelativeToolTip": "Foodie.WebClient\\Views\\Orders\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-06T04:33:24.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeToolTip": "Foodie.WebClient\\Views\\Admin\\Dashboard.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAEsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-06T04:24:50.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoriesAPI.cs",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\CategoriesAPI.cs",
+              "RelativeDocumentMoniker": "Foodie.ManagementAPI\\Controllers\\CategoriesAPI.cs",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\CategoriesAPI.cs",
+              "RelativeToolTip": "Foodie.ManagementAPI\\Controllers\\CategoriesAPI.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAcwBkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T02:24:51.957Z"
+              "WhenOpened": "2024-11-06T03:56:48.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Orders.cshtml",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Sellers\\Orders.cshtml",
+              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Sellers\\Orders.cshtml",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Sellers\\Orders.cshtml",
+              "RelativeToolTip": "Foodie.WebClient\\Views\\Sellers\\Orders.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-06T04:02:18.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EditAddress.cshtml",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Customers\\EditAddress.cshtml",
+              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Customers\\EditAddress.cshtml",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Customers\\EditAddress.cshtml",
+              "RelativeToolTip": "Foodie.WebClient\\Views\\Customers\\EditAddress.cshtml",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAAAGIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-06T03:40:00.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Customers\\Profile.cshtml",
+              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Customers\\Profile.cshtml",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Customers\\Profile.cshtml",
+              "RelativeToolTip": "Foodie.WebClient\\Views\\Customers\\Profile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-06T03:39:58.876Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Home\\Index.cshtml",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Foodie.WebClient\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-21T02:24:18.303Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.ManagementAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "Foodie.ManagementAPI\\appsettings.json",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.ManagementAPI\\appsettings.json",
-              "RelativeToolTip": "Foodie.ManagementAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-21T02:22:50.755Z"
+              "Title": "CartsAPI.cs",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\CartsAPI.cs",
+              "RelativeDocumentMoniker": "Foodie.ManagementAPI\\Controllers\\CartsAPI.cs",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\CartsAPI.cs",
+              "RelativeToolTip": "Foodie.ManagementAPI\\Controllers\\CartsAPI.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAkwA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T03:23:57.086Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Program.cs",
-              "RelativeDocumentMoniker": "Foodie.WebClient\\Program.cs",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Program.cs",
-              "RelativeToolTip": "Foodie.WebClient\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAArAAAAAAAAAA==",
+              "Title": "UsersAPI.cs",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\UsersAPI.cs",
+              "RelativeDocumentMoniker": "Foodie.ManagementAPI\\Controllers\\UsersAPI.cs",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\UsersAPI.cs",
+              "RelativeToolTip": "Foodie.ManagementAPI\\Controllers\\UsersAPI.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T02:22:41.608Z"
+              "WhenOpened": "2024-11-06T03:23:50.387Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "Foodie.Service.csproj",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.Service\\Foodie.Service.csproj",
-              "RelativeDocumentMoniker": "Foodie.Service\\Foodie.Service.csproj",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.Service\\Foodie.Service.csproj",
-              "RelativeToolTip": "Foodie.Service\\Foodie.Service.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-21T02:22:06.529Z"
+              "Title": "ProductFeedBacksAPI.cs",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\ProductFeedBacksAPI.cs",
+              "RelativeDocumentMoniker": "Foodie.ManagementAPI\\Controllers\\ProductFeedBacksAPI.cs",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\ProductFeedBacksAPI.cs",
+              "RelativeToolTip": "Foodie.ManagementAPI\\Controllers\\ProductFeedBacksAPI.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T03:23:36.469Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "Foodie.WebClient.csproj",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Foodie.WebClient.csproj",
-              "RelativeDocumentMoniker": "Foodie.WebClient\\Foodie.WebClient.csproj",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Foodie.WebClient.csproj",
-              "RelativeToolTip": "Foodie.WebClient\\Foodie.WebClient.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-21T02:19:38.33Z"
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Products\\Detail.cshtml",
+              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Products\\Detail.cshtml",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Products\\Detail.cshtml",
+              "RelativeToolTip": "Foodie.WebClient\\Views\\Products\\Detail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-06T03:06:44.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FOODIEContext.cs",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.DataAccessLayer\\DBContexts\\FOODIEContext.cs",
+              "RelativeDocumentMoniker": "Foodie.DataAccessLayer\\DBContexts\\FOODIEContext.cs",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.DataAccessLayer\\DBContexts\\FOODIEContext.cs",
+              "RelativeToolTip": "Foodie.DataAccessLayer\\DBContexts\\FOODIEContext.cs",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAAwNEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T01:41:45.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProductDao.cs",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.DataAccessLayer\\DAO\\ProductDao.cs",
+              "RelativeDocumentMoniker": "Foodie.DataAccessLayer\\DAO\\ProductDao.cs",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.DataAccessLayer\\DAO\\ProductDao.cs",
+              "RelativeToolTip": "Foodie.DataAccessLayer\\DAO\\ProductDao.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAwE0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T01:24:48.062Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Views\\Users\\Login.cshtml",
-              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Users\\Login.cshtml",
-              "ToolTip": "E:\\Fall 2024\\PRM391\\Project\\FoodieWebAPI\\Foodie.WebClient\\Views\\Users\\Login.cshtml",
-              "RelativeToolTip": "Foodie.WebClient\\Views\\Users\\Login.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Products\\Index.cshtml",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "Foodie.WebClient\\Views\\Products\\Index.cshtml",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAAJ4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-21T02:19:53.039Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 120,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:12:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "WhenOpened": "2024-11-04T01:21:01.951Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:13:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EditProduct.cshtml",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Sellers\\EditProduct.cshtml",
+              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Sellers\\EditProduct.cshtml",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Sellers\\EditProduct.cshtml",
+              "RelativeToolTip": "Foodie.WebClient\\Views\\Sellers\\EditProduct.cshtml",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAwwIEAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-04T01:10:41.452Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:132:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CreateFood.cshtml",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Sellers\\CreateFood.cshtml",
+              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Sellers\\CreateFood.cshtml",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Sellers\\CreateFood.cshtml",
+              "RelativeToolTip": "Foodie.WebClient\\Views\\Sellers\\CreateFood.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-04T01:10:22.669Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 1304,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:133:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Sellers\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Foodie.WebClient\\Views\\Sellers\\Dashboard.cshtml",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.WebClient\\Views\\Sellers\\Dashboard.cshtml",
+              "RelativeToolTip": "Foodie.WebClient\\Views\\Sellers\\Dashboard.cshtml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAwCkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-04T01:06:01.296Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProductsAPI.cs",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\ProductsAPI.cs",
+              "RelativeDocumentMoniker": "Foodie.ManagementAPI\\Controllers\\ProductsAPI.cs",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Controllers\\ProductsAPI.cs",
+              "RelativeToolTip": "Foodie.ManagementAPI\\Controllers\\ProductsAPI.cs",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAAAO8AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T01:02:19.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Foodie.ManagementAPI\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\Project\\FOODIE\\FoodieWebAPI\\Foodie.ManagementAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Foodie.ManagementAPI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-04T00:49:51.41Z"
             }
           ]
         }

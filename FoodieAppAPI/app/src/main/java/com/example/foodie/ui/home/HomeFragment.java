@@ -17,6 +17,7 @@ import com.example.foodie.customview.CollectionPagerAdapter;
 import com.example.foodie.databinding.FragmentHomeBinding;
 import com.example.foodie.models.Category;
 import com.example.foodie.models.Product;
+import com.example.foodie.ui.cart.CartActivity;
 import com.example.foodie.ui.product.ProductListFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -47,6 +48,7 @@ public class HomeFragment extends Fragment implements IHomeView , View.OnClickLi
         fragments = new ArrayList<>();
         binding.header.iconSearch.setOnClickListener(this);
         binding.header.searchEditText.setOnKeyListener(this);
+        binding.header.iconCart.setOnClickListener(this);
     }
 
 //    @Override
@@ -183,6 +185,10 @@ public class HomeFragment extends Fragment implements IHomeView , View.OnClickLi
         if(v.getId() == binding.header.iconSearch.getId()){
             String title= binding.header.searchEditText.getText().toString();
             Intent intent = SearchActivity.newInstance(requireContext(),title);
+            startActivity(intent);
+        }
+        if(v.getId() == binding.header.iconCart.getId()){
+            Intent intent = new Intent(getContext(), CartActivity.class);
             startActivity(intent);
         }
     }

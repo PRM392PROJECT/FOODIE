@@ -13,9 +13,9 @@ namespace Foodie.WebClient.Controllers
         {
             _logger = logger;
         }
+
         public IActionResult Index()
         {
-
             return View();
         }
 
@@ -29,5 +29,6 @@ namespace Foodie.WebClient.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        
     }
 }

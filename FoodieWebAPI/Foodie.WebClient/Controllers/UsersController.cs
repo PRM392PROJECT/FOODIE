@@ -1,8 +1,6 @@
 ﻿using Foodie.DataAccessLayer.Models;
 using Foodie.ManagementAPI.RequestDto;
 using Foodie.ManagementAPI.ResponseDto;
-using Foodie.WebClient.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Foodie.WebClient.Controllers
@@ -25,6 +23,7 @@ namespace Foodie.WebClient.Controllers
             {
                 return GetView(int.Parse(userRoleId));
             }
+
             return View();
         }
 
@@ -51,20 +50,22 @@ namespace Foodie.WebClient.Controllers
         private async Task<IActionResult> AuthenticateUser(string email, string password)
         {
             var login = new Login() { Email = email, Password = password };
-            var response = await httpClient.PostAsJsonAsync("http://localhost:7059/api/users/login",login);
+            var response = await httpClient.PostAsJsonAsync("http://localhost:7059/api/users/authen/login", login);
 
             if (response.IsSuccessStatusCode)
             {
-                var user = await response.Content.ReadFromJsonAsync<UserResponse>();
+                var token = await response.Content.ReadFromJsonAsync<Token>();
+                var user = token.User;
                 var cookieOptions = new CookieOptions
                 {
-                    Expires = DateTime.Now.AddDays(7)
+                    Expires = DateTime.Now.AddHours(1)
                 };
                 Response.Cookies.Append("UserRoleId", user.RoleId.ToString(), cookieOptions);
                 Response.Cookies.Append("UserId", user.UserId.ToString(), cookieOptions);
                 Response.Cookies.Append("UserEmail", user.Email, cookieOptions);
                 Response.Cookies.Append("UserPhoneNumber", user.PhoneNumber, cookieOptions);
-                Response.Cookies.Append("UserRestaurentId",user.RestaurantId.ToString(), cookieOptions);
+                Response.Cookies.Append("UserRestaurentId", user.RestaurantId.ToString(), cookieOptions);
+                Response.Cookies.Append("AuthToken", token.TokenString.ToString(), cookieOptions);
                 return Ok(user);
             }
 
@@ -80,7 +81,13 @@ namespace Foodie.WebClient.Controllers
             Response.Cookies.Delete("UserPhoneNumber");
             Response.Cookies.Delete("UserPassword");
             Response.Cookies.Delete("UserRestaurentId");
+            Response.Cookies.Delete("AuthToken");
             return RedirectToAction("Login", "Users");
+        }
+
+        public IActionResult Register()
+        {
+            return View();
         }
 
         public IActionResult GetView(int roleId)
@@ -92,12 +99,18 @@ namespace Foodie.WebClient.Controllers
                 case 2:
                     return RedirectToAction("Dashboard", "Sellers"); // Seller
                 case 3:
-                    return RedirectToAction("Dashboard", "Admins"); // Admin
+                    return NoContent();
                 case 4:
-                    return RedirectToAction("Dashboard", "Shippers"); // Shipper
+                    return RedirectToAction("Dashboard", "Admin"); // Admin
+                   
                 default:
                     return RedirectToAction("Login", "Users"); // Mặc định: quay về trang đăng nhập
             }
+        }
+
+        public IActionResult Error()
+        {
+            return View();
         }
     }
 }

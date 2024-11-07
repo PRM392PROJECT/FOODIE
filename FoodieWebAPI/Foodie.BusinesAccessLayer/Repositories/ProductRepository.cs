@@ -4,7 +4,7 @@ using Foodie.DataAccessLayer.Models;
 
 namespace Foodie.BusinesAccessLayer.Repositories
 {
-    public class ProductRepository: IProductRepository
+    public class ProductRepository : IProductRepository
     {
         private readonly ProductDao _productDao;
 
@@ -22,11 +22,12 @@ namespace Foodie.BusinesAccessLayer.Repositories
         public async Task<Product> CreateProduct(Product product)
         {
             try
-            {  
-                return await _productDao.Create(product);
-            }catch(Exception ex)
             {
-                throw new Exception("Error create product: "+ex.Message);
+                return await _productDao.Create(product);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error create product: " + ex.Message);
             }
         }
 
@@ -38,7 +39,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
             }
             catch (Exception ex)
             {
-                throw new Exception("Error delete product: "+ex.Message); 
+                throw new Exception("Error delete product: " + ex.Message);
             }
         }
 
@@ -49,20 +50,22 @@ namespace Foodie.BusinesAccessLayer.Repositories
                 var product = await _productDao.GetById(productId);
                 if (product != null)
                 {
-                    product.ProductImages = (ICollection<ProductImage>) await _productImageDao.GetByProductId(productId);
+                    product.ProductImages = (ICollection<ProductImage>)await _productImageDao.GetByProductId(productId);
                 }
+
                 return product;
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 throw new Exception("Error create product: " + ex.Message);
             }
         }
 
-        public async Task<IEnumerable<Product>> GetProductByName(string productName,int pageNumber,int pageSize)
+        public async Task<IEnumerable<Product>> GetProductByName(string productName, int pageNumber, int pageSize)
         {
             try
             {
-                var products = await _productDao.GetByName(productName,pageNumber,pageSize);
+                var products = await _productDao.GetByName(productName, pageNumber, pageSize);
                 return products;
             }
             catch (Exception ex)
@@ -99,6 +102,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
                     await _productDao.Update(productExit);
                     return product;
                 }
+
                 throw new Exception("Can not found product id: " + productId);
             }
             catch (Exception ex)
@@ -106,7 +110,7 @@ namespace Foodie.BusinesAccessLayer.Repositories
                 throw new Exception("Error update product: " + ex.Message);
             }
         }
-       
+
         public Task<IEnumerable<ProductImage>> CreateImages(List<ProductImage> productImages)
         {
             try
@@ -118,19 +122,20 @@ namespace Foodie.BusinesAccessLayer.Repositories
                 throw new Exception("");
             }
         }
-        
+
         public async Task<ProductImage> CreateImage(ProductImage productImage)
         {
             try
             {
-                productImage =  await _productImageDao.Create(productImage);
+                productImage = await _productImageDao.Create(productImage);
                 return productImage;
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                throw new Exception("Error create image: "+ex.Message);
+                throw new Exception("Error create image: " + ex.Message);
             }
         }
-        
+
         public async Task<int> CountProductByCategoryId(int categoryId)
         {
             return await _productDao.CountByCategoryId(categoryId);
@@ -149,7 +154,8 @@ namespace Foodie.BusinesAccessLayer.Repositories
             }
         }
 
-        public async Task<IEnumerable<Product>> GetProductsByRestaurantId(int restaurantId, int pageNumber, int pageSize)
+        public async Task<IEnumerable<Product>> GetProductsByRestaurantId(int restaurantId, int pageNumber,
+            int pageSize)
         {
             try
             {
@@ -162,9 +168,44 @@ namespace Foodie.BusinesAccessLayer.Repositories
             }
         }
 
+        public async Task<IEnumerable<Product>> GetProductsByEmail(string email, int pageNumber, int pageSize)
+        {
+            try
+            {
+                var products = await _productDao.GetProductByRestaurent(email, pageNumber, pageSize);
+                return products;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error get product by category: " + ex.Message);
+            }
+        }
+
         public async Task<int> CountProductByRestaurentId(int restaurantId)
         {
             return await _productDao.CountByRestaurantId(restaurantId);
+        }
+
+        public async Task<int> CountProductByEmail(string email)
+        {
+            return await _productDao.CountByRestaurantEmail(email);
+        }
+
+        public async Task<ProductImage> UpdatePImage(ProductImage productImage)
+        {
+            var image = await _productImageDao.GetById(productImage.ImageId);
+            if (image != null)
+            {
+                image.ImageUrl = productImage.ImageUrl;
+                return await _productImageDao.Update(image);
+            }
+
+            return null;
+        }
+
+        public async Task<bool> DeleteImageById(int imageId)
+        {
+            return await _productImageDao.Delete(imageId);
         }
     }
 }

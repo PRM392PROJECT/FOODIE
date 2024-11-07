@@ -6,8 +6,8 @@ namespace Foodie.ManagementAPI.ResponseDto
     {
         public RestaurantResponse()
         {
-            
         }
+
         public int RestaurantId { get; set; }
         public string Name { get; set; } = null!;
         public string? Location { get; set; }

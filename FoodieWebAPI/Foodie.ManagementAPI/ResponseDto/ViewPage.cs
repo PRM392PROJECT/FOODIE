@@ -2,7 +2,6 @@
 {
     public class ViewPage<T>
     {
-
         public ViewPage(int pageNumber, int pageSize, IEnumerable<T> items, int totalItems)
         {
             CurrentPage = pageNumber;

@@ -1,5 +1,264 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@await Html.PartialAsync("_Header_Customer")
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 0;
+        background-color: #f9f9f9;
+    }
+
+    .product-detail {
+        max-width: 1000px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .slideshow-container {
+        max-width: 80%;
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .slide {
+        display: none;
+    }
+
+    .slide img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.3s;
+        user-select: none;
+    }
+
+    .prev {
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    .next {
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .product-detail h2 {
+        margin: 0 0 10px;
+        font-size: 24px;
+        color: #333;
+    }
+
+    .product-price {
+        font-size: 20px;
+        font-weight: bold;
+        color: #28a745;
+    }
+
+    .order-button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        margin-right: 10px;
+    }
+
+    .order-button:hover {
+        background-color: #218838;
+    }
+
+    .additional-info {
+        margin-top: 20px;
+        border-top: 1px solid #eaeaea;
+        padding-top: 15px;
+    }
+
+    .loading {
+        text-align: center;
+        font-size: 18px;
+        color: #888;
+    }
+
+    .error {
+        color: red;
+        text-align: center;
+    }
+    .feedback-item {
+        margin-bottom: 20px; /* Khoảng cách dưới mỗi phản hồi */
+        padding: 10px;
+        border-bottom: 1px solid #eaeaea; /* Đường kẻ phân cách giữa các phản hồi */
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .user-info img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .rating {
+        color: #f39c12; /* Màu vàng cho đánh giá */
+        margin-bottom: 5px;
+    }
+
+    .comment {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .date {
+        font-size: 12px;
+        color: #888;
+    }
+
+</style>
+
+<div class="product-detail" id="product-detail">
+    <div class="loading">Đang tải chi tiết sản phẩm...</div>
+</div>
+
+<div class="feedback-section" id="feedback-section">
+    <h3>Phản hồi</h3>
+    <div class="loading-feedback">Đang tải phản hồi...</div>
+    <ul class="feedback-list" id="feedback-list"></ul>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetchProductDetail();
+        fetchFeedbacks();
+    });
+
+    const productId = @Html.Raw(Model);
+    const apiUrl = `http://localhost:7059/api/products/get-byid/${productId}`;
+
+    async function fetchProductDetail() {
+        try {
+            const response = await fetch(apiUrl);
+            const productData = await response.json();
+            const images = productData.images.map((image, index) => `
+                <div class="slide">
+                    <img src="${image.imageUrl}" alt="${productData.name}">
+                </div>
+            `).join('');
+            const slideshowControls = `
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            `;
+
+            const productDetail = `
+                <h2>${productData.name}</h2>
+                <p class="product-price">${productData.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</p>
+                <div class="slideshow-container">${images}${slideshowControls}</div>
+                <p><strong>Mô tả:</strong> ${productData.description}</p>
+                <div class="additional-info">
+                    <h3>Thông tin thêm</h3>
+                    <ul>
+                        <li><strong>Danh mục:</strong> ${productData.categoryName}</li>
+                        <li><strong>Ngày tạo:</strong> ${new Date(productData.createAt).toLocaleDateString('vi-VN')}</li>
+                        <li><strong>Ngày cập nhật:</strong> ${new Date(productData.upDateAt).toLocaleDateString('vi-VN')}</li>
+                    </ul>
+                </div>
+                <div class="button-group">
+                    <button class="order-button" onclick="orderProduct(${productData.productId})">Đặt hàng</button>
+                    <button class="order-button" onclick="addToCart(${productData.productId},${productData.price})">Thêm vào giỏ</button>
+                </div>
+            `;
+
+            document.getElementById('product-detail').innerHTML = productDetail;
+            showSlides(0);
+        } catch (error) {
+            console.error('Lỗi khi lấy dữ liệu sản phẩm:', error);
+            document.getElementById('product-detail').innerHTML = '<div class="error">Không thể tải chi tiết sản phẩm.</div>';
+        }
+    }
+
+    let slideIndex = 0;
+    function showSlides(index) {
+        const slides = document.getElementsByClassName('slide');
+        if (slides.length === 0) return;
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+        slides[index].style.display = 'block';
+    }
+
+    function changeSlide(n) {
+        const slides = document.getElementsByClassName('slide');
+        slideIndex = (slideIndex + n + slides.length) % slides.length;
+        showSlides(slideIndex);
+    }
+
+    async function addToCart(productId, productPrice) {
+        const userId = @Html.Raw(ViewBag.UserId);
+        const cartItem = { productId, quantity: 1, price: productPrice };
+        const api = `http://localhost:7059/api/carts/add-cart/${userId}`;
+        try {
+            const response = await fetch(api, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(cartItem)
+            });
+            if (response.ok) {
+                alert('Đã thêm vào giỏ hàng thành công');
+                window.location.href = '/Customers/Carts';
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    function orderProduct(productId) {
+        window.location.href = `/Customers/OrderDetail/${productId}`;
+    }
+
+    async function fetchFeedbacks() {
+        const feedbackApiUrl = `http://localhost:7059/api/productfeedbacks/get-page?productId=${productId}&pageNumber=1&pageSize=5`;
+        try {
+            const response = await fetch(feedbackApiUrl);
+            const feedbackData = await response.json();
+            const feedbackList = feedbackData.items.map(feedback => `
+                <div class="feedback-item">
+                    <div class="user-info">
+                        <img src="${feedback.avatarUrl}" alt="${feedback.userFirstName} ${feedback.userLastName}">
+                        <div class="user-name">${feedback.userFirstName} ${feedback.userLastName}</div>
+                    </div>
+                    <div class="rating">Đánh giá: ${'★'.repeat(feedback.rating)}</div>
+                    <div class="comment">${feedback.comment}</div>
+                    <div class="date">${new Date(feedback.createdAt).toLocaleDateString('vi-VN')}</div>
+                </div>
+            `).join('');
+            document.getElementById('feedback-list').innerHTML = feedbackList || '<div class="error">Chưa có phản hồi nào.</div>';
+        } catch (error) {
+            console.error('Lỗi khi lấy dữ liệu phản hồi:', error);
+            document.getElementById('feedback-list').innerHTML = '<div class="error">Không thể tải phản hồi.</div>';
+        }
+    }
+</script>

@@ -23,16 +23,29 @@
         android:layout_gravity="center"
         android:text="Create a new account"
         android:layout_marginTop= "5dp"/>
-
     <EditText
-        android:id="@+id/fullnameEdt"
+        android:id="@+id/firstNameEdit"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/backgroud_edittext"
-        android:hint="Fullname"
+        android:hint="FirstName"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textSize="16sp" />
+    <EditText
+        android:id="@+id/lastNameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/backgroud_edittext"
+        android:hint="LastName"
         android:inputType="text"
         android:maxLines="1"
         android:paddingStart="20dp"
@@ -84,16 +97,6 @@
             android:textSize="16sp"
             android:inputType="textPassword"
             android:maxLines="1"/>
-        <!--- <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:padding="10dp"
-        android:src="@drawable/"
-        android:adjustViewBounds="true"
-        android:layout_marginEnd="20dp"/>
-        -->
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -127,7 +130,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginEnd="20dp"
@@ -137,58 +140,8 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/backgroud_edittext"
         android:textColor="#000000"/>
-<!--    <RelativeLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:layout_marginEnd="20dp">-->
-
-<!--        <View-->
-<!--            android:layout_centerVertical="true"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="1dp"-->
-<!--            android:background="#1A000000"-->
-<!--            android:layout_toStartOf="@+id/orTxt"-->
-<!--            android:layout_marginEnd= "20dp"-->
-<!--            android:layout_marginStart="20dp"/>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/orTxt"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="OR"-->
-<!--            android:layout_centerInParent="true"-->
-<!--            android:textSize="12sp"-->
-<!--            android:textColor="#80000000"/>-->
-<!--&lt;!&ndash;        <View&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_centerVertical="true"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_height="1dp"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:background="#1A000000"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_toEndOf="@+id/orTxt"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_marginEnd= "20dp"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_marginStart="20dp"/>&ndash;&gt;-->
-<!--    </RelativeLayout>-->
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="40dp">
 
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text = "Already have an account?"/>-->
 
-<!--        <TextView-->
-<!--            android:layout_marginStart="5dp"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Log In"-->
-<!--            android:textStyle="bold"/>-->
-    </LinearLayout>
 </LinearLayout>
